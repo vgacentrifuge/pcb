@@ -12,6 +12,7 @@ The VGA mixer is a device that takes two VGA inputs,
 called "background" and "foreground", and outputs a single VGA video stream.
 
 It should support the SVGA resolution 800x600 @ 60Hz and 16-bit color depth.
+The colors are stored as (5,6,5)-bit RGB values internally.
 
 On the board there are several buttons and an LCD screen,
 allowing you to pick between different **modes**:
@@ -127,7 +128,8 @@ Available in the lab is the EFM32GG990F1024-BGA112
 We use SPI between MCU and FPGA, and between MCU and SD-card. They can be fully independent.
 For our SPI communication, the lecture tells us to add extra wires to the PCB.
 
-[I2C](https://en.wikipedia.org/wiki/I%C2%B2C) is "open drain", which means we must use pull-up resistors on the lines. 
+[I2C](https://en.wikipedia.org/wiki/I%C2%B2C) is "open drain", which means we must use pull-up resistors on the lines.
+
 A small issue here might be the number of I2C ports on the MCU: 2.
 For the VGA Display Data Channel, our board will be a slave device.
 Since we have two VGA inputs, they might both want to drive the clock signal. 
@@ -151,6 +153,10 @@ We want a slot to be able to move the SD-card to and from a computer.
 When connected, the MCU communicates via SPI to the card.
 In addition to the 4 SPI pins, The SD-card takes a 3.3V VDD and ground.
 
+Mouser has thousands of the [MEM2051-00-195-00-A](https://no.mouser.com/ProductDetail/GCT/MEM2051-00-195-00-A?qs=KUoIvG%2F9Ilat7yfJRNWXUQ%3D%3D) for 12kr a pop.
+The solder pads are on the underside, is that a problem? TODO.
+When buying from Mouser, we may as well buy an 8GB microSD card for 99kr as well: [SDSDQAB-008G](https://no.mouser.com/ProductDetail/SanDisk/SDSDQAB-008G?qs=EgF7oUuTQmoYk8ahPy9gPg%3D%3D)
+
 ### LCD text output
 
 ### Input panel
@@ -158,25 +164,45 @@ We need to design a button layout that fits our functionality,
 but also allows us to experiment after the PCB design is finalized.
 
 ### VGA ports
+We need the physical VGA ports, as well as supporting components.
+The speed we target is [SVGA 800x600@60Hz](http://tinyvga.com/vga-timing/800x600@60Hz).
 
-#### VGA Display Data Channel
+As for the physical VGA ports, they cost a lot on digikey, farnell doesn't have it.
+Mouser has thousands of [L77HDE15SD1CH4RHNVGA](https://no.mouser.com/ProductDetail/Amphenol-Commercial-Products/L77HDE15SD1CH4RHNVGA?qs=f9yNj16SXrKPVxRw%2FcVQYg%3D%3D) for 19kr a piece.
+Is has through-hole pins.
+
+#### VGA Display Data Channel - I2C EEPROMs
 The [DDC2B](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC2) standard is an I2C protocol to communicate information about the "monitor" to the video source.
-Our device should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data). 
+Our device should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
+See [this page](http://www.hardwarebook.info/VGA_(VESA_DDC)) for specifications.
 The VGA DDC uses three pins: I2C data, I2C clock, and DC +5V delivered by the video source.
-We should probably ignore that last one.
+Our board must respond to the 7-bit I²C address 50h.
 
-We can let the MCU handle the I2C communication. It has several I2C ports built in.
+To save our MCU from being a slave over the VGA ports, we can buy dirt cheep I2C EEPROMSs.
+For instance [M24C02-WMN6TP](https://www.digikey.no/no/products/detail/stmicroelectronics/M24C02-WMN6TP/1663568),
+in stock at Digikey.no, at 1,7kr a piece. We use one per VGA input = 6 for 3 boards.
 
-### ADCs
+The I2C master will try to read from address 0xA1 = 0b1010 0001.
+This is perfect! The EEPROM listens for address 0b1010 xxxx, where
+we configure the X's ourselves. The last bit is 1 for read and 0 for write.
+
+##### I2C EEPROM support components
+ - Remember to add connectors for the chip to the board, to program it.
+ - The Write Control should be pulled up by default, and low when being programmed.
+ - Also remember pulling SDA up (TODO: figure 11), and probably SCL too.
+ - Vcc should be decoupled "usually of the order of 10 nF to 100 nF, close to the Vcc/Vss pins".
+ - E0, E1 and E2 should be connected to ground, to listen the correct address.
+
+#### Input VGA ADCs
 The analog color inputs of each VGA input needs to become digital 6 or 5 bit values.
 We can use ADCs with more bit depth than this, and then ignore the least significant bits.
 When configuring the gain on the ADC, I2C is used, which should be the MCU's task (right?? TODO).
 
-#### ADC support components
+##### ADC support components
 It seems people expect the cable to be 75 Ohms, in
 addition to 75 Ohm pull-down resistors on both the DAC output and the ADC input.
 
-### DAC
+#### Output VGA DAC
 When outputing analog color data, we don't want to use resistors, as they take space,
 and the FPGA outputs are not the best at delivering DC current.
 We have several contenders, both have 3 10-bit inputs named R, G and B.
@@ -201,6 +227,8 @@ While developing, we want to use some components that might not be part of the f
 
 ### SD-card reader breakout board
 A breakout SD card reader would be great to get the MCU dev-board to do SD-card reading, when developing.
+We can make one ourselves by soldering onto the pads of a microSD-SD adapter Håvard has.
 
 ### VGA breakout board
-To test both FPGA video output and Display Data Chanel info
+To test both FPGA video output and Display Data Chanel info, we should probably just use one of the 9
+[L77HDE15SD1CH4RHNVGA](https://no.mouser.com/ProductDetail/Amphenol-Commercial-Products/L77HDE15SD1CH4RHNVGA?qs=f9yNj16SXrKPVxRw%2FcVQYg%3D%3D) we buy for the 3 PCBs.
