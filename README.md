@@ -18,7 +18,7 @@ allowing you to pick between different **modes**:
  - Showing only the foreground
  - Showing only the background
  - Overlaying with chroma keying appied to the foreground
- - Showing the foreground at 33%, 50% or 67% transparancy
+ - Showing the foreground at 25%, 50% or 75% transparancy
  - Adding the colors (double exposure)
 
 In addition to modes, the foreground can also be **scaled** and **translated**:
@@ -42,8 +42,18 @@ almost directly out to the output DAC.
 The output signal is just a few pixels behind the background.
 
 The foreground gets buffered, either in SRAM, DRAM or the FPGA's internal block RAM.
-When the background signal is passing through the FPGA, it checks the settings and
-foreground frame buffer to see what, if anything, should happen to the pixel before it is output.
+When the background signal is passing through the FPGA, it knows which pixel it is processing.
+By checking its settings, it will know if and where the foreground framebuffer should be sampled.
+Translations and scaling affect how the foreground overlays the background.
+
+Scaling is done by doubling or quadrupling the current pixel coordinate (left shifting).
+Translations are done by adding offsets. If the resulting pixel position
+is still within the framebuffer bounds, it gets sampled.
+
+Chroma key is handled by looking at the color chanels.
+Transparancy is done by averaging the foreground and background layers.
+To get 25% foreground, pixel = (fg+(fg<<1) + bg) >> 2, or something similar.
+We don't want to do actual division.
 
 User input is handled by an MCU, which is connected to the FPGA via SPI.
 The MCU also handles the VGA input data pins, to communicate to our video sources
@@ -77,7 +87,7 @@ The dev-board itself contains:
  - 16MB Quad-SPI Flash
  
 #### On PCB
-We will use the **ARTIX-7 XC7A100T** on the PCB, which has already been procured.
+On the PCB we will use the **ARTIX-7 XC7A100T** in FTG256 package, which has already been procured.
  - 4,860 Kib of dual port block ram
 
 #### Voltages
@@ -85,30 +95,77 @@ The FPGA requires, 1.0V, 1.8V and 3.3V, and they must become ready in order.
 The 3.3V is the standard signal voltage we use.
 
 #### Required FPGA support components
-In the datasheet they define that certain sets of decoupling capacitors should be connected to certain pins.
-TODO: Copy the datasheet.
+In the datasheet they define that certain sets of **decoupling capacitors** should be connected to certain pins.
+This is already included in the example schematic from the lecture.
 Try to get them close to the pins on the actual PCB.
 
-We also need a configuration flash chip on the board,
-to program the FPGA on startup. It must be programmable using JTAG,
-see the example setup from the lecture.
+We also need a **configuration flash chip** on the board,
+to program the FPGA on startup.
+TODO: Find supported flash chip (See UG908 Appendix C).
+
+It must be programmable using **JTAG**, so we add a connector.
+See the example setup from the lecture (e.g. the 10k pullups).
 
 ### SRAM
 
 ### DRAM
 
 ### MCU
+Available in the lab is the EFM32GG990F1024-BGA112
+ - ARM Cortex M3
+ - Flash: 1024kB
+ - RAM: 128kB
+ - USB support
+ - ADC: 8 channels, 12 bit
+ - DAC: 2 channels, 12 bit
+ - SPI: 3
+ - I2C: 2
+ - GPIO: 87
+ - 112 pin BGA package
+ 
+### Connections
+We use SPI between MCU and FPGA, and between MCU and SD-card. They can be fully independent.
+For our SPI communication, the lecture tells us to add extra wires to the PCB.
+
+[I2C](https://en.wikipedia.org/wiki/I%C2%B2C) is "open drain", which means we must use pull-up resistors on the lines. 
+A small issue here might be the number of I2C ports on the MCU: 2.
+For the VGA Display Data Channel, our board will be a slave device.
+Since we have two VGA inputs, they might both want to drive the clock signal. 
+The LCD screen probably uses I2C, so our MCU also needs to be a master.
+
+### Power circuit
+We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
+The MCU and SD card use 3.3V.
+
+Remember the jumpers between the power circuit and rest of the board.
+
+### Clock circuit
+By using an external crystal, as recommended, we can run the MCU at 48MHz.
+The FPGA should take the same clock as input, and use phase-locked loops
+to internally run faster clocks at rational multiples of the input.
+
+The clock circuit itself needs components.
 
 ### SD-card & SD-card slot
 We want a slot to be able to move the SD-card to and from a computer.
-When connected, the MCU communicates via SPI to the
-The SD-card takes 3.3V VDD
+When connected, the MCU communicates via SPI to the card.
+In addition to the 4 SPI pins, The SD-card takes a 3.3V VDD and ground.
 
 ### LCD text output
 
 ### Input panel
+We need to design a button layout that fits our functionality,
+but also allows us to experiment after the PCB design is finalized.
 
 ### VGA ports
+
+#### VGA Display Data Channel
+The [DDC2B](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC2) standard is an I2C protocol to communicate information about the "monitor" to the video source.
+Our device should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data). 
+The VGA DDC uses three pins: I2C data, I2C clock, and DC +5V delivered by the video source.
+We should probably ignore that last one.
+
+We can let the MCU handle the I2C communication. It has several I2C ports built in.
 
 ### ADCs
 The analog color inputs of each VGA input needs to become digital 6 or 5 bit values.
@@ -137,10 +194,13 @@ It also has a "TTL input interface, and a high impedance, analog output current 
 Digikey.no has lots of versions of it [in stock](https://www.digikey.no/en/products/base-product/analog-devices-inc/505/ADV7123/24791).
 Note: They need to be bought in bulk, and cost 100-200NOK per unit.
 
-TODO: What is TTL, how much do we need to configure it. It has a clock input. Why?
+TODO: What is TTL, how much do we need to configure it. Can the MCU do the configuration?
 
-### 
-
-## Development breakout components
+## Development components
 While developing, we want to use some components that might not be part of the finished PCB.
-A breakout slot
+
+### SD-card reader breakout board
+A breakout SD card reader would be great to get the MCU dev-board to do SD-card reading, when developing.
+
+### VGA breakout board
+To test both FPGA video output and Display Data Chanel info
