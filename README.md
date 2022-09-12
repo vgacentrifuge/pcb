@@ -108,6 +108,46 @@ It must be programmable using **JTAG**, so we add a connector.
 See the example setup from the lecture (e.g. the 10k pullups).
 
 ### SRAM
+We need to calculate the required SRAM size.
+With an 800x600=480 000 pixel grid, 16 bit color depth, it makes sense to
+use a 512K x 16 bit SRAM. We do however also want to make the SRAM easy to address.
+
+800 bits of X-coordinate rounds up to 10 bits.
+600 bit of Y-coordinate also rounds up to 10 bits.
+A 20 bit address means 2^20 = 1M x 16bit SRAM.
+
+This size would also allow us to support 1024x768 (XGA),
+but speed is a bigger issue. XGA has a pixel clock of 15.3ns.
+
+If we stick to SVGA, the [IS61WV102416FBLL-10TLI ](https://no.mouser.com/ProductDetail/ISSI/IS61WV102416FBLL-10TLI?qs=HXFqYaX1Q2y%2F6qe553VRZQ%3D%3D)
+could work. It is Async, with 10ns read cycle and write cycle.
+The packaging is TSOP-48, which we should be able to solder on.
+It takes 3.3V.
+
+It seems like it will be OK to perform interleaving reads and writes every 10ns.
+We keep output enable and chip select high all the time.
+
+Let's say we want to read from [0xA0:], and write to [0xB0:]
+
+t=0ns: write 0xA0 to address lines
+
+t=10ns:
+data at 0xA0 is ready on output. read it.
+at the same time, set WE#=LOW, and address lines to 0xB0
+
+t=12.5ns: the value at 0xA0 is no longer being output, but we have already read it.
+
+t=14ns: the data line is high-Z, start sending data on line.
+
+t=20ns: set WE#=HIGH again to finish write, address can be changed to 0xA1.
+
+Keep going like so. The biggest issue is the t=14ns.
+The read is just finished being output, on the data lines,
+but now we must drive the data lines for 6ns for the write to succeed.
+
+Since we in reality have 25ns per pixel, we have 5ns to go on.
+If we use a clock speed of 6.25ns, we get 4 nicely timed rising edges
+to do our work with some safety margin.
 
 ### DRAM
 
@@ -153,11 +193,20 @@ We want a slot to be able to move the SD-card to and from a computer.
 When connected, the MCU communicates via SPI to the card.
 In addition to the 4 SPI pins, The SD-card takes a 3.3V VDD and ground.
 
+See for instance [this website](https://www.electroniccircuitsdesign.com/pinout/sd-microsd-card-pinout.html) for pinout on the physical SD and microSD cards.
+
+Note that [this SO-post](https://electronics.stackexchange.com/questions/496357/sd-card-via-spi-pull-up-resistors-or-dedicated-ic)
+talks about pull-up resistors on all the data pins, we can do that too.
+
 Mouser has thousands of the [MEM2051-00-195-00-A](https://no.mouser.com/ProductDetail/GCT/MEM2051-00-195-00-A?qs=KUoIvG%2F9Ilat7yfJRNWXUQ%3D%3D) for 12kr a pop.
 The solder pads are on the underside, is that a problem? TODO.
 When buying from Mouser, we may as well buy an 8GB microSD card for 99kr as well: [SDSDQAB-008G](https://no.mouser.com/ProductDetail/SanDisk/SDSDQAB-008G?qs=EgF7oUuTQmoYk8ahPy9gPg%3D%3D)
 
 ### LCD text output
+A cheap 2 row x 16 char width LCD screen is [DFR0555](https://www.digikey.no/no/products/detail/dfrobot/DFR0555/9356340).
+It is controlled over I2C (with an address different to the EEPROMS, btw).
+At 87mm x 32mm total, it is quite small. Each char is 2.96mm x 5.56mm.
+Mouser doesn't have anything cheaper using I2C, so it's probably a good option.
 
 ### Input panel
 We need to design a button layout that fits our functionality,
@@ -167,13 +216,32 @@ but also allows us to experiment after the PCB design is finalized.
 We need the physical VGA ports, as well as supporting components.
 The speed we target is [SVGA 800x600@60Hz](http://tinyvga.com/vga-timing/800x600@60Hz).
 
+The VGA connector itself is [described here](http://www.hardwarebook.info/VGA).
+For VGA output we only really need to connect 5 pins, plus ground:
+ - red, green, blue color (analog, 75 Ohm)
+ - horizontal sync, vertical sync. See timing chart.
+
+Note: While we are in the "porch" and sync pulse areas of the signal, the color values must all be 0V.
+See for example the 2nd [Ben Eater VGA video](https://www.youtube.com/watch?v=uqY3FMuMuRo).
+
+We also might want to connect the 3 DDC2B ports, in case we want to read info about the output monitor.
+See the following section about DAC and VGA Display Data Channel.
+
+For inputs, we need to read those 5 signals, including the analog color signals (using ADCs).
+We should also let the video sources get info about our board over I2C. See next sections.
+
 As for the physical VGA ports, they cost a lot on digikey, farnell doesn't have it.
 Mouser has thousands of [L77HDE15SD1CH4RHNVGA](https://no.mouser.com/ProductDetail/Amphenol-Commercial-Products/L77HDE15SD1CH4RHNVGA?qs=f9yNj16SXrKPVxRw%2FcVQYg%3D%3D) for 19kr a piece.
 Is has through-hole pins.
 
-#### VGA Display Data Channel - I2C EEPROMs
+#### VGA Display Data Channel
 The [DDC2B](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC2) standard is an I2C protocol to communicate information about the "monitor" to the video source.
-Our device should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
+
+For the output port, we can connect the DDC pins to one of the MCU's I2C ports,
+in case we want to read info about the screen.
+
+##### Input VGA ports: I2C EEPROMs
+On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
 See [this page](http://www.hardwarebook.info/VGA_(VESA_DDC)) for specifications.
 The VGA DDC uses three pins: I2C data, I2C clock, and DC +5V delivered by the video source.
 Our board must respond to the 7-bit I²C address 50h.
@@ -198,9 +266,14 @@ The analog color inputs of each VGA input needs to become digital 6 or 5 bit val
 We can use ADCs with more bit depth than this, and then ignore the least significant bits.
 When configuring the gain on the ADC, I2C is used, which should be the MCU's task (right?? TODO).
 
+
+
 ##### ADC support components
-It seems people expect the cable to be 75 Ohms, in
-addition to 75 Ohm pull-down resistors on both the DAC output and the ADC input.
+It seems people expect the cable to be 75 Ohms,
+in addition to 75 Ohm pull-down resistors on the ADC input.
+
+TODO: Where do we need to add resistors? What even is impedance matching?
+Read the DAC and ADC datasheets perhaps.
 
 #### Output VGA DAC
 When outputing analog color data, we don't want to use resistors, as they take space,
