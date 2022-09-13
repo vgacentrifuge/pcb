@@ -64,7 +64,7 @@ The SD card is also connected to the MCU over another SPI.
 We use FAT32 formatted SD-cards, allowing the user to prepare overlays on their computer, saved as bmp.
 See [this project here](https://create.arduino.cc/projecthub/SurtrTech/display-bmp-pictures-from-sd-card-on-tft-lcd-shield-f3074c).
 The MCU does all file system work and image decoding. The LCD can be used to pick images by file name.
-When selected, the foreground input gets ignored, and the FPGA fills the framebuffer with the image instead, sent over SPI. 
+When selected, the foreground input gets ignored, and the FPGA fills the framebuffer with the image instead, sent over SPI.
 
 In general, the MCU takes user input and uses SPI to send a state struct to the FPGA.
 This means timed transitions, and switching between saved states, can be orchestrated from there.
@@ -112,14 +112,14 @@ We need to calculate the required SRAM size.
 With an 800x600=480 000 pixel grid, 16 bit color depth, it makes sense to
 use a 512K x 16 bit SRAM. We do however also want to make the SRAM easy to address.
 
-800 bits of X-coordinate rounds up to 10 bits.
-600 bit of Y-coordinate also rounds up to 10 bits.
+800 pixels of X-coordinate rounds up to 10 bits.
+600 pixels of Y-coordinate also rounds up to 10 bits.
 A 20 bit address means 2^20 = 1M x 16bit SRAM.
 
 This size would also allow us to support 1024x768 (XGA),
 but speed is a bigger issue. XGA has a pixel clock of 15.3ns.
 
-If we stick to SVGA, the [IS61WV102416FBLL-10TLI ](https://no.mouser.com/ProductDetail/ISSI/IS61WV102416FBLL-10TLI?qs=HXFqYaX1Q2y%2F6qe553VRZQ%3D%3D)
+If we stick to SVGA, the [IS61WV102416FBLL-10TLI](https://no.mouser.com/ProductDetail/ISSI/IS61WV102416FBLL-10TLI?qs=HXFqYaX1Q2y%2F6qe553VRZQ%3D%3D)
 could work. It is Async, with 10ns read cycle and write cycle.
 The packaging is TSOP-48, which we should be able to solder on.
 It takes 3.3V.
@@ -177,7 +177,8 @@ The LCD screen probably uses I2C, so our MCU also needs to be a master.
 
 ### Power circuit
 We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
-The MCU and SD card use 3.3V.
+The MCU and SD card use 3.3V, so does the SRAM.
+The DRAM is a bit more complicated, see the DRAM section.
 
 Remember the jumpers between the power circuit and rest of the board.
 
