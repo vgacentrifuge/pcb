@@ -117,37 +117,21 @@ use a 512K x 16 bit SRAM. We do however also want to make the SRAM easy to addre
 A 20 bit address means 2^20 = 1M x 16bit SRAM.
 
 This size would also allow us to support 1024x768 (XGA),
-but speed is a bigger issue. XGA has a pixel clock of 15.3ns.
+but speed is a bigger issue. XGA has a pixel clock of 15.3ns / pixel.
 
-If we stick to SVGA, the [IS61WV102416FBLL-10TLI](https://no.mouser.com/ProductDetail/ISSI/IS61WV102416FBLL-10TLI?qs=HXFqYaX1Q2y%2F6qe553VRZQ%3D%3D)
-could work. It is Async, with 10ns read cycle and write cycle.
-The packaging is TSOP-48, which we should be able to solder on.
-It takes 3.3V.
+To get good speed, we have looked at the syncronous 1M x 18b SRAM [CY7C1372KV33-200AXC](https://www.digikey.no/en/products/detail/cypress-semiconductor-corp/CY7C1372KV33-200AXC/5982740)
+which supposedly costs 94kr per chip. It takes 3.3V.
+With pipelining, the access time becomes 3ns,
+with each operation delayed for two cycles.
 
-It seems like it will be OK to perform interleaving reads and writes every 10ns.
-We keep output enable and chip select high all the time.
+The number of pins needed becomes:
+ - 20 address pins
+ - 16 data pins
+ - write enable
+ - clock
 
-Let's say we want to read from [0xA0:], and write to [0xB0:]
-
-t=0ns: write 0xA0 to address lines
-
-t=10ns:
-data at 0xA0 is ready on output. read it.
-at the same time, set WE#=LOW, and address lines to 0xB0
-
-t=12.5ns: the value at 0xA0 is no longer being output, but we have already read it.
-
-t=14ns: the data line is high-Z, start sending data on line.
-
-t=20ns: set WE#=HIGH again to finish write, address can be changed to 0xA1.
-
-Keep going like so. The biggest issue is the t=14ns.
-The read is just finished being output, on the data lines,
-but now we must drive the data lines for 6ns for the write to succeed.
-
-Since we in reality have 25ns per pixel, we have 5ns to go on.
-If we use a clock speed of 6.25ns, we get 4 nicely timed rising edges
-to do our work with some safety margin.
+The rest, like output enable, clock enable, byte enable etc. can all be pulled by the pcb.
+At least I think so.
 
 ### DRAM
 
