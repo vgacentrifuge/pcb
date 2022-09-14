@@ -126,12 +126,12 @@ with each operation delayed for two cycles.
 
 The number of pins needed becomes:
  - 20 address pins
- - 16 data pins
+ - 18 data pins
  - write enable
  - clock
 
 The rest, like output enable, clock enable, byte enable etc. can all be pulled by the pcb.
-At least I think so.
+The JTAG pins should be exposed as a header on the PCB, but don't take up any FPGA pins.
 
 ### DRAM
 
