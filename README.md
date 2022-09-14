@@ -197,14 +197,17 @@ Mouser doesn't have anything cheaper using I2C, so it's probably a good option.
 We need to design a button layout that fits our functionality,
 but also allows us to experiment after the PCB design is finalized.
 
+We can use an off the shelf keyboard matrix, and re-label the keys.
+Mouser stocks 81 of the 4x4 [3844](https://no.mouser.com/ProductDetail/Adafruit/3844?qs=qSfuJ%252Bfl%2Fd6WS5%252BJGim1hw%3D%3D).
+
 ### VGA ports
 We need the physical VGA ports, as well as supporting components.
 The speed we target is [SVGA 800x600@60Hz](http://tinyvga.com/vga-timing/800x600@60Hz).
 
 The VGA connector itself is [described here](http://www.hardwarebook.info/VGA).
 For VGA output we only really need to connect 5 pins, plus ground:
- - red, green, blue color (analog, 75 Ohm)
- - horizontal sync, vertical sync. See timing chart.
+ - red, green, blue color (analog 0-0.7V, 75 Ohm)
+ - horizontal sync, vertical sync (5V, but 3.3V makes do). See timing chart.
 
 Note: While we are in the "porch" and sync pulse areas of the signal, the color values must all be 0V.
 See for example the 2nd [Ben Eater VGA video](https://www.youtube.com/watch?v=uqY3FMuMuRo).
@@ -224,6 +227,8 @@ The [DDC2B](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC2) standard is
 
 For the output port, we can connect the DDC pins to one of the MCU's I2C ports,
 in case we want to read info about the screen.
+NOTE: The I2C lines are open drain, and expect to be pulled up to 5V.
+We will need a level shifter for the MCU to be able to use the I2C port.
 
 ##### Input VGA ports: I2C EEPROMs
 On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
@@ -231,9 +236,11 @@ See [this page](http://www.hardwarebook.info/VGA_(VESA_DDC)) for specifications.
 The VGA DDC uses three pins: I2C data, I2C clock, and DC +5V delivered by the video source.
 Our board must respond to the 7-bit I²C address 50h.
 
+Remember that the I2C lines are open collector, and pulled to 5V. Our MCU would not handle that.
+
 To save our MCU from being a slave over the VGA ports, we can buy dirt cheep I2C EEPROMSs.
 For instance [M24C02-WMN6TP](https://www.digikey.no/no/products/detail/stmicroelectronics/M24C02-WMN6TP/1663568),
-in stock at Digikey.no, at 1,7kr a piece. We use one per VGA input = 6 for 3 boards.
+in stock at Digikey.no, at 1,7kr a piece. They work at 2.5V - 5.5V, and we use one per VGA input = 6 for 3 boards.
 
 The I2C master will try to read from address 0xA1 = 0b1010 0001.
 This is perfect! The EEPROM listens for address 0b1010 xxxx, where
@@ -251,7 +258,7 @@ The analog color inputs of each VGA input needs to become digital 6 or 5 bit val
 We can use ADCs with more bit depth than this, and then ignore the least significant bits.
 When configuring the gain on the ADC, I2C is used, which should be the MCU's task (right?? TODO).
 
-
+The video ADC we looked at is the 3 channel x 10bit TI [TVP7002PZPR](https://no.mouser.com/ProductDetail/Texas-Instruments/TVP7002PZPR?qs=0OHPnBYoB%2FnBqXV%2Fq5aVXw%3D%3D)
 
 ##### ADC support components
 It seems people expect the cable to be 75 Ohms,
