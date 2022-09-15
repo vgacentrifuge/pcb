@@ -129,8 +129,18 @@ The number of pins needed becomes:
  - 18 data pins
  - write enable
  - clock
+ - chip select
+ - output enable
 
-The rest, like output enable, clock enable, byte enable etc. can all be pulled by the pcb.
+We use chip select to deselect, which when we don't need access.
+The deselect is pipelined as well, allowing us to mix it into the operations.
+
+We want to connect output enable to be sure that we never try to
+write to th data line while it is being driven.
+If we do everything perfectly, The data line is automatically tri-stated by writes,
+but we want to be safe.
+
+The rest, like output enable, clock enable, byte enable, advance etc. can all be pulled by the pcb.
 This SRAM package does not expose JTAG pins.
 
 ### MCU
@@ -268,17 +278,11 @@ Both can be driven from 3.3V and/or 1.8V, which we already have.
 For 800x600 @ 60Hz, a throughput of at least 40 MSPS is enough.
 Both DACs we look at have data registers.
 
-One possible DAC is the 10 bit [THS8136](https://www.ti.com/product/THS8136).
-It seems to be a bit difficult to purchase.
-
 A guy on the EEVblog [forums](https://www.eevblog.com/forum/beginners/impedance-matching-on-custom-vga-dac/)
 have used the **ADV7123** for VGA purposes, and said it worked.
 
-It also has a "TTL input interface, and a high impedance, analog output current source".
-Digikey.no has lots of versions of it [in stock](https://www.digikey.no/en/products/base-product/analog-devices-inc/505/ADV7123/24791).
-Note: They need to be bought in bulk, and cost 100-200NOK per unit.
-
-TODO: What is TTL, how much do we need to configure it. Can the MCU do the configuration?
+A nice DAC is the 10 bit [THS8136](https://www.ti.com/product/THS8136).
+Mouser stocks the [THS8135PHP](https://no.mouser.com/ProductDetail/Texas-Instruments/THS8135PHP?qs=wYV1UssyEL%2Fe7CEpgO3AeQ%3D%3D)
 
 ## Development components
 While developing, we want to use some components that might not be part of the finished PCB.

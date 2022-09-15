@@ -4,17 +4,29 @@ Already bought:
  - Switching power supply chips
  - Homemade SD card "breakout board"
 
+We have, but won't use
+ - 3x 8-bit video DAC: ADV7125JSTZ240, but it's not avaliable anymore, so sux 1000% if broken
+
 To buy, per PCB:
- - FPGA's decoupling capacitors
+ - FPGA's decoupling capacitors and resistors
+ - FPGA config flash
+ - FPGA JTAG connector
  - SRAM: CY7C1372KV33-200AXC [DigiKey Listed]
+ - MCU decoupling capacitors and resistors
+ - MCU programming connector
  - I2C pullup resistors (on LCD data and clock line)
- - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
  - Power circuit resistors and capacitors
  - Power circuit jumpers
  - Clock circuit
- -
- - A bunch of breakout pins, we have
+ - SD-card slot: 10067847-001RLF [Digikey Listed]
+ - LCD text screen: DFR0555 [Digikey Listed]
+ - Keyboard matrix: Adafruit 3844 [Mouser Listed]
+ - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
+ - A bunch of breakout pins, we have the physical male connectors, both single and double.
 
 Development purchases:
  - SRAM breakout board [DigiKey Listed]
  - VGA breakout board
+
+Development things already bought:
+ - VGA Pmod output, we might use for testing
