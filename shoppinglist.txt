@@ -1,32 +1,56 @@
+Multipliers in this document are all per board.
+
 Already bought:
  - FPGA: ARTIX-7 XC7A100T in FTG256
  - MCU: EFM32GG990F1024-BGA112
  - Switching power supply chips
- - Homemade SD card "breakout board"
+ - A bunch of 2.54mm male pin headers, both single and double.
 
-We have, but won't use
- - 3x 8-bit video DAC: ADV7125JSTZ240, but it's not avaliable anymore, so sux 1000% if broken
+Development things already bought:
+ - Homemade SD card "breakout board"
+ - VGA Pmod output, we might use for testing
 
 To buy, per PCB:
- - FPGA's decoupling capacitors and resistors
- - FPGA config flash
- - FPGA JTAG connector
+ - FPGA [Already bought]
+   - decoupling capacitors and resistors
+   - config flash:
+   - JTAG connector
  - SRAM: CY7C1372KV33-200AXC [DigiKey Listed]
- - MCU decoupling capacitors and resistors
- - MCU programming connector
- - I2C pullup resistors (on LCD data and clock line)
+ - MCU [Already bought]
+   - decoupling capacitors and resistors
+   - MCU programming connector
+ - 4x I2C pullups: 2kOhm Resistors
  - Power circuit resistors and capacitors
- - Power circuit jumpers
+   - Power circuit jumpers [Use 1mm pins]
  - Clock circuit
  - SD-card slot: 10067847-001RLF [Digikey Listed]
+   - 0.1 uF decoupling capacitor
+   - 5x 10k Ohm pull up resistors
  - LCD text screen: DFR0555 [Digikey Listed]
  - Keyboard matrix: Adafruit 3844 [Mouser Listed]
  - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
- - A bunch of breakout pins, we have the physical male connectors, both single and double.
+ - 2x VGA DDC I2C EEPROMs: M24C02-WMN6TP [DigiKey Listed]
+   - (=2x) 5-pin connectors for I2C EEPROM programming [Use male pin header]
+ - 2x 3-channel 10-bit ADC: TVP7002PZPR [Mouser Listed]
+   - 1x (=2x) ADC support
+     - 3x (=6x) Sync-on-green input disable: 1nF capacitor
+     - 1x (=2x) PLL pump
+       - 1x (=2x) Resistor 1.5kOhm
+       - 1x (=2x) Capacitor 4.7nF
+       - 1x (=2x) Capacitor 0.1uF
+   - 1x (=2x) I2C address choice: Resistor 2.2kOhm
+   - 3x (=6x) Color inputs
+     - 1x (=6x) 75 Ohm resistors
+     - 1x (=6x) 0.1 uF capacitors
+   - 2x (=4x) HSYNC and VSYNC level shifters
+   - 1x (=2x) VSYNC parallel 1nF capacitor
+ - VGA Output DAC: THS8135PHP [Mouser Listed]
+  - 3x 75 Ohm resistors
+  - 1x R_FS reference resistor
+  - 5 0.1 uF capacitors
+
 
 Development purchases:
  - SRAM breakout board [DigiKey Listed]
- - VGA breakout board
-
-Development things already bought:
- - VGA Pmod output, we might use for testing
+   The same breakout board can be used for the ADC and DAC, so we buy a few
+ - VGA breakout board [Mouser Listed]

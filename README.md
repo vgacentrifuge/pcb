@@ -163,6 +163,10 @@ For our SPI communication, the lecture tells us to add extra wires to the PCB.
 [I2C](https://en.wikipedia.org/wiki/I%C2%B2C) is "open drain", which means we must use pull-up resistors on the lines.
 Calculations can be found in this [EFM32GG application note](https://www.silabs.com/documents/public/application-notes/AN0011.pdf).
 
+We use I2C for the LCD, and I2C for the ADCs.
+They both seem to like 400kHz, which means a 2kOhm resistor is common.
+They both also want to be pulled up to 3.3V.
+
 ### Power circuit
 We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
 The MCU and SD card use 3.3V, so does the SRAM.
@@ -188,6 +192,9 @@ See for instance [this website](https://www.electroniccircuitsdesign.com/pinout/
 
 Note that [this SO-post](https://electronics.stackexchange.com/questions/496357/sd-card-via-spi-pull-up-resistors-or-dedicated-ic)
 talks about pull-up resistors on all the data pins, we can do that too.
+
+People seem to disagree, but hooking up a 10k Ohm resistor to each of DAT0-DAT3 and CMD seems good.
+Also a 0.1 uF decoupling capacitor between Vcc and GND.
 
 To easily solder, we can buy the [10067847-001RLF](https://www.digikey.no/no/products/detail/amphenol-cs-fci/10067847-001RLF/2283478).
 It is full size SD, with solder pins visible
@@ -246,43 +253,83 @@ For instance [M24C02-WMN6TP](https://www.digikey.no/no/products/detail/stmicroel
 in stock at Digikey.no, at 1,7kr a piece. They work at 2.5V - 5.5V, and we use one per VGA input = 6 for 3 boards.
 
 The I2C master will try to read from address 0xA1 = 0b1010 0001.
-This is perfect! The EEPROM listens for address 0b1010 xxxx, where
-we configure the X's ourselves. The last bit is 1 for read and 0 for write.
+This is perfect! The EEPROM listens for address 0b1010 XXXX, where
+we configure the first 3 X's ourselves. The last bit is 1 for read and 0 for write.
 
 ##### I2C EEPROM support components
  - Remember to add connectors for the chip to the board, to program it.
- - The Write Control should be pulled up by default, and low when being programmed.
- - Also remember pulling SDA up (TODO: figure 11), and probably SCL too.
+ - The Write Control should be pulled HIGH by default, and low only when being programmed.
+ - When programming, the programmer is the master -> pull SDA and SCL up.
+ - Programming can be done over 3.3V, while the VGA uses 5V
  - Vcc should be decoupled "usually of the order of 10 nF to 100 nF, close to the Vcc/Vss pins".
  - E0, E1 and E2 should be connected to ground, to listen the correct address.
+
+The programming header thus becomes:
+ - Vcc (3.3)
+ - SCL
+ - SDA
+ - Write control (pulled low when programming)
+ - Vss (ground)
 
 #### Input VGA ADCs
 The analog color inputs of each VGA input needs to become digital 6 or 5 bit values.
 We can use ADCs with more bit depth than this, and then ignore the least significant bits.
-When configuring the gain on the ADC, I2C is used, which should be the MCU's task (right?? TODO).
 
 The video ADC we looked at is the 3 channel x 10bit TI [TVP7002PZPR](https://no.mouser.com/ProductDetail/Texas-Instruments/TVP7002PZPR?qs=0OHPnBYoB%2FnBqXV%2Fq5aVXw%3D%3D)
 
-##### ADC support components
-It seems people expect the cable to be 75 Ohms,
-in addition to 75 Ohm pull-down resistors on the ADC input.
+It is configurable over I2C, things like gain, clamp and offset. Also programmable subpixel positioning.
+It also has a PLL on the HSYNC, allowing it to generate a pixel clock for the FPGA VGA inputs.
+The 40MHz on SVGA is well within the 12-165MHz range.
 
-TODO: Where do we need to add resistors? What even is impedance matching?
-Read the DAC and ADC datasheets perhaps.
+So: **we need to connect the ADCs to the MCU, to program them**.
+Luckily, the chips have one bit of customizable address, so the options are:
+ - 0xB8 = 0b10111000
+ - 0xBA = 0b10111010
+Remember that the last bit is 1 for read and 0 for write.
+Notably, neither of these addresses collide with the 0xA0/0xA1 of the VGA DDC,
+but you have to remember voltages.
+
+The ADC needs 3.3V and **1.9V**! It says MIN 1.8V, but do we want to take any chances?
+
+The I/O is however 3.3V, so we can connect it to a "normal" FPGA bank.
+
+But: VGA HSYNC and VSYNC are 5V signals. We can **not** pass those into the ADC!
+Can we simply create voltage dividers between ground and HSYNC/VSYNC?
+
+##### ADC support components
+The 3 unused Sync-on-green inputs should be connected to GND using in total:
+ - 3x 1nF capacitors
+
+The HSYNC PLL requires (see Figure 4)
+ - Resistor 1.5 kOhm
+ - Capacitor 4.7 nF
+ - Capacitor 0.1 uF
+
+To pull the address choice up or down they specify:
+- 2.2 kOhm Resistor
+
+We also need decoupling capacitors, and reference voltage resistors.
+See the example setup in the datasheets.
 
 #### Output VGA DAC
 When outputing analog color data, we don't want to use resistors, as they take space,
 and the FPGA outputs are not the best at delivering DC current.
-We have several contenders, both have 3 10-bit inputs named R, G and B.
-Both can be driven from 3.3V and/or 1.8V, which we already have.
+
+A nice DAC that Mouser stocks is  [THS8135PHP](https://no.mouser.com/ProductDetail/Texas-Instruments/THS8135PHP?qs=wYV1UssyEL%2Fe7CEpgO3AeQ%3D%3D)
+It has 3 10-bit inputs named R, G and B, and 240MS/s.
 For 800x600 @ 60Hz, a throughput of at least 40 MSPS is enough.
-Both DACs we look at have data registers.
+It takes 3.3V analog, and 1.8V digital.
+**This means the FPGA pins delivering VGA out must be 1.8V**.
 
-A guy on the EEVblog [forums](https://www.eevblog.com/forum/beginners/impedance-matching-on-custom-vga-dac/)
-have used the **ADV7123** for VGA purposes, and said it worked.
+ - 0.1 uF decoupling capacitors near each power pin (3 of them)
+ - 0.1 uF capacitors between COMP-AVdd and between VREF-AVss
+ - R_FS between FSADJ and AVss. TODO
+ - 3x 75 Ohm resistors, for each analog output? TODO
 
-A nice DAC is the 10 bit [THS8136](https://www.ti.com/product/THS8136).
-Mouser stocks the [THS8135PHP](https://no.mouser.com/ProductDetail/Texas-Instruments/THS8135PHP?qs=wYV1UssyEL%2Fe7CEpgO3AeQ%3D%3D)
+It also has [PCB Layout Guidelines](https://www.ti.com/lit/an/slea077/slea077.pdf?ts=1663284093618).
+10x trace width clearance between analog inputs.
+Everything close! Resistors, capacitors, analog output port.
+TODO: ESD protection on the analog outputs is recommended.
 
 ## Development components
 While developing, we want to use some components that might not be part of the finished PCB.
@@ -294,8 +341,16 @@ We can make one ourselves by soldering onto the pads of a microSD-SD adapter Hå
 Håvard made a shitty one. Done!
 
 ### VGA breakout board
-
+It costs a bit, but we can use the [DB15F-VGA-TERM](https://no.mouser.com/ProductDetail/Gravitech/DB15F-VGA-TERM?qs=WZeyYeqMOWcPAs%252BVmUTiLg%3D%3D) from Mouser.
 
 ### SRAM breakout board
 The SRAM has a 14mm x 20mm 100-pin LQFP package.
 We can buy [this board](https://www.digikey.no/no/products/detail/schmartboard,-inc./202-0010-02/9559360)
+
+## Circuit board design
+The maunals folder contains the PCB lecture.
+
+For hooking up the FPGA, [this guy](https://www.youtube.com/watch?v=THLdycw9-Vs) from Altium Academy shows
+the bare minimum of pins to run an ARTIX-7. Includes flash, voltages and and JTAG.
+
+There is also the [7 Series FPGAs PCB Design Guide](https://docs.xilinx.com/v/u/en-US/ug483_7Series_PCB).
