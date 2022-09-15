@@ -42,7 +42,7 @@ The background video signal is never scaled or translated, and can be sent
 almost directly out to the output DAC.
 The output signal is just a few pixels behind the background.
 
-The foreground gets buffered, either in SRAM, DRAM or the FPGA's internal block RAM.
+The foreground gets buffered, either in SRAM or the FPGA's internal block RAM.
 When the background signal is passing through the FPGA, it knows which pixel it is processing.
 By checking its settings, it will know if and where the foreground framebuffer should be sampled.
 Translations and scaling affect how the foreground overlays the background.
@@ -131,9 +131,7 @@ The number of pins needed becomes:
  - clock
 
 The rest, like output enable, clock enable, byte enable etc. can all be pulled by the pcb.
-The JTAG pins should be exposed as a header on the PCB, but don't take up any FPGA pins.
-
-### DRAM
+This SRAM package does not expose JTAG pins.
 
 ### MCU
 Available in the lab is the EFM32GG990F1024-BGA112
@@ -153,23 +151,21 @@ We use SPI between MCU and FPGA, and between MCU and SD-card. They can be fully 
 For our SPI communication, the lecture tells us to add extra wires to the PCB.
 
 [I2C](https://en.wikipedia.org/wiki/I%C2%B2C) is "open drain", which means we must use pull-up resistors on the lines.
-
-A small issue here might be the number of I2C ports on the MCU: 2.
-For the VGA Display Data Channel, our board will be a slave device.
-Since we have two VGA inputs, they might both want to drive the clock signal. 
-The LCD screen probably uses I2C, so our MCU also needs to be a master.
+Calculations can be found in this [EFM32GG application note](https://www.silabs.com/documents/public/application-notes/AN0011.pdf).
 
 ### Power circuit
 We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
 The MCU and SD card use 3.3V, so does the SRAM.
 The DRAM is a bit more complicated, see the DRAM section.
 
-Remember the jumpers between the power circuit and rest of the board.
+**Remember the jumpers** between the power circuit and rest of the board.
 
 ### Clock circuit
 By using an external crystal, as recommended, we can run the MCU at 48MHz.
-The FPGA should take the same clock as input, and use phase-locked loops
+The FPGA can take the **clock out** signal from the EMF32GG as a clock input, and use phase-locked loops
 to internally run faster clocks at rational multiples of the input.
+
+We should also have a clock circuit on the FPGA side, so that we have two options
 
 The clock circuit itself needs components.
 
@@ -183,9 +179,8 @@ See for instance [this website](https://www.electroniccircuitsdesign.com/pinout/
 Note that [this SO-post](https://electronics.stackexchange.com/questions/496357/sd-card-via-spi-pull-up-resistors-or-dedicated-ic)
 talks about pull-up resistors on all the data pins, we can do that too.
 
-Mouser has thousands of the [MEM2051-00-195-00-A](https://no.mouser.com/ProductDetail/GCT/MEM2051-00-195-00-A?qs=KUoIvG%2F9Ilat7yfJRNWXUQ%3D%3D) for 12kr a pop.
-The solder pads are on the underside, is that a problem? TODO.
-When buying from Mouser, we may as well buy an 8GB microSD card for 99kr as well: [SDSDQAB-008G](https://no.mouser.com/ProductDetail/SanDisk/SDSDQAB-008G?qs=EgF7oUuTQmoYk8ahPy9gPg%3D%3D)
+To easily solder, we can buy the [10067847-001RLF](https://www.digikey.no/no/products/detail/amphenol-cs-fci/10067847-001RLF/2283478).
+It is full size SD, with solder pins visible
 
 ### LCD text output
 A cheap 2 row x 16 char width LCD screen is [DFR0555](https://www.digikey.no/no/products/detail/dfrobot/DFR0555/9356340).
@@ -218,9 +213,7 @@ See the following section about DAC and VGA Display Data Channel.
 For inputs, we need to read those 5 signals, including the analog color signals (using ADCs).
 We should also let the video sources get info about our board over I2C. See next sections.
 
-As for the physical VGA ports, they cost a lot on digikey, farnell doesn't have it.
-Mouser has thousands of [L77HDE15SD1CH4RHNVGA](https://no.mouser.com/ProductDetail/Amphenol-Commercial-Products/L77HDE15SD1CH4RHNVGA?qs=f9yNj16SXrKPVxRw%2FcVQYg%3D%3D) for 19kr a piece.
-Is has through-hole pins.
+As for the physical VGA ports, there is [this](https://www.digikey.no/no/products/detail/amphenol-icc-commercial-products/L77HDE15SD1CH4FVGA/4888525) on digikey at 15kr a pop. Is has through-hole pins. Buy 9, 3 per PCB.
 
 #### VGA Display Data Channel
 The [DDC2B](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC2) standard is an I2C protocol to communicate information about the "monitor" to the video source.
@@ -294,6 +287,11 @@ While developing, we want to use some components that might not be part of the f
 A breakout SD card reader would be great to get the MCU dev-board to do SD-card reading, when developing.
 We can make one ourselves by soldering onto the pads of a microSD-SD adapter Håvard has.
 
+Håvard made a shitty one. Done!
+
 ### VGA breakout board
-To test both FPGA video output and Display Data Chanel info, we should probably just use one of the 9
-[L77HDE15SD1CH4RHNVGA](https://no.mouser.com/ProductDetail/Amphenol-Commercial-Products/L77HDE15SD1CH4RHNVGA?qs=f9yNj16SXrKPVxRw%2FcVQYg%3D%3D) we buy for the 3 PCBs.
+
+
+### SRAM breakout board
+The SRAM has a 14mm x 20mm 100-pin LQFP package.
+We can buy [this board](https://www.digikey.no/no/products/detail/schmartboard,-inc./202-0010-02/9559360)
