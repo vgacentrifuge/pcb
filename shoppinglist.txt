@@ -1,0 +1,20 @@
+Already bought:
+ - FPGA: ARTIX-7 XC7A100T in FTG256
+ - MCU: EFM32GG990F1024-BGA112
+ - Switching power supply chips
+ - Homemade SD card "breakout board"
+
+To buy, per PCB:
+ - FPGA's decoupling capacitors
+ - SRAM: CY7C1372KV33-200AXC [DigiKey Listed]
+ - I2C pullup resistors (on LCD data and clock line)
+ - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
+ - Power circuit resistors and capacitors
+ - Power circuit jumpers
+ - Clock circuit
+ -
+ - A bunch of breakout pins, we have
+
+Development purchases:
+ - SRAM breakout board [DigiKey Listed]
+ - VGA breakout board
