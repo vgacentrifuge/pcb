@@ -19,36 +19,31 @@ To buy, per PCB:
  - MCU [Already bought]
    - decoupling capacitors and resistors
    - MCU programming connector
- - 4x I2C pullups: 2kOhm Resistors
+ - 4x I2C pullups: 2k2Ohm Resistors
+   2 for the LCD & DDC out line
+   2 for the ADC config line
  - Power circuit resistors and capacitors
-   - Power circuit jumpers [Use 1mm pins]
+   - Power circuit jumpers [Use 2.54mm pins]
  - Clock circuit
- - SD-card slot: 10067847-001RLF [Digikey Listed]
+   - MCU Crystal Oscillator: FO7HSCDE48.0-T1 [Digikey Listed]
+     - decoupling capacitor 0.01 uF
+ - SD-card slot: 10067847-001RLF [DigiKey Listed]
    - 0.1 uF decoupling capacitor
    - 5x 10k Ohm pull up resistors
  - LCD text screen: DFR0555 [Digikey Listed]
  - Keyboard matrix: Adafruit 3844 [Mouser Listed]
  - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
+ - 6x DDC level switching MOS-FETs: BSN20 [DigiKey Listed]
  - 2x VGA DDC I2C EEPROMs: M24C02-WMN6TP [DigiKey Listed]
    - (=2x) 5-pin connectors for I2C EEPROM programming [Use male pin header]
  - 2x 3-channel 10-bit ADC: TVP7002PZPR [Mouser Listed]
-   - 1x (=2x) ADC support
-     - 3x (=6x) Sync-on-green input disable: 1nF capacitor
-     - 1x (=2x) PLL pump
-       - 1x (=2x) Resistor 1.5kOhm
-       - 1x (=2x) Capacitor 4.7nF
-       - 1x (=2x) Capacitor 0.1uF
-   - 1x (=2x) I2C address choice: Resistor 2.2kOhm
-   - 3x (=6x) Color inputs
-     - 1x (=6x) 75 Ohm resistors
-     - 1x (=6x) 0.1 uF capacitors
-   - 2x (=4x) HSYNC and VSYNC level shifters
-   - 1x (=2x) VSYNC parallel 1nF capacitor
+  - A bunch of capacitors and resistors
+  - 1x (2x)
  - VGA Output DAC: THS8135PHP [Mouser Listed]
   - 3x 75 Ohm resistors
   - 1x R_FS reference resistor
   - 5 0.1 uF capacitors
-
+ - 3x VGA HSYNC & VSYNC level shifters: SN74LVC2T45DCTR [DigiKey Listed]
 
 Development purchases:
  - SRAM breakout board [DigiKey Listed]
