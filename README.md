@@ -104,8 +104,13 @@ We also need a **configuration flash chip** on the board,
 to program the FPGA on startup.
 TODO: Find supported flash chip (See UG908 Appendix C).
 
-It must be programmable using **JTAG**, so we add a connector.
-See the example setup from the lecture (e.g. the 10k pullups).
+#### Debug connector
+The Debug connector from the lecture looks like the **14-pin F JTAG ILA connector**.
+See [this website](https://developer.arm.com/documentation/100765/0000/Signal-descriptions/Debug-connectors/14-pin-F-JTAG-ILA-connector).
+
+See the example setup from the lecture (remember 2x 10k pullups).
+However, this website says that pin 6 (TCK) is pulled down on their board,
+why is ours pulled up?
 
 ### SRAM
 We need to calculate the required SRAM size.
@@ -156,9 +161,31 @@ Available in the lab is the EFM32GG990F1024-BGA112
  - GPIO: 87
  - 112 pin BGA package
  
+For PCB considerations, see [SiLabs EFM32 AN0002](https://www.silabs.com/documents/public/application-notes/an0002.0-efm32-ezr32-series-0-hardware-design-considerations.pdf).
+It includes decoupling capacitors. See Figure 3.1. EFM32 Series 0 Standard Decoupling Example.
+Also add the 1 Ohm resistor from Figure 3.3.
+ 
+The debug conenctor is 20-pin header.
+From the PCB lecture, it seems we use the 2.54mm pitch legacy JTAG.
+We can buy [this connector here](https://www.digikey.no/en/products/detail/cnc-tech/3020-20-0300-00/3441742).
+
+#### MCU Clock circuit
+By using an external crystal, as recommended, we can run the MCU at 48MHz.
+This is simply buying a crystal oscillator.
+The [FO7HSCDE48.0-T1](https://www.digikey.no/no/products/detail/fox-electronics/FO7HSCDE48-0-T1/12160237)
+is 48MHz, SMD, and with 5mm and 2.5mm between the 4 pins, which at least isn't the smallest oscillator.
+The datasheet also has recommended solder pad distance of at least 2.2 mm. Seems doable.
+
+The AN0002 EFM32 hardware design considerations also mentions two capacitors.
+The lecture uses 2x 12pF.
+
+The FPGA can take the **clock out** signal from the EMF32GG as a clock input, and use phase-locked loops
+to internally run faster clocks at rational multiples of the input.
+We should also have a clock circuit on the FPGA side, so that we have two options.
+
 ### Connections
 We use SPI between MCU and FPGA, and between MCU and SD-card. They can be fully independent.
-For our SPI communication, the lecture tells us to add extra wires to the PCB.
+For our SPI communication, the lecture tells us to add extra wires between the MCU and PCB for safety.
 
 [I2C](https://en.wikipedia.org/wiki/I%C2%B2C) is "open drain", which means we must use pull-up resistors on the lines.
 Calculations can be found in this [EFM32GG application note](https://www.silabs.com/documents/public/application-notes/AN0011.pdf).
@@ -167,25 +194,17 @@ We use I2C for the LCD, and I2C for the ADCs.
 They both seem to like 400kHz, which means a 2kOhm resistor is common.
 They both also want to be pulled up to 3.3V.
 
+Between the boards, if we do make two PCBs, we want to connect them.
+We can buy e.g. 2 of the 2x8 pin vertical male header per board [3020-16-0200-00](https://www.digikey.no/en/products/detail/cnc-tech/3020-16-0200-00/3441735).
+And 2 of the female as well [PPPC082LJBN-RC](https://www.digikey.no/en/products/detail/sullins-connector-solutions/PPPC082LJBN-RC/776019).
+These are both through-hole.
+
 ### Power circuit
 We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
 The MCU and SD card use 3.3V, so does the SRAM.
 The ADC uses 1.9V, and HSYNC and VSYNC must be level switched to / from 5V.
 
 **Remember the jumpers** between the power circuit and rest of the board.
-
-### Clock circuit
-By using an external crystal, as recommended, we can run the MCU at 48MHz.
-This is simply buying a crystal oscillator.
-The [FO7HSCDE48.0-T1](https://www.digikey.no/no/products/detail/fox-electronics/FO7HSCDE48-0-T1/12160237)
-is 48MHz, SMD, and with 5mm and 2.5mm between the 4 pins, which at least isn't the smallest oscillator.
-The datasheet also has recommended solder pad distance of at least 2.2 mm. Seems doable.
-
-The FPGA can take the **clock out** signal from the EMF32GG as a clock input, and use phase-locked loops
-to internally run faster clocks at rational multiples of the input.
-
-We should also have a clock circuit on the FPGA side, so that we have two options.
-
 
 ### SD-card & SD-card slot
 We want a slot to be able to move the SD-card to and from a computer.
@@ -332,7 +351,7 @@ See the example setup in the datasheets.
 They come in at 5V, but must be 3.3V into the ADC.
 This only requires a unidirectional level shifter.
 For each ADC, buy one
-[]()
+[SN74LVC2T45DCTR](https://www.digikey.no/no/products/detail/texas-instruments/SN74LVC2T45DCTR/639457)
 which has two channels.
 The direction pin can be tied low or high.
 

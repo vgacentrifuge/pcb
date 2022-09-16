@@ -13,20 +13,18 @@ Development things already bought:
 To buy, per PCB:
  - FPGA [Already bought]
    - decoupling capacitors and resistors
-   - config flash:
-   - JTAG connector
+   - Clock circuit: [TODO]
+   - config flash: [TODO]
+   - JTAG connector [TODO]
  - SRAM: CY7C1372KV33-200AXC [DigiKey Listed]
  - MCU [Already bought]
    - decoupling capacitors and resistors
-   - MCU programming connector
- - 4x I2C pullups: 2k2Ohm Resistors
-   2 for the LCD & DDC out line
-   2 for the ADC config line
- - Power circuit resistors and capacitors
-   - Power circuit jumpers [Use 2.54mm pins]
- - Clock circuit
+   - MCU programming connector, 20-pin legacy 2.54mm: 3020-20-0300-00 [DigiKey Listed]
    - MCU Crystal Oscillator: FO7HSCDE48.0-T1 [Digikey Listed]
-     - decoupling capacitor 0.01 uF
+     - 2x decoupling capacitor 0.01 uF / 12pF
+ - General connectors [TODO, just pin headers?]
+ - Power circuit resistors and capacitors
+   - Power circuit jumpers [Use 2.54mm header pins]
  - SD-card slot: 10067847-001RLF [DigiKey Listed]
    - 0.1 uF decoupling capacitor
    - 5x 10k Ohm pull up resistors
