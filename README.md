@@ -170,18 +170,22 @@ They both also want to be pulled up to 3.3V.
 ### Power circuit
 We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
 The MCU and SD card use 3.3V, so does the SRAM.
-The DRAM is a bit more complicated, see the DRAM section.
+The ADC uses 1.9V, and HSYNC and VSYNC must be level switched to / from 5V.
 
 **Remember the jumpers** between the power circuit and rest of the board.
 
 ### Clock circuit
 By using an external crystal, as recommended, we can run the MCU at 48MHz.
+This is simply buying a crystal oscillator.
+The [FO7HSCDE48.0-T1](https://www.digikey.no/no/products/detail/fox-electronics/FO7HSCDE48-0-T1/12160237)
+is 48MHz, SMD, and with 5mm and 2.5mm between the 4 pins, which at least isn't the smallest oscillator.
+The datasheet also has recommended solder pad distance of at least 2.2 mm. Seems doable.
+
 The FPGA can take the **clock out** signal from the EMF32GG as a clock input, and use phase-locked loops
 to internally run faster clocks at rational multiples of the input.
 
-We should also have a clock circuit on the FPGA side, so that we have two options
+We should also have a clock circuit on the FPGA side, so that we have two options.
 
-The clock circuit itself needs components.
 
 ### SD-card & SD-card slot
 We want a slot to be able to move the SD-card to and from a computer.
@@ -240,19 +244,30 @@ in case we want to read info about the screen.
 NOTE: The I2C lines are open drain, and expect to be pulled up to 5V.
 We will need a level shifter for the MCU to be able to use the I2C port.
 
+##### VGA DDC level switches
+The VGA standard expects 5V I2C over the SDA and SCL lines.
+Both when we are slave and master, we want to support this.
+Since all other I2C components we have use 3.3V, we level switch.
+This can be done, according to [AN97055](https://cdn-shop.adafruit.com/datasheets/an97055.pdf),
+simply using two N-channel enhancement mode MOS-FET, and pullups on both sides.
+
+In the case of the VGA inputs, where we are slaves, might not need those pullups,
+since the master probably provides pullup. We can use a 10k to avoid floating.
+
+A suggested MOSFET is the [BSN20](https://www.digikey.no/no/products/detail/diodes-incorporated/BSN20-7/2756034).
+With two per DDC IC2, that comes to 6.
+
 ##### Input VGA ports: I2C EEPROMs
 On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
 See [this page](http://www.hardwarebook.info/VGA_(VESA_DDC)) for specifications.
 The VGA DDC uses three pins: I2C data, I2C clock, and DC +5V delivered by the video source.
-Our board must respond to the 7-bit I²C address 50h.
+Our board must respond to the 7-bit I²C address 50h (also known as A0h and A1h in 8-bit).
 
-Remember that the I2C lines are open collector, and pulled to 5V. Our MCU would not handle that.
-
-To save our MCU from being a slave over the VGA ports, we can buy dirt cheep I2C EEPROMSs.
+To save having to use our MCU from being a slave over the VGA ports, we can buy dirt cheep I2C EEPROMSs.
 For instance [M24C02-WMN6TP](https://www.digikey.no/no/products/detail/stmicroelectronics/M24C02-WMN6TP/1663568),
 in stock at Digikey.no, at 1,7kr a piece. They work at 2.5V - 5.5V, and we use one per VGA input = 6 for 3 boards.
 
-The I2C master will try to read from address 0xA1 = 0b1010 0001.
+In DDC, the I2C master will try to read from address 0xA1 = 0b1010 0001.
 This is perfect! The EEPROM listens for address 0b1010 XXXX, where
 we configure the first 3 X's ourselves. The last bit is 1 for read and 0 for write.
 
@@ -260,9 +275,9 @@ we configure the first 3 X's ourselves. The last bit is 1 for read and 0 for wri
  - Remember to add connectors for the chip to the board, to program it.
  - The Write Control should be pulled HIGH by default, and low only when being programmed.
  - When programming, the programmer is the master -> pull SDA and SCL up.
- - Programming can be done over 3.3V, while the VGA uses 5V
+ - Programming can be done over 3.3V.
  - Vcc should be decoupled "usually of the order of 10 nF to 100 nF, close to the Vcc/Vss pins".
- - E0, E1 and E2 should be connected to ground, to listen the correct address.
+ - E0, E1 and E2 should be connected to ground, to listen to the correct address.
 
 The programming header thus becomes:
  - Vcc (3.3)
@@ -289,27 +304,43 @@ Remember that the last bit is 1 for read and 0 for write.
 Notably, neither of these addresses collide with the 0xA0/0xA1 of the VGA DDC,
 but you have to remember voltages.
 
-The ADC needs 3.3V and **1.9V**! It says MIN 1.8V, but do we want to take any chances?
+The ADC needs 3.3V and **1.9V**!
 
 The I/O is however 3.3V, so we can connect it to a "normal" FPGA bank.
 
 But: VGA HSYNC and VSYNC are 5V signals. We can **not** pass those into the ADC!
-Can we simply create voltage dividers between ground and HSYNC/VSYNC?
+The suggested circuit 
 
 ##### ADC support components
-The 3 unused Sync-on-green inputs should be connected to GND using in total:
- - 3x 1nF capacitors
-
-The HSYNC PLL requires (see Figure 4)
- - Resistor 1.5 kOhm
- - Capacitor 4.7 nF
- - Capacitor 0.1 uF
-
-To pull the address choice up or down they specify:
-- 2.2 kOhm Resistor
-
-We also need decoupling capacitors, and reference voltage resistors.
 See the example setup in the datasheets.
+
+- 1x (=2x) ADC support
+     - 3x (=6x) Sync-on-green input disable: 1nF capacitor
+     - 7x (=14x) 10nF capacitors for unused analog input
+     - 1x (=2x) PLL pump
+       - 1x (=2x) Resistor 1.5kOhm
+       - 1x (=2x) Capacitor 4.7nF
+       - 1x (=2x) Capacitor 0.1uF
+   - 1x (=2x) I2C address choice: Resistor 2.2kOhm
+   - 3x (=6x) Color inputs
+     - 1x (=6x) 75 Ohm resistors
+     - 1x (=6x) 0.1 uF capacitors
+   - 1x (=2x) VSYNC parallel 1nF capacitor
+   - even more stuff, just look at the suggested schematic
+
+##### HSYNC VSYNC Level shifters
+They come in at 5V, but must be 3.3V into the ADC.
+This only requires a unidirectional level shifter.
+For each ADC, buy one
+[]()
+which has two channels.
+The direction pin can be tied low or high.
+
+Same applies to the output VGA, but the other way.
+We don't use the DAC's HSYNC and VSYNC ports,
+instead letting the FPGA control it.
+It would be nice to have 1.8V input, since the rest of video out is 1.8V.
+The same level shifter from above works at that voltage too!
 
 #### Output VGA DAC
 When outputing analog color data, we don't want to use resistors, as they take space,
