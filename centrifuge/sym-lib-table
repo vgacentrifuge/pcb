@@ -1,4 +1,3 @@
 (sym_lib_table
-  (lib (name "New_Library")(type "KiCad")(uri "/home.host/repos/projects/dc_load_2022/New_Library.kicad_sym")(options "")(descr ""))
   (lib (name "centrifuge_symbols")(type "KiCad")(uri "${KIPRJMOD}/centrifuge_symbols.kicad_sym")(options "")(descr ""))
 )
