@@ -31,17 +31,15 @@ To buy, per PCB:
  - LCD text screen: DFR0555 [Digikey Listed]
  - Keyboard matrix: Adafruit 3844 [Mouser Listed]
  - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
- - 3x DDC I2C REDRIVER: PCA9508D [DigiKey Listed]
+ - 6x Level shifter for DDC and H/VSYNC: LSF0102DCH [DigiKey Listed]
  - 2x VGA DDC I2C EEPROMs: M24C02-WMN6TP [DigiKey Listed]
- - 1x 3x5-pin connector for I2C EEPROM programming [DigiKey Listed]
+ - 1x 3x5-pin connector for I2C EEPROM programming: TSW-105-07-F-T [DigiKey Listed]
  - 2x 3-channel 10-bit ADC: TVP7002PZPR [Mouser Listed]
   - A bunch of capacitors and resistors
-  - 1x (2x)
  - VGA Output DAC: THS8135PHP [Mouser Listed]
   - 3x 75 Ohm resistors
   - 1x R_FS reference resistor
-  - 5 0.1 uF capacitors
- - 3x VGA HSYNC & VSYNC level shifters: SN74LVC2T45DCTR [DigiKey Listed]
+  - 5x 0.1 uF capacitors
 
 Development purchases:
  - SRAM breakout board [DigiKey Listed]

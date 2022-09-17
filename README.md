@@ -90,6 +90,9 @@ The dev-board itself contains:
 #### On PCB
 On the PCB we will use the **ARTIX-7 XC7A100T** in FTG256 package, which has already been procured.
  - 4,860 Kib of dual port block ram
+ 
+See the data sheet for it [here](https://docs.xilinx.com/v/u/en-US/ds181_Artix_7_Data_Sheet),
+and remember the user guides listed in the pcb lecture.
 
 #### Voltages
 The FPGA requires, 1.0V, 1.8V and 3.3V, and they must become ready in order.
@@ -165,8 +168,10 @@ Available in the lab is the EFM32GG990F1024-BGA112
 For PCB considerations, see [SiLabs EFM32 AN0002](https://www.silabs.com/documents/public/application-notes/an0002.0-efm32-ezr32-series-0-hardware-design-considerations.pdf).
 It includes decoupling capacitors. See Figure 3.1. EFM32 Series 0 Standard Decoupling Example.
 Also add the 1 Ohm resistor from Figure 3.3.
- 
-The debug conenctor is 20-pin header.
+
+#### MCU Debug connector
+
+The debug conenctor is 20-pin header, shown in section 4 of AN0002.
 From the PCB lecture, it seems we use the 2.54mm pitch legacy JTAG.
 We can buy [this connector here](https://www.digikey.no/en/products/detail/cnc-tech/3020-20-0300-00/3441742).
 
@@ -199,6 +204,25 @@ Between the boards, if we do make two PCBs, we want to connect them.
 We can buy e.g. 2 of the 2x8 pin vertical male header per board [3020-16-0200-00](https://www.digikey.no/en/products/detail/cnc-tech/3020-16-0200-00/3441735).
 And 2 of the female as well [PPPC082LJBN-RC](https://www.digikey.no/en/products/detail/sullins-connector-solutions/PPPC082LJBN-RC/776019).
 These are both through-hole.
+
+### Splitting the MCU and FPGA
+We have considered splitting the PCB in half, to separate the MCU from the FPGA.
+In practice we will probably not create two PCBs,
+since clock lines shouldn't go through pins,
+but it would be great to have a PCB that can be used
+without the MCU physically on the board.
+
+With SPI, we control the speed ourselves, so we can tune it down until it is stable,
+depending on how the wiring is.
+
+The SPI between the MCU and FPGA should have room to solder on a pin header.
+The SPI clock is slower than the 48MHz clock-out from the MCU,
+which should **not** have a pin header.
+We also give the FPGA its own oscillator, to not depend on the MCU clock out.
+
+The SPI lane for the SD card can also have holes for soldering on a pin header if desired.
+The I2C buses for the ADCs and LCD screen should have pins,
+and the keyboard matrix should have them.
 
 ### Power circuit
 We base it on the PCB lecture. We need to power up the 1.0V, 1.8V and 3.3V in order.
@@ -269,8 +293,26 @@ The VGA standard expects 5V I2C over the SDA and SCL lines.
 Both when we are slave and master, we want to support this.
 Since all other I2C components use 3.3V, we level switch.
 
-For the three DDC channels, we can use one of [PCA9508D](https://www.digikey.no/en/products/detail/nxp-usa-inc/PCA9508D-118/1966240) for each.
-It has a suggested application where both sides get 10k Ohm pullups on SDA and SCL.'
+For the three DDC channels, we can use one of
+[771-LSF0102DCH](https://no.mouser.com/ProductDetail/Nexperia/LSF0102DCH?qs=zW32dvEIR3vhhHCS5E8Gjg%3D%3D)
+for each.
+
+If you are curious how open-drain interfaces, like I2C, work through it,
+[this datasheet](https://www.ti.com/lit/ds/symlink/lsf0102.pdf?ts=1663455770501)
+for a similar device has an example in section 9.2.
+
+#### VGA HSYNC VSYNC Level shifters
+They come in at 5V, but must be 3.3V into the ADC.
+Same applies to the output VGA, but the other way.
+We don't use the DAC's HSYNC and VSYNC ports,
+instead letting the FPGA control it.
+It would be nice to support 1.8V input, since the rest of video out is at 1.8V.
+
+For each ADC, and for the output, buy one
+[771-LSF0102DCH](https://no.mouser.com/ProductDetail/Nexperia/LSF0102DCH?qs=zW32dvEIR3vhhHCS5E8Gjg%3D%3D),
+just like we did for the DDC.
+
+**In other words, by 3 of it for HSYNC/VSYNC, and 3 of it for DDC I2C.**
 
 ##### Input VGA ports: I2C EEPROMs
 On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
@@ -333,7 +375,7 @@ The ADC needs 3.3V and **1.9V**!
 The I/O is however 3.3V, so we can connect it to a "normal" FPGA bank.
 
 But: VGA HSYNC and VSYNC are 5V signals. We can **not** pass those into the ADC!
-The suggested circuit 
+See the HSYNC VSYNC Level shifter section above.
 
 ##### ADC support components
 See the example setup in the datasheets.
@@ -352,20 +394,6 @@ See the example setup in the datasheets.
    - 1x (=2x) VSYNC parallel 1nF capacitor
    - even more stuff, just look at the suggested schematic
 
-##### HSYNC VSYNC Level shifters
-They come in at 5V, but must be 3.3V into the ADC.
-This only requires a unidirectional level shifter.
-For each ADC, buy one
-[SN74LVC2T45DCTR](https://www.digikey.no/no/products/detail/texas-instruments/SN74LVC2T45DCTR/639457)
-which has two channels.
-The direction pin can be tied low or high.
-
-Same applies to the output VGA, but the other way.
-We don't use the DAC's HSYNC and VSYNC ports,
-instead letting the FPGA control it.
-It would be nice to have 1.8V input, since the rest of video out is 1.8V.
-The same level shifter from above works at that voltage too!
-
 #### Output VGA DAC
 When outputing analog color data, we don't want to use resistors, as they take space,
 and the FPGA outputs are not the best at delivering DC current.
@@ -375,6 +403,7 @@ It has 3 10-bit inputs named R, G and B, and 240MS/s.
 For 800x600 @ 60Hz, a throughput of at least 40 MSPS is enough.
 It takes 3.3V analog, and 1.8V digital.
 **This means the FPGA pins delivering VGA out must be 1.8V**.
+Luckily, when the Vcco is the same as Vccaux (1.8V), they can be ramped at the same time.
 
  - 0.1 uF decoupling capacitors near each power pin (3 of them)
  - 0.1 uF capacitors between COMP-AVdd and between VREF-AVss
