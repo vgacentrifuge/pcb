@@ -31,9 +31,9 @@ To buy, per PCB:
  - LCD text screen: DFR0555 [Digikey Listed]
  - Keyboard matrix: Adafruit 3844 [Mouser Listed]
  - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
- - 6x DDC level switching MOS-FETs: BSN20 [DigiKey Listed]
+ - 3x DDC I2C REDRIVER: PCA9508D [DigiKey Listed]
  - 2x VGA DDC I2C EEPROMs: M24C02-WMN6TP [DigiKey Listed]
-   - (=2x) 5-pin connectors for I2C EEPROM programming [Use male pin header]
+ - 1x 3x5-pin connector for I2C EEPROM programming [DigiKey Listed]
  - 2x 3-channel 10-bit ADC: TVP7002PZPR [Mouser Listed]
   - A bunch of capacitors and resistors
   - 1x (2x)

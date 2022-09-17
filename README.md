@@ -101,8 +101,9 @@ This is already included in the example schematic from the lecture.
 Try to get them close to the pins on the actual PCB.
 
 We also need a **configuration flash chip** on the board,
-to program the FPGA on startup.
-TODO: Find supported flash chip (See UG908 Appendix C).
+to program the FPGA on startup. See UG908 Appendix C.
+
+The PCB Lecture used the [S25FL127SABMFV101](https://www.digikey.no/en/products/detail/cypress-semiconductor-corp/S25FL127SABMFV101/5788556).
 
 #### Debug connector
 The Debug connector from the lecture looks like the **14-pin F JTAG ILA connector**.
@@ -242,13 +243,13 @@ The speed we target is [SVGA 800x600@60Hz](http://tinyvga.com/vga-timing/800x600
 The VGA connector itself is [described here](http://www.hardwarebook.info/VGA).
 For VGA output we only really need to connect 5 pins, plus ground:
  - red, green, blue color (analog 0-0.7V, 75 Ohm)
- - horizontal sync, vertical sync (5V, but 3.3V makes do). See timing chart.
+ - horizontal sync, vertical sync (5V). See timing chart.
 
 Note: While we are in the "porch" and sync pulse areas of the signal, the color values must all be 0V.
 See for example the 2nd [Ben Eater VGA video](https://www.youtube.com/watch?v=uqY3FMuMuRo).
 
 We also might want to connect the 3 DDC2B ports, in case we want to read info about the output monitor.
-See the following section about DAC and VGA Display Data Channel.
+See the following sections about DAC and VGA Display Data Channel.
 
 For inputs, we need to read those 5 signals, including the analog color signals (using ADCs).
 We should also let the video sources get info about our board over I2C. See next sections.
@@ -266,15 +267,10 @@ We will need a level shifter for the MCU to be able to use the I2C port.
 ##### VGA DDC level switches
 The VGA standard expects 5V I2C over the SDA and SCL lines.
 Both when we are slave and master, we want to support this.
-Since all other I2C components we have use 3.3V, we level switch.
-This can be done, according to [AN97055](https://cdn-shop.adafruit.com/datasheets/an97055.pdf),
-simply using two N-channel enhancement mode MOS-FET, and pullups on both sides.
+Since all other I2C components use 3.3V, we level switch.
 
-In the case of the VGA inputs, where we are slaves, might not need those pullups,
-since the master probably provides pullup. We can use a 10k to avoid floating.
-
-A suggested MOSFET is the [BSN20](https://www.digikey.no/no/products/detail/diodes-incorporated/BSN20-7/2756034).
-With two per DDC IC2, that comes to 6.
+For the three DDC channels, we can use one of [PCA9508D](https://www.digikey.no/en/products/detail/nxp-usa-inc/PCA9508D-118/1966240) for each.
+It has a suggested application where both sides get 10k Ohm pullups on SDA and SCL.'
 
 ##### Input VGA ports: I2C EEPROMs
 On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
@@ -282,28 +278,37 @@ See [this page](http://www.hardwarebook.info/VGA_(VESA_DDC)) for specifications.
 The VGA DDC uses three pins: I2C data, I2C clock, and DC +5V delivered by the video source.
 Our board must respond to the 7-bit I²C address 50h (also known as A0h and A1h in 8-bit).
 
-To save having to use our MCU from being a slave over the VGA ports, we can buy dirt cheep I2C EEPROMSs.
+To save having to use our MCU from needing to be a slave over the VGA ports, we can buy dirt cheep I2C EEPROMSs.
 For instance [M24C02-WMN6TP](https://www.digikey.no/no/products/detail/stmicroelectronics/M24C02-WMN6TP/1663568),
 in stock at Digikey.no, at 1,7kr a piece. They work at 2.5V - 5.5V, and we use one per VGA input = 6 for 3 boards.
+
+Note: The EEPROMs technically support running on 5V,
+and the VGA port has 5V supplied by the graphics card.
+The reason we don't want to use it is that the graphics card
+expects us to draw < 1mA when the monitor is on.
 
 In DDC, the I2C master will try to read from address 0xA1 = 0b1010 0001.
 This is perfect! The EEPROM listens for address 0b1010 XXXX, where
 we configure the first 3 X's ourselves. The last bit is 1 for read and 0 for write.
 
 ##### I2C EEPROM support components
- - Remember to add connectors for the chip to the board, to program it.
- - The Write Control should be pulled HIGH by default, and low only when being programmed.
- - When programming, the programmer is the master -> pull SDA and SCL up.
- - Programming can be done over 3.3V.
  - Vcc should be decoupled "usually of the order of 10 nF to 100 nF, close to the Vcc/Vss pins".
  - E0, E1 and E2 should be connected to ground, to listen to the correct address.
-
-The programming header thus becomes:
- - Vcc (3.3)
- - SCL
- - SDA
- - Write control (pulled low when programming)
- - Vss (ground)
+ 
+ - We should create a jumper thing to let the MCU be the programmer, if we ever need to change the EEPROM.
+ - It should have 5 pins:
+   - Vcc (3.3V)
+   - Vss
+   - SCL
+   - SDA
+   - Write enable (just connect to Vss to enable writing)
+ 
+ Opposite to it there should be the same 5 pins comming from one of the MCU's I2C buses,
+ e.g. the one used to configure the ADCs.
+ 
+ To make the connector easy, we can use a 3x5 pin header, and have the MCU connected
+ to the middle row, and jump either to the left or right.
+ See [TSW-105-07-F-T](https://www.digikey.no/en/products/detail/samtec-inc/TSW-105-07-F-T/6692070).
 
 #### Input VGA ADCs
 The analog color inputs of each VGA input needs to become digital 6 or 5 bit values.
