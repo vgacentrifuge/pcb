@@ -117,18 +117,20 @@ To not completly rely on the MCU's clockout,
 The [arty schematic](https://digilent.com/reference/_media/arty:arty_sch.pdf) has and
 [ASEM1-100.000MHZ-LC-T](https://no.mouser.com/ProductDetail/ABRACON/ASEM1-100.000MHZ-LC-T?qs=3KFUwL3kAg3Sbz4Re5NI5g%3D%3D), but it's not in stock.
 
-What about the [SIT8103AI-23-33E-100.00000X](https://www.digikey.no/en/products/detail/sitime/SIT8103AI-23-33E-100-00000X/9451471)?
-It is similar in a lot of ways(Hz, 3.3V, +-50pmm, MEMS), but uses LVCMOS as output instead of CMOS.
+We use the [EC2620TTS-100.000MTR](https://no.mouser.com/ProductDetail/Ecliptek-Abracon/EC2620TTS-100.000M-TR?qs=ZQxglWs2YhXyVb5B6v%252BGOw%3D%3D).
 
 I checked the Xilinx Clocking Wizard, both MMCM and PLL will happily turn 100MHz into 160MHz.
 
 #### Debug connector
 The Debug connector from the lecture looks like the **14-pin F JTAG ILA connector**.
 See [this website](https://developer.arm.com/documentation/100765/0000/Signal-descriptions/Debug-connectors/14-pin-F-JTAG-ILA-connector).
+The pitch is 2mm, yes you read that right.
+The component, through hole, can be found here:
+[0878311411](https://www.digikey.no/en/products/detail/molex/0878311411/3313107).
 
 See the example setup from the lecture (remember 2x 10k pullups).
 However, this website says that pin 6 (TCK) is pulled down on their board,
-why is ours pulled up? TODO
+**why is ours pulled up?** 
 
 ### SRAM
 We need to calculate the required SRAM size.
@@ -185,9 +187,12 @@ Also add the 1 Ohm resistor from Figure 3.3.
 
 #### MCU Debug connector
 
+In the PCB lecture, they use the 2.54mm pitch legacy JTAG.
 The debug conenctor is 20-pin header, shown in section 4 of AN0002.
-From the PCB lecture, it seems we use the 2.54mm pitch legacy JTAG.
-We can buy [this connector here](https://www.digikey.no/en/products/detail/cnc-tech/3020-20-0300-00/3441742).
+
+Since we have a gecko with the modern connector, we can use the
+modern [Cortex Debug+ETM Connector](https://documentation-service.arm.com/static/5fce6c49e167456a35b36af1).
+It has 1.27mm pitch, we pick this through-hole one: [3220-20-0100-00](https://www.digikey.no/en/products/detail/cnc-tech/3220-20-0100-00/3883663).
 
 #### MCU Clock circuit
 By using an external crystal, as recommended, we can run the MCU at 48MHz.
@@ -297,7 +302,7 @@ See the following sections about DAC and VGA Display Data Channel.
 For inputs, we need to read those 5 signals, including the analog color signals (using ADCs).
 We should also let the video sources get info about our board over I2C. See next sections.
 
-As for the physical VGA ports, there is [this](https://www.digikey.no/no/products/detail/amphenol-icc-commercial-products/L77HDE15SD1CH4FVGA/4888525) on digikey at 15kr a pop. Is has through-hole pins. Buy 9, 3 per PCB.
+As for the physical VGA ports, there is [L77HDE15SD1CH4FVGA](https://www.digikey.no/no/products/detail/amphenol-icc-commercial-products/L77HDE15SD1CH4FVGA/4888525) on digikey at 15kr a pop. Is has through-hole pins. Buy 9, 3 per PCB.
 
 #### VGA Display Data Channel
 The [DDC2B](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC2) standard is an I2C protocol to communicate information about the "monitor" to the video source.
@@ -421,8 +426,8 @@ See the example setup in the datasheets.
 When outputing analog color data, we don't want to use resistors, as they take space,
 and the FPGA outputs are not the best at delivering DC current.
 
-A nice DAC that Mouser stocks is  [THS8135PHP](https://no.mouser.com/ProductDetail/Texas-Instruments/THS8135PHP?qs=wYV1UssyEL%2Fe7CEpgO3AeQ%3D%3D)
-It has 3 10-bit inputs named R, G and B, and 240MS/s.
+A nice DAC that Mouser stocks is  [THS8136IPHP](https://no.mouser.com/ProductDetail/Texas-Instruments/THS8136IPHP?qs=h8kCHL4kpM5MDIol0WiuLg%3D%3D)
+It has 3 10-bit inputs named R, G and B, and 180MS/s.
 For 800x600 @ 60Hz, a throughput of at least 40 MSPS is enough.
 It takes 3.3V analog, and 1.8V digital.
 **This means the FPGA pins delivering VGA out must be 1.8V**.
@@ -437,6 +442,9 @@ It also has [PCB Layout Guidelines](https://www.ti.com/lit/an/slea077/slea077.pd
 10x trace width clearance between analog inputs.
 Everything close! Resistors, capacitors, analog output port.
 TODO: ESD protection on the analog outputs is recommended.
+
+#### Protection
+We buy TVS diodes like the [PUSB3AB2DF](https://www.digikey.no/en/products/detail/nexperia-usa-inc/PUSB3AB2DFZ/12325057?s=N4IgTCBcDaIAoFUDKAhAzAQRWAIgMRAF0BfIA).
 
 ## Development components
 While developing, we want to use some components that might not be part of the finished PCB.

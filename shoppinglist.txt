@@ -13,41 +13,42 @@ Development things already bought:
 To buy, per PCB:
  - FPGA [Already bought]
    - decoupling capacitors and resistors
-   - Clock oscillator: SIT8103AI-23-33E-100.00000X [DigiKey Listed]
-   - config flash: S25FL127SABMFV101 [DigiKey Listed]
-   - JTAG connector [TODO]
- - SRAM: CY7C1372KV33-200AXC [DigiKey Listed]
+   - Clock oscillator: EC2620TTS-100.000M TR [Mouser Listed OK]
+   - config flash: S25FL127SABMFV101 [DigiKey Listed OK]
+   - JTAG connector 2mm 14-pin: 0878311411 [DigiKey Listed OK]
+ - 5x (in total) SRAM: CY7C1372KV33-200AXC [DigiKey Listed OK]
  - MCU [Already bought]
    - decoupling capacitors and resistors
-   - MCU programming connector, 20-pin legacy 2.54mm: 3020-20-0300-00 [DigiKey Listed]
-   - MCU Crystal Oscillator: FO7HSCDE48.0-T1 [Digikey Listed]
+   - MCU programming connector, 20-pin 1.27mm: 3220-20-0100-00 [DigiKey Listed OK]
+   - MCU Crystal Oscillator: FO7HSCDE48.0-T1 [Digikey Listed OK]
      - 2x decoupling capacitor 0.01 uF / 12pF
- - General connectors [TODO, just pin headers?]
+ - General connectors [just pin headers?]
  - Power circuit resistors and capacitors
    - Power circuit jumpers [Use 2.54mm header pins]
- - SD-card slot: 10067847-001RLF [DigiKey Listed]
+ - SD-card slot: 10067847-001RLF [DigiKey Listed OK]
    - 0.1 uF decoupling capacitor
    - 5x 10k Ohm pull up resistors
- - 1x (in total) microSD 512MB card: Adafruit 5252 [DigiKey Listed]
- - LCD text screen: DFR0555 [Digikey Listed]
- - Keyboard matrix: Adafruit 3844 [Mouser Listed]
- - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed]
- - 6x I2C Level shift MOSFETs: BSN20-7 [DigiKey Listed]
- - 3x Level shifter for H/VSYNC: LSF0102DCH [DigiKey Listed]
- - 2x VGA DDC I2C EEPROMs: M24C02-WMN6TP [DigiKey Listed]
- - 2x 3-channel 10-bit ADC: TVP7002PZPR [Mouser Listed]
+ - 1x (in total) microSD 512MB card: Adafruit 5252 [DigiKey Listed OK]
+ - LCD text screen: DFR0555 [Digikey Listed OK]
+ - Keyboard matrix: Adafruit 3844 [Mouser Listed OK]
+ - 3x VGA ports: L77HDE15SD1CH4FVGA [DigiKey Listed OK]
+ - 6x I2C Level shift MOSFETs: BSN20-7 [DigiKey Listed OK]
+ - 6x Level shifter for H/VSYNC: LSF0102DCH [DigiKey Listed OK]
+ - 2x VGA DDC I2C EEPROMs: M24C02-WMN6TP [DigiKey Listed OK]
+ - 2x 3-channel 10-bit ADC: TVP7002PZPR [Mouser Listed OK]
   - A bunch of capacitors and resistors
- - VGA Output DAC: THS8135PHP [Mouser Listed]
+ - VGA Output DAC: THS8136IPHP [Mouser Listed OK]
   - 3x 75 Ohm resistors
   - 1x R_FS reference resistor
   - 5x 0.1 uF capacitors
+  - 10x 3.3V TVS diode: PUSB3AB2DF [DigiKey Listed OK]
 
- - 1x 3x5-pin connector for I2C EEPROM programming: TSW-105-07-F-T [DigiKey Listed]
- - 2x 2x5 2.54mm male pin header: 3020-10-0300-00 [DigiKey Listed]
- - 3x (in total) 2x5 2.54mm female jumper shunt: 69145-210LF [DigiKey Listed]
- - 25x (in total) 2-pin female jumper 2.54mm: QPC02SXGN-RC [DigiKey Listed]
+ - 1x 3x5-pin connector for I2C EEPROM programming: TSW-105-07-F-T [DigiKey Listed OK]
+ - 2x 2x5 2.54mm male pin header: 3020-10-0300-00 [DigiKey Listed OK]
+ - 2x 2x5 2.54mm female jumper shunt: 69145-210LF [DigiKey Listed OK]
+ - 25x (in total) 2-pin female jumper 2.54mm: QPC02SXGN-RC [DigiKey Listed OK]
 
 Development purchases:
- - SRAM breakout board [DigiKey Listed]
+ - SRAM breakout board [DigiKey Listed OK]
    The same breakout board can be used for the ADC and DAC, so we buy a few
- - VGA breakout board [Mouser Listed]
+ - VGA breakout board [Mouser Listed OK]
