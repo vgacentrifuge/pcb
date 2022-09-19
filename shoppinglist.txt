@@ -13,7 +13,7 @@ Development things already bought:
 To buy, per PCB:
  - FPGA [Already bought]
    - decoupling capacitors and resistors
-   - Clock circuit: [TODO]
+   - Clock oscillator: SIT8103AI-23-33E-100.00000X [DigiKey Listed]
    - config flash: S25FL127SABMFV101 [DigiKey Listed]
    - JTAG connector [TODO]
  - SRAM: CY7C1372KV33-200AXC [DigiKey Listed]

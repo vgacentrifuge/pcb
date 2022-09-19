@@ -95,8 +95,13 @@ See the data sheet for it [here](https://docs.xilinx.com/v/u/en-US/ds181_Artix_7
 and remember the user guides listed in the pcb lecture.
 
 #### Voltages
-The FPGA requires, 1.0V, 1.8V and 3.3V, and they must become ready in order.
-The 3.3V is the standard signal voltage we use.
+The FPGA requires:
+ - 1.0V (Vccint & Vccbram)
+ - 1.8V (Vccaux)
+ - 3.3V (Vcco) The standard signal voltage we use for I/O banks.
+
+They must become ready in order, Vccint and Vccbram can rise together. 
+For one bank, Vcco=1.8V, and the datasheet said it's fine to rise it together with Vccaux.
 
 #### Required FPGA support components
 In the datasheet they define that certain sets of **decoupling capacitors** should be connected to certain pins.
@@ -106,6 +111,16 @@ Try to get them close to the pins on the actual PCB.
 We also need a **configuration flash chip** on the board,
 to program the FPGA on startup. See UG908 Appendix C.
 We picked the one from the pcb lecture: [S25FL127SABMFV101](https://www.digikey.no/en/products/detail/cypress-semiconductor-corp/S25FL127SABMFV101/5788556).
+
+#### FPGA's own clock signal
+To not completly rely on the MCU's clockout,
+The [arty schematic](https://digilent.com/reference/_media/arty:arty_sch.pdf) has and
+[ASEM1-100.000MHZ-LC-T](https://no.mouser.com/ProductDetail/ABRACON/ASEM1-100.000MHZ-LC-T?qs=3KFUwL3kAg3Sbz4Re5NI5g%3D%3D), but it's not in stock.
+
+What about the [SIT8103AI-23-33E-100.00000X](https://www.digikey.no/en/products/detail/sitime/SIT8103AI-23-33E-100-00000X/9451471)?
+It is similar in a lot of ways(Hz, 3.3V, +-50pmm, MEMS), but uses LVCMOS as output instead of CMOS.
+
+I checked the Xilinx Clocking Wizard, both MMCM and PLL will happily turn 100MHz into 160MHz.
 
 #### Debug connector
 The Debug connector from the lecture looks like the **14-pin F JTAG ILA connector**.
