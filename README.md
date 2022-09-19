@@ -105,8 +105,7 @@ Try to get them close to the pins on the actual PCB.
 
 We also need a **configuration flash chip** on the board,
 to program the FPGA on startup. See UG908 Appendix C.
-
-The PCB Lecture used the [S25FL127SABMFV101](https://www.digikey.no/en/products/detail/cypress-semiconductor-corp/S25FL127SABMFV101/5788556).
+We picked the one from the pcb lecture: [S25FL127SABMFV101](https://www.digikey.no/en/products/detail/cypress-semiconductor-corp/S25FL127SABMFV101/5788556).
 
 #### Debug connector
 The Debug connector from the lecture looks like the **14-pin F JTAG ILA connector**.
@@ -114,7 +113,7 @@ See [this website](https://developer.arm.com/documentation/100765/0000/Signal-de
 
 See the example setup from the lecture (remember 2x 10k pullups).
 However, this website says that pin 6 (TCK) is pulled down on their board,
-why is ours pulled up?
+why is ours pulled up? TODO
 
 ### SRAM
 We need to calculate the required SRAM size.
@@ -230,6 +229,8 @@ The MCU and SD card use 3.3V, so does the SRAM.
 The ADC uses 1.9V, and HSYNC and VSYNC must be level switched to / from 5V.
 
 **Remember the jumpers** between the power circuit and rest of the board.
+We buy a 2x5 male 2.54mm pin header [3020-10-0300-00](https://www.digikey.no/en/products/detail/cnc-tech/3020-10-0300-00/3441727), and
+the 2x5 female jumper shunt, [69145-210LF](https://www.digikey.no/en/products/detail/amphenol-cs-fci/69145-210LF/1528094), with 3A rating per pin.
 
 ### SD-card & SD-card slot
 We want a slot to be able to move the SD-card to and from a computer.
@@ -246,6 +247,9 @@ Also a 0.1 uF decoupling capacitor between Vcc and GND.
 
 To easily solder, we can buy the [10067847-001RLF](https://www.digikey.no/no/products/detail/amphenol-cs-fci/10067847-001RLF/2283478).
 It is full size SD, with solder pins visible
+
+We should buy an SD card as well, the 512MB microSD [5252](https://www.digikey.no/en/products/detail/adafruit-industries-llc/5252/15841478) is cheap,
+so buy at least one.
 
 ### LCD text output
 A cheap 2 row x 16 char width LCD screen is [DFR0555](https://www.digikey.no/no/products/detail/dfrobot/DFR0555/9356340).
@@ -293,6 +297,12 @@ The VGA standard expects 5V I2C over the SDA and SCL lines.
 Both when we are slave and master, we want to support this.
 Since all other I2C components use 3.3V, we level switch.
 
+[This guide](https://cdn-shop.adafruit.com/datasheets/an97055.pdf)
+shows how a single N-channel MOSFET does the trick.
+We buy 2 per DDC I2C, 6 per board.
+We pick the one they mention that is easiest to solder: [BSN20](https://www.digikey.no/en/products/detail/diodes-incorporated/BSN20-7/2756034).
+
+<!--
 For the three DDC channels, we can use one of
 [771-LSF0102DCH](https://no.mouser.com/ProductDetail/Nexperia/LSF0102DCH?qs=zW32dvEIR3vhhHCS5E8Gjg%3D%3D)
 for each.
@@ -300,6 +310,7 @@ for each.
 If you are curious how open-drain interfaces, like I2C, work through it,
 [this datasheet](https://www.ti.com/lit/ds/symlink/lsf0102.pdf?ts=1663455770501)
 for a similar device has an example in section 9.2.
+-->
 
 #### VGA HSYNC VSYNC Level shifters
 They come in at 5V, but must be 3.3V into the ADC.
@@ -309,10 +320,7 @@ instead letting the FPGA control it.
 It would be nice to support 1.8V input, since the rest of video out is at 1.8V.
 
 For each ADC, and for the output, buy one
-[771-LSF0102DCH](https://no.mouser.com/ProductDetail/Nexperia/LSF0102DCH?qs=zW32dvEIR3vhhHCS5E8Gjg%3D%3D),
-just like we did for the DDC.
-
-**In other words, by 3 of it for HSYNC/VSYNC, and 3 of it for DDC I2C.**
+[771-LSF0102DCH](https://no.mouser.com/ProductDetail/Nexperia/LSF0102DCH?qs=zW32dvEIR3vhhHCS5E8Gjg%3D%3D).
 
 ##### Input VGA ports: I2C EEPROMs
 On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
