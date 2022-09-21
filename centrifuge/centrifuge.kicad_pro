@@ -364,7 +364,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "centrifuge footprints"
+    ],
     "pinned_symbol_libs": []
   },
   "meta": {
@@ -400,7 +402,9 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power",
-        "nets": [],
+        "nets": [
+          "+5V"
+        ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.0,
@@ -417,53 +421,30 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "sram_ext_layers_signals",
+        "name": "fpga_power_hidden",
         "nets": [
-          "/fpga_core/config_dram/SRAM_A0",
-          "/fpga_core/config_dram/SRAM_A1",
-          "/fpga_core/config_dram/SRAM_A10",
-          "/fpga_core/config_dram/SRAM_A11",
-          "/fpga_core/config_dram/SRAM_A12",
-          "/fpga_core/config_dram/SRAM_A13",
-          "/fpga_core/config_dram/SRAM_A14",
-          "/fpga_core/config_dram/SRAM_A15",
-          "/fpga_core/config_dram/SRAM_A16",
-          "/fpga_core/config_dram/SRAM_A17",
-          "/fpga_core/config_dram/SRAM_A18",
-          "/fpga_core/config_dram/SRAM_A2",
-          "/fpga_core/config_dram/SRAM_A3",
-          "/fpga_core/config_dram/SRAM_A4",
-          "/fpga_core/config_dram/SRAM_A5",
-          "/fpga_core/config_dram/SRAM_A6",
-          "/fpga_core/config_dram/SRAM_A7",
-          "/fpga_core/config_dram/SRAM_A8",
-          "/fpga_core/config_dram/SRAM_A9",
-          "/fpga_core/config_dram/SRAM_ADV_LD",
-          "/fpga_core/config_dram/SRAM_CE1",
-          "/fpga_core/config_dram/SRAM_CE2",
-          "/fpga_core/config_dram/SRAM_CEN",
-          "/fpga_core/config_dram/SRAM_CLK",
-          "/fpga_core/config_dram/SRAM_D0",
-          "/fpga_core/config_dram/SRAM_D1",
-          "/fpga_core/config_dram/SRAM_D2",
-          "/fpga_core/config_dram/SRAM_D27",
-          "/fpga_core/config_dram/SRAM_D28",
-          "/fpga_core/config_dram/SRAM_D29",
-          "/fpga_core/config_dram/SRAM_D3",
-          "/fpga_core/config_dram/SRAM_D30",
-          "/fpga_core/config_dram/SRAM_D31",
-          "/fpga_core/config_dram/SRAM_D32",
-          "/fpga_core/config_dram/SRAM_D33",
-          "/fpga_core/config_dram/SRAM_D34",
-          "/fpga_core/config_dram/SRAM_D35",
-          "/fpga_core/config_dram/SRAM_D4",
-          "/fpga_core/config_dram/SRAM_D5",
-          "/fpga_core/config_dram/SRAM_D6",
-          "/fpga_core/config_dram/SRAM_D7",
-          "/fpga_core/config_dram/SRAM_D8",
-          "/fpga_core/config_dram/SRAM_OE",
-          "/fpga_core/config_dram/SRAM_WE"
+          "+1V8",
+          "+3.3VA",
+          "GND"
         ],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.5,
+        "via_drill": 0.3,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "sram_ext_layers_signals",
+        "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
@@ -482,24 +463,77 @@
         "microvia_drill": 0.1,
         "name": "sram_int_layers_signals",
         "nets": [
-          "/fpga_core/config_dram/SRAM_D10",
-          "/fpga_core/config_dram/SRAM_D11",
-          "/fpga_core/config_dram/SRAM_D12",
-          "/fpga_core/config_dram/SRAM_D13",
-          "/fpga_core/config_dram/SRAM_D14",
-          "/fpga_core/config_dram/SRAM_D15",
-          "/fpga_core/config_dram/SRAM_D16",
-          "/fpga_core/config_dram/SRAM_D17",
-          "/fpga_core/config_dram/SRAM_D18",
-          "/fpga_core/config_dram/SRAM_D19",
-          "/fpga_core/config_dram/SRAM_D20",
-          "/fpga_core/config_dram/SRAM_D21",
-          "/fpga_core/config_dram/SRAM_D22",
-          "/fpga_core/config_dram/SRAM_D23",
-          "/fpga_core/config_dram/SRAM_D24",
-          "/fpga_core/config_dram/SRAM_D25",
-          "/fpga_core/config_dram/SRAM_D26",
-          "/fpga_core/config_dram/SRAM_D9"
+          "/config_sram/CCLK",
+          "/config_sram/GCLK100",
+          "/config_sram/IO0",
+          "/config_sram/IO1",
+          "/config_sram/IO2",
+          "/config_sram/IO3",
+          "/config_sram/SRAM_A0",
+          "/config_sram/SRAM_A1",
+          "/config_sram/SRAM_A10",
+          "/config_sram/SRAM_A11",
+          "/config_sram/SRAM_A12",
+          "/config_sram/SRAM_A13",
+          "/config_sram/SRAM_A14",
+          "/config_sram/SRAM_A15",
+          "/config_sram/SRAM_A16",
+          "/config_sram/SRAM_A17",
+          "/config_sram/SRAM_A18",
+          "/config_sram/SRAM_A19",
+          "/config_sram/SRAM_A2",
+          "/config_sram/SRAM_A20",
+          "/config_sram/SRAM_A3",
+          "/config_sram/SRAM_A4",
+          "/config_sram/SRAM_A5",
+          "/config_sram/SRAM_A6",
+          "/config_sram/SRAM_A7",
+          "/config_sram/SRAM_A8",
+          "/config_sram/SRAM_A9",
+          "/config_sram/SRAM_ADV_LD",
+          "/config_sram/SRAM_CE1",
+          "/config_sram/SRAM_CE2",
+          "/config_sram/SRAM_CEN",
+          "/config_sram/SRAM_CLK",
+          "/config_sram/SRAM_D0",
+          "/config_sram/SRAM_D1",
+          "/config_sram/SRAM_D10",
+          "/config_sram/SRAM_D11",
+          "/config_sram/SRAM_D12",
+          "/config_sram/SRAM_D13",
+          "/config_sram/SRAM_D14",
+          "/config_sram/SRAM_D15",
+          "/config_sram/SRAM_D16",
+          "/config_sram/SRAM_D17",
+          "/config_sram/SRAM_D18",
+          "/config_sram/SRAM_D19",
+          "/config_sram/SRAM_D2",
+          "/config_sram/SRAM_D20",
+          "/config_sram/SRAM_D21",
+          "/config_sram/SRAM_D22",
+          "/config_sram/SRAM_D23",
+          "/config_sram/SRAM_D24",
+          "/config_sram/SRAM_D25",
+          "/config_sram/SRAM_D26",
+          "/config_sram/SRAM_D27",
+          "/config_sram/SRAM_D28",
+          "/config_sram/SRAM_D29",
+          "/config_sram/SRAM_D3",
+          "/config_sram/SRAM_D30",
+          "/config_sram/SRAM_D31",
+          "/config_sram/SRAM_D32",
+          "/config_sram/SRAM_D33",
+          "/config_sram/SRAM_D34",
+          "/config_sram/SRAM_D35",
+          "/config_sram/SRAM_D4",
+          "/config_sram/SRAM_D5",
+          "/config_sram/SRAM_D6",
+          "/config_sram/SRAM_D7",
+          "/config_sram/SRAM_D8",
+          "/config_sram/SRAM_D9",
+          "/config_sram/SRAM_OE",
+          "/config_sram/SRAM_WE",
+          "/config_sram/n_CONFIG_CS"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -573,19 +607,19 @@
       "fpga_core"
     ],
     [
-      "7ae01eab-b7e9-4f61-8d9a-46af2febb719",
-      "pwr_jtag"
+      "6ac36f05-d11f-41e5-adcf-89492f122a3d",
+      "config_sram"
     ],
     [
-      "1940e786-5b3c-4bbb-ac62-a40747a0a06c",
-      "vga_input"
+      "7f3a165a-4686-414a-8d97-d578fb2b1939",
+      "vga_input2"
     ],
     [
       "4f747698-811f-451e-996d-fc6d5c7e8416",
       "vga_output"
     ],
     [
-      "3d9e1ae6-368b-46cc-9939-07839cc3eb83",
+      "94211ea9-1226-4272-8ff4-cfa702997c07",
       "vga_input1"
     ],
     [
@@ -593,8 +627,28 @@
       "inter_board"
     ],
     [
-      "25b6fe27-4f80-41b1-8445-679eed4b92cd",
-      "config_dram"
+      "a539582e-9da6-42b9-9000-a9a78430d064",
+      "pwr_jtag"
+    ],
+    [
+      "03f6e6ed-4fa7-4e69-a885-c103830c7863",
+      "vga_interface"
+    ],
+    [
+      "ed149683-fc4f-47ee-ae41-f4e00fd54a30",
+      "vga_interface1"
+    ],
+    [
+      "f54fef4b-20f8-4233-ad11-9dcb63745f1c",
+      "ddc_eeprom1"
+    ],
+    [
+      "c9449019-11a4-457b-97dc-3b456ae30bad",
+      "vga_interface2"
+    ],
+    [
+      "627ced27-ba97-4a12-9b57-1a3f9e0508b8",
+      "ddc_eeprom2"
     ]
   ],
   "text_variables": {}

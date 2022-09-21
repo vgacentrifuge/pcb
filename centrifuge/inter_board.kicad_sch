@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "VGA Centrifuge")
+    (rev "R1")
+    (comment 1 "Author: Paolo Celati")
+  )
+
   (lib_symbols
   )
 
