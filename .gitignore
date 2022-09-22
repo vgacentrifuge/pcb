@@ -1,4 +1,6 @@
 centrifuge/centrifuge-backups/*
 centrifuge/centrifuge_symbols.bak
+centrifuge_mcu/centrifuge_mcu-backups/*
+centrifuge_mcu/centrifuge_mcu_symbols.bak
 *.kicad_prl
 */fp-info-cache
