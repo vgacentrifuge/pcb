@@ -1,0 +1,63 @@
+* Power circuit
+[ ] Are all resistors and capacitors the correct values?
+[ ] Did we calculate correct inductance values?
+[ ] Is everything connected as supposed to (see pcb lecture)
+[ ] Use multiple Vias for connecting to ground plane
+
+[ ] Should we buy a 12V AC adapter? [[https://www.digikey.no/no/products/detail/xp-power/VEL05US120-EU-JA/5023702][This one]]
+is cheap, 5W, has positive core, 2,1mm I.D. x 5,5mm Y.D. x 12,0mm barrel jack.
+
+[X] The shottky diodes have a footprint that works
+[X] The barrel jack has a footprint that works
+
+* MCU
+Datasheet: https://www.silabs.com/documents/public/data-sheets/efm32gg-datasheet.pdf
+AN0002 Hardware considerations: https://www.silabs.com/documents/public/application-notes/an0002.0-efm32-ezr32-series-0-hardware-design-considerations.pdf
+
+** Power delivery
+[X] Do we provide power to all power inputs (REG, IO and Analog)
+[X] All ground pins connected?
+[ ] Are decoupling capacitors placed well?
+
+** Choice of output pins
+[ ] Make sure all pins are correct in schematic, and support what we want to use them for
+NOTE: Make sure you always look at the BGA112 package!
+
+[X] Make sure all features we use are available on the 990
+The 990 fully implements the 2x I2C and 3x USART described elsewhere in the datasheet.
+
+[X] Make sure the GPIO pins are available on the 990!
+See table 5.20.3 GPIO Pinout Overview.
+
+** Footprint
+[ ] Are the pins in the correct locations, correct solder pad size and such?
+
+** Debug header
+[ ] Is it correctly laid out?
+
+** Crystal
+Oups, we bought an osciallator, not a crystal.
+We should buy a crystal instead, to stay true to the pcb lecture schematic and AN0002.
+[ ] Are the capacitors correctly placed on the PCB?
+[ ] Use KiCADs differental pair routing?
+[ ] Is the ground plane correctly formed under the crystal?
+
+* I2C
+[ ] Buy both 2k and 4.7k pullups in case we need to switch
+
+* Connectors
+[ ] Check that the 20-pin debug connector is already bought (1.27mm 2x10 male pin header)
+For all other pin headers, just buy a fair amount of 1-row and 2-row breakup-able pin headers.
+[ ] Buy 2x per board of 2x20: https://www.digikey.no/no/products/detail/sullins-connector-solutions/PREC020DFAN-RC/2774994
+[ ] Buy 1x per board of 1x20: https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC020SACN-RC/2776086
+
+* SD card
+[ ] Everything connected correctly
+[ ] Pullup resistors make sense
+[ ] Footprint matches the slot we havee bought
+
+* LCD screen
+[ ] Check that the footprint is correct in terms of size and holes, and connection point
+
+* Keyboard matrix
+* FPGA

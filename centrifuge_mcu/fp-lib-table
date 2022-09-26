@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "centrifuge_mcu")(type "KiCad")(uri "${KIPRJMOD}/centrifuge_mcu.pretty")(options "")(descr ""))
+)

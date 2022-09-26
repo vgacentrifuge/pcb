@@ -196,10 +196,16 @@ It has 1.27mm pitch, we pick this through-hole one: [3220-20-0100-00](https://ww
 
 #### MCU Clock circuit
 By using an external crystal, as recommended, we can run the MCU at 48MHz.
+
+<!--
 This is simply buying a crystal oscillator.
 The [FO7HSCDE48.0-T1](https://www.digikey.no/no/products/detail/fox-electronics/FO7HSCDE48-0-T1/12160237)
 is 48MHz, SMD, and with 5mm and 2.5mm between the 4 pins, which at least isn't the smallest oscillator.
 The datasheet also has recommended solder pad distance of at least 2.2 mm. Seems doable.
+-->
+
+The first chip we bought was in fact not a crystal, but an oscialltor chip using a crystal insternally.
+We buy another one instead, see the schematic.
 
 The AN0002 EFM32 hardware design considerations also mentions two capacitors.
 The lecture uses 2x 12pF.
