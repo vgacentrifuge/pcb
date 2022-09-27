@@ -279,7 +279,9 @@ so buy at least one.
 
 ### LCD text output
 A cheap 2 row x 16 char width LCD screen is [DFR0555](https://www.digikey.no/no/products/detail/dfrobot/DFR0555/9356340).
-It is controlled over I2C (with an address different to the EEPROMS, btw).
+It is controlled over I2C.
+8-bit address for LCD: 0x7C = 0b 0111 110X
+8-bit address for backlight: 0xC0 = 0b 1100 000X
 At 87mm x 32mm total, it is quite small. Each char is 2.96mm x 5.56mm.
 Mouser doesn't have anything cheaper using I2C, so it's probably a good option.
 

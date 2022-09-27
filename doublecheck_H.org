@@ -1,14 +1,14 @@
 * Power circuit
-[ ] Are all resistors and capacitors the correct values?
-[ ] Did we calculate correct inductance values?
-[ ] Is everything connected as supposed to (see pcb lecture)
+[X] Are all resistors and capacitors the correct values?
+[X] Did we calculate correct inductance values?
+[X] Is everything connected as supposed to (see pcb lecture)
 [ ] Use multiple Vias for connecting to ground plane
 
 [ ] Should we buy a 12V AC adapter? [[https://www.digikey.no/no/products/detail/xp-power/VEL05US120-EU-JA/5023702][This one]]
-is cheap, 5W, has positive core, 2,1mm I.D. x 5,5mm Y.D. x 12,0mm barrel jack.
+is cheap, 5W, has positive core, *2,1mm I.D. x 5,5mm Y.D.* x 12,0mm deep barrel jack.
 
-[X] The shottky diodes have a footprint that works
 [X] The barrel jack has a footprint that works
+[X] The barrel jack pin numbers match in datasheet, footprint and schematic
 
 * MCU
 Datasheet: https://www.silabs.com/documents/public/data-sheets/efm32gg-datasheet.pdf
@@ -54,10 +54,17 @@ For all other pin headers, just buy a fair amount of 1-row and 2-row breakup-abl
 * SD card
 [ ] Everything connected correctly
 [ ] Pullup resistors make sense
-[ ] Footprint matches the slot we havee bought
+[ ] Footprint matches the slot we have bought
 
 * LCD screen
 [ ] Check that the footprint is correct in terms of size and holes, and connection point
 
 * Keyboard matrix
+[ ] Is the custom footprint correct size?
+
 * FPGA
+[ ] Does it get everything it needs from the MCU?
+
+* In general
+[ ] Do all parts we purchase have correct parameters (as specified in schematic)
+[ ] Do all footprints actually fit the parts we buy / have bought?
