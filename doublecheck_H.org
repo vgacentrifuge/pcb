@@ -1,11 +1,18 @@
+* TODO
+[X] Switch pullups to 2.2k
+[ ] Add the connectors Paolo expects
+[X] 124k -> 120k + 4.7k
+[X] 5.49M -> 5.6M
+[ ] Some LEDs for the MCU
+[X] Add pinouts for power input
+[ ] Add symbol for LCD
+
 * Power circuit
 [X] Are all resistors and capacitors the correct values?
 [X] Did we calculate correct inductance values?
 [X] Is everything connected as supposed to (see pcb lecture)
 [ ] Use multiple Vias for connecting to ground plane
-
-[ ] Should we buy a 12V AC adapter? [[https://www.digikey.no/no/products/detail/xp-power/VEL05US120-EU-JA/5023702][This one]]
-is cheap, 5W, has positive core, *2,1mm I.D. x 5,5mm Y.D.* x 12,0mm deep barrel jack.
+[ ] We do actually use the 16-pin PWP footprint?
 
 [X] The barrel jack has a footprint that works
 [X] The barrel jack pin numbers match in datasheet, footprint and schematic
