@@ -1,0 +1,2766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/havard/Development/tdt4295/pcb/centrifuge_mcu/centrifuge_mcu.kicad_sch</source>
+    <date>Thu 29 Sep 2022 12:48:37 AM CEST</date>
+    <tool>Eeschema (6.0.7)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>VGA Centrifuge - MCU area</title>
+        <company/>
+        <rev>v01</rev>
+        <date/>
+        <source>centrifuge_mcu.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/">
+      <title_block>
+        <title>Power supply</title>
+        <company/>
+        <rev/>
+        <date/>
+        <source>power_circuit.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>mcu.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="4" name="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>SD_card.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="5" name="/Button Panel/" tstamps="/5ad062df-ac4b-48ff-8223-f8ac7bddbcbd/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>button_panel.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J101">
+      <value>Conn_02x06_Odd_Even</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_02x06_Odd_Even" description="Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c3ee3d5f-a47e-484a-9ed5-e3969b1e91c8</tstamps>
+    </comp>
+    <comp ref="J102">
+      <value>FPGA_Power</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x06_Male" description="Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>31d82d6c-7440-4f93-94da-d41259c0e84d</tstamps>
+    </comp>
+    <comp ref="J103">
+      <value>FPGA_extra</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Male" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>64ddcf41-2be8-44c4-9b4f-c144dbd415f7</tstamps>
+    </comp>
+    <comp ref="J104">
+      <value>FPGA_control</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Male" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>52b4b80d-fe22-4d00-af8b-c6fc493f6cee</tstamps>
+    </comp>
+    <comp ref="J105">
+      <value>FPGA_SPI</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Male" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>12449800-d3ac-47fd-8345-77581e9ee736</tstamps>
+    </comp>
+    <comp ref="J106">
+      <value>DDC_I2Cs</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x04_Male" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ffb96e4e-d1b7-4a34-8cf4-6af796e53468</tstamps>
+    </comp>
+    <comp ref="J107">
+      <value>ACD_I2C</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>77fc2bfd-40b0-4d39-86a9-4ee272045e6e</tstamps>
+    </comp>
+    <comp ref="J108">
+      <value>ACD_RST</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d3da86ea-a6bb-4c62-9ab2-3b5ac18d623b</tstamps>
+    </comp>
+    <comp ref="R101">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fbdfdf53-0af0-4881-86b7-bda43037c5c0</tstamps>
+    </comp>
+    <comp ref="R102">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ffc560a1-502f-49ea-9467-3ee69b6fe615</tstamps>
+    </comp>
+    <comp ref="R103">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a189374-725f-449d-9360-c0e4859448b0</tstamps>
+    </comp>
+    <comp ref="R104">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>361339da-bf8b-44f3-bf13-a80c15ec62bf</tstamps>
+    </comp>
+    <comp ref="R105">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>183184e9-9f31-4ea1-8b25-6677e79c4591</tstamps>
+    </comp>
+    <comp ref="R106">
+      <value>2.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-072K2L/5896727"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1b2f2733-a102-4f32-bff0-0ef5c6463c32</tstamps>
+    </comp>
+    <comp ref="U101">
+      <value>DFR0555</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/trinamic-motion-control-gmbh/CABLE-PH04/9381900</field>
+      </fields>
+      <libsource lib="mcu_centrifuge_library" part="DFR0555" description=""/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/trinamic-motion-control-gmbh/CABLE-PH04/9381900"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ce5747e-02ae-4108-bbe2-9e2fb0a774ec</tstamps>
+    </comp>
+    <comp ref="U102">
+      <value>LCD16x2L</value>
+      <footprint>centrifuge_mcu:DFR0555</footprint>
+      <libsource lib="mcu_centrifuge_library" part="LCD16x2L" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="centrifuge_mcu.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>524dbf6c-6040-4307-8aa0-a7db2ccfd54e</tstamps>
+    </comp>
+    <comp ref="C101">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>a1af26c1-d3db-4e07-aca4-2b78a5e7915c</tstamps>
+    </comp>
+    <comp ref="C102">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>072e51fa-24ad-4879-8a17-8bafce6a7e68</tstamps>
+    </comp>
+    <comp ref="C103">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>625906b7-a253-4523-b1aa-59af4bb9ee3b</tstamps>
+    </comp>
+    <comp ref="C104">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>e6c5e756-ca67-4be7-af87-f56fdbe22de6</tstamps>
+    </comp>
+    <comp ref="C105">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>c6994463-1289-4b8f-8a33-9a3932588e33</tstamps>
+    </comp>
+    <comp ref="C106">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>73f88321-46e3-4d25-a66f-e3a33b53df39</tstamps>
+    </comp>
+    <comp ref="C107">
+      <value>100u</value>
+      <footprint>Capacitor_THT:CP_Radial_D10.0mm_P5.00mm</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/panasonic-electronic-components/EEU-FC1H101/266332</field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized_US" description="Polarized capacitor, US symbol"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/panasonic-electronic-components/EEU-FC1H101/266332"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>56e72752-ec6f-49ac-9c07-a7fa3e725cfe</tstamps>
+    </comp>
+    <comp ref="C108">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>991fd5d4-a857-4adc-9583-93469dc48b4d</tstamps>
+    </comp>
+    <comp ref="C109">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>faa7426e-5a7b-4a57-83f5-bdd2f8dcabe5</tstamps>
+    </comp>
+    <comp ref="C110">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>d2a986e4-08ee-40fb-9525-e66f8c7d9dee</tstamps>
+    </comp>
+    <comp ref="C111">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>dbef8908-e4eb-4514-b3f3-03e4a527bd3d</tstamps>
+    </comp>
+    <comp ref="C112">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>20a2f2b3-80ff-494f-8595-d4207efb031c</tstamps>
+    </comp>
+    <comp ref="C113">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>05f3f4a6-788e-4869-bdc6-e39b291c7aae</tstamps>
+    </comp>
+    <comp ref="C114">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>90d1de26-2db8-4feb-854d-3204fa52fa8a</tstamps>
+    </comp>
+    <comp ref="C115">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>90fa2bc7-0c30-4e27-b6ca-2ac22b9682dc</tstamps>
+    </comp>
+    <comp ref="C116">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>e1c15ceb-72e2-4461-9928-9e449f67a1f7</tstamps>
+    </comp>
+    <comp ref="C117">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>92564b41-40c1-4197-b810-5f790021fbfe</tstamps>
+    </comp>
+    <comp ref="C118">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>5604188e-58c0-4a4d-87eb-c11d1d829536</tstamps>
+    </comp>
+    <comp ref="C119">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>78305aa9-89f6-4282-bdd3-90eb7bb7b2d7</tstamps>
+    </comp>
+    <comp ref="C120">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>99d63fb1-8fa0-4b61-8442-7dc7849ba783</tstamps>
+    </comp>
+    <comp ref="C121">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>adb79824-5a96-4286-8cac-935b903fcd9c</tstamps>
+    </comp>
+    <comp ref="C122">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>aeab78a9-df8b-4a71-8517-ac3bcb6f315f</tstamps>
+    </comp>
+    <comp ref="C123">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>aec2292b-f7bc-4055-8eb4-58af06f331f1</tstamps>
+    </comp>
+    <comp ref="C124">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>e074913e-f6cc-41cc-a0e1-7a3e4e319309</tstamps>
+    </comp>
+    <comp ref="C125">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/murata-electronics/GRT31CC81E106KE01L/5416837"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>937771de-ac4b-48f6-9c52-dda6a3196a98</tstamps>
+    </comp>
+    <comp ref="C126">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>28bbe0f2-4d87-467f-83a7-564fd997f9c9</tstamps>
+    </comp>
+    <comp ref="C127">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>4768f285-0a10-4086-a4be-709435bae4d4</tstamps>
+    </comp>
+    <comp ref="C128">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/walsin-technology-corporation/1206B104K250CT/9355100"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>ee3e32b5-00c9-454c-906f-c7f2a369d182</tstamps>
+    </comp>
+    <comp ref="C129">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>1a2a84b8-2f92-4ba1-ae03-e063929e72c4</tstamps>
+    </comp>
+    <comp ref="C130">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>ffbe1a36-8a98-4e69-9327-71304e1700e3</tstamps>
+    </comp>
+    <comp ref="C131">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>631f51a8-3639-49ae-b63d-2c4165360a89</tstamps>
+    </comp>
+    <comp ref="C132">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>a68bdd9c-9815-4d5c-be07-821f16046b0d</tstamps>
+    </comp>
+    <comp ref="C133">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>4b0c7563-a234-4f8f-8980-0f29781aa4c2</tstamps>
+    </comp>
+    <comp ref="C134">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/samsung-electro-mechanics/CL31B226KQHNNNE/3888804"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>30af1ccf-57bd-4dfa-a3c7-b50972df9aff</tstamps>
+    </comp>
+    <comp ref="J109">
+      <value>USB_B_Micro</value>
+      <footprint>Connector_USB:USB_Micro-B_Molex-105017-0001</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/molex/1050171001/5293188</field>
+      </fields>
+      <libsource lib="Connector" part="USB_B_Micro" description="USB Micro Type B connector"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/molex/1050171001/5293188"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>7bc4b5ab-0b64-4ea2-82c2-2129d540c6ef</tstamps>
+    </comp>
+    <comp ref="J110">
+      <value>Barrel_Jack</value>
+      <footprint>Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/tensility-international-corp/54-00133/9685442</field>
+      </fields>
+      <libsource lib="Connector" part="Barrel_Jack_Switch" description="DC Barrel Jack with an internal switch"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/tensility-international-corp/54-00133/9685442"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>64e7aec5-a50a-4cc1-bc4a-3ac5a787bdf4</tstamps>
+    </comp>
+    <comp ref="J111">
+      <value>PowerIn</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>bd5a9fec-56d7-498e-b619-492547a754cc</tstamps>
+    </comp>
+    <comp ref="J112">
+      <value>PowerPads</value>
+      <footprint>centrifuge_mcu:PowerPads</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>248ad934-17e0-4f3d-a16c-c76f8f23552e</tstamps>
+    </comp>
+    <comp ref="L101">
+      <value>1.5u</value>
+      <footprint>centrifuge_mcu:L_Sumida_CR75</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/sumida-america-inc/0415CDMCCDS-1R5MC/9490383</field>
+        <field name="Tolerance">Ip&gt;2.5A, Irms&gt;2.1A</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Tolerance" value="Ip&gt;2.5A, Irms&gt;2.1A"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/sumida-america-inc/0415CDMCCDS-1R5MC/9490383"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>9ebae10d-7ff9-4cb6-b145-93aea9fdd6ba</tstamps>
+    </comp>
+    <comp ref="L102">
+      <value>1.5u</value>
+      <footprint>centrifuge_mcu:L_Sumida_CR75</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/sumida-america-inc/0415CDMCCDS-1R5MC/9490383</field>
+        <field name="Tolerance">Ipeek&gt;2.8A, Irms&gt;2.1A</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Tolerance" value="Ipeek&gt;2.8A, Irms&gt;2.1A"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/sumida-america-inc/0415CDMCCDS-1R5MC/9490383"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>6c56b2ed-4218-424f-89ec-9f44f707da5b</tstamps>
+    </comp>
+    <comp ref="L103">
+      <value>2.2u</value>
+      <footprint>Inductor_SMD:L_Vishay_IHLP-2020</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/vishay-dale/IHLP2020CZER2R2M5A/13985228</field>
+        <field name="Tolerance">Ip&gt;2.9A, Irms&gt;2.1A</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Tolerance" value="Ip&gt;2.9A, Irms&gt;2.1A"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/vishay-dale/IHLP2020CZER2R2M5A/13985228"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>186669bc-0916-4594-b056-0e5a8515ad89</tstamps>
+    </comp>
+    <comp ref="L104">
+      <value>1.5u</value>
+      <footprint>centrifuge_mcu:L_Sumida_CR75</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/sumida-america-inc/0415CDMCCDS-1R5MC/9490383</field>
+        <field name="Tolerance">Ip&gt;2.8A, Irms&gt;2.1A</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Tolerance" value="Ip&gt;2.8A, Irms&gt;2.1A"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/sumida-america-inc/0415CDMCCDS-1R5MC/9490383"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>87a5b636-b283-4ae1-abfc-6253aba97184</tstamps>
+    </comp>
+    <comp ref="L105">
+      <value>2.2u</value>
+      <footprint>Inductor_SMD:L_Vishay_IHLP-2020</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/vishay-dale/IHLP2020CZER2R2M5A/13985228</field>
+        <field name="Tolerance">Ip&gt;2.9A, Irms&gt;2.1A</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Tolerance" value="Ip&gt;2.9A, Irms&gt;2.1A"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/vishay-dale/IHLP2020CZER2R2M5A/13985228"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>3f2ff04c-c011-49a1-9c4d-9cb47d64cf20</tstamps>
+    </comp>
+    <comp ref="L106">
+      <value>3.3u</value>
+      <footprint>centrifuge_mcu:L_TDK_7065</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/tdk-corporation/SPM6545VT-3R3M-D/14638088</field>
+        <field name="Tolerance">Ipeek&gt;3.7A, Irms&gt;2.3A</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="Tolerance" value="Ipeek&gt;3.7A, Irms&gt;2.3A"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/tdk-corporation/SPM6545VT-3R3M-D/14638088"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>fc62c2f8-8a5a-4edc-bdcc-474e1ec5f509</tstamps>
+    </comp>
+    <comp ref="Q101">
+      <value>Q_PMOS_DGS</value>
+      <footprint>Package_TO_SOT_THT:TO-220-3_Vertical</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/infineon-technologies/SPP80P06PHXKSA1/2081673</field>
+      </fields>
+      <libsource lib="Device" part="Q_PMOS_GDS" description="P-MOSFET transistor, gate/drain/source"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/infineon-technologies/SPP80P06PHXKSA1/2081673"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>4f1eb62c-b37c-41f5-8d0c-68086b1b750a</tstamps>
+    </comp>
+    <comp ref="R107">
+      <value>5.6M</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RMCF0805FT5M60/1713201</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RMCF0805FT5M60/1713201"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>598509b1-6199-4052-bef3-945fa3653745</tstamps>
+    </comp>
+    <comp ref="R108">
+      <value>6.81k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD6K81/2240257</field>
+        <field name="Threshold">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Threshold" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD6K81/2240257"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>34d06151-83de-4857-a6e1-fc4d9b695ddd</tstamps>
+    </comp>
+    <comp ref="R109">
+      <value>22.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273</field>
+        <field name="Threshold">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Threshold" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>5583bb93-207e-4ebe-ade7-2e63b6b9fe55</tstamps>
+    </comp>
+    <comp ref="R110">
+      <value>33k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0733KL/5896774</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0733KL/5896774"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>e52ef882-8ac4-43bb-a44e-5890d98bb3e0</tstamps>
+    </comp>
+    <comp ref="R111">
+      <value>22.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273</field>
+        <field name="Threshold">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Threshold" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>06640941-4c27-4537-aef2-b68a63a5f54f</tstamps>
+    </comp>
+    <comp ref="R112">
+      <value>73.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/RC0805FR-0773K2L/728129</field>
+        <field name="Threshold">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Threshold" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/RC0805FR-0773K2L/728129"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>3f5752b2-e707-4063-95d8-b09b1bb68f07</tstamps>
+    </comp>
+    <comp ref="R113">
+      <value>22.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273</field>
+        <field name="Threshold">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Threshold" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>206d62a1-1e9e-4df8-a0aa-67dfc0f16863</tstamps>
+    </comp>
+    <comp ref="R114">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-07100KL/5896520</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-07100KL/5896520"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>162b4e3e-e25d-4901-acb9-ce818bdf24d9</tstamps>
+    </comp>
+    <comp ref="R115">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-07100KL/5896520</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-07100KL/5896520"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>dd039ee3-4210-4551-a17e-313f8c3c0f48</tstamps>
+    </comp>
+    <comp ref="R116">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-07100KL/5896520</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-07100KL/5896520"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>80efbc09-92c8-432e-b496-adc67740c0a3</tstamps>
+    </comp>
+    <comp ref="R117">
+      <value>30.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/RC0805FR-0730K1L/727845</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/RC0805FR-0730K1L/727845"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>708a3c60-c896-4a64-b498-f68ad278fa45</tstamps>
+    </comp>
+    <comp ref="R118">
+      <value>22.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>64bd179a-f6fb-4df9-8235-634f58612e18</tstamps>
+    </comp>
+    <comp ref="R119">
+      <value>73.2k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/RC0805FR-0773K2L/728129</field>
+        <field name="Threshold">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Threshold" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/RC0805FR-0773K2L/728129"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>82b83c6c-419a-46ce-9dd7-bdcbc9f51acb</tstamps>
+    </comp>
+    <comp ref="R120">
+      <value>22.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>7f57b438-5796-40f1-a1b3-4f226d41b922</tstamps>
+    </comp>
+    <comp ref="R121">
+      <value>124k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RMCF0805FT124K/1760657</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RMCF0805FT124K/1760657"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>42390d8a-bde8-4276-afd6-3a6628a1fe8e</tstamps>
+    </comp>
+    <comp ref="R122">
+      <value>22.1k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273</field>
+        <field name="Tolerance">1%</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Tolerance" value="1%"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/stackpole-electronics-inc/RNCP0805FTD22K1/2240273"/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>2dcc4862-f74f-4de0-967a-ce4ba6f38ee5</tstamps>
+    </comp>
+    <comp ref="U103">
+      <value>TPS54294</value>
+      <footprint>centrifuge_mcu:TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias_EXTRA</footprint>
+      <libsource lib="" part="TPS54294_1" description=""/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>d74fa298-ff26-4fe6-9af5-ae2cf4529486</tstamps>
+    </comp>
+    <comp ref="U104">
+      <value>TPS54294</value>
+      <footprint>centrifuge_mcu:TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias_EXTRA</footprint>
+      <libsource lib="" part="TPS54294_2" description=""/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>612c894c-5691-4e85-86a2-27ebc27c07ac</tstamps>
+    </comp>
+    <comp ref="U105">
+      <value>TPS54294</value>
+      <footprint>centrifuge_mcu:TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias_EXTRA</footprint>
+      <libsource lib="mcu_centrifuge_library" part="TPS54294" description=""/>
+      <property name="Sheetname" value="Power Circuit"/>
+      <property name="Sheetfile" value="power_circuit.kicad_sch"/>
+      <sheetpath names="/Power Circuit/" tstamps="/4964a866-34f8-4db5-8a1b-b6662659a83a/"/>
+      <tstamps>8fc3f9af-b9b7-4672-a5ff-9a3cca25cb64</tstamps>
+    </comp>
+    <comp ref="C135">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>c9238634-c2d7-423b-b34d-3e0750dc83b1</tstamps>
+    </comp>
+    <comp ref="C136">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>82539160-f89f-4027-baa6-8128bbefdf0e</tstamps>
+    </comp>
+    <comp ref="C137">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>5255b976-ae9d-409b-8337-1c785dbd1115</tstamps>
+    </comp>
+    <comp ref="C138">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:CP_Elec_4x5.4</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/nichicon/UWT1C100MCL1GB/589914</field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized_US" description="Polarized capacitor, US symbol"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/nichicon/UWT1C100MCL1GB/589914"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>9ed69746-c021-491f-a33e-59871af261ac</tstamps>
+    </comp>
+    <comp ref="C139">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/kemet/C0805C105J4REC7800/8643700"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>eeb2d0e6-0531-4b87-a933-36e19cbd5802</tstamps>
+    </comp>
+    <comp ref="C140">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>4128d112-ec38-4d88-8a64-c939c532a35e</tstamps>
+    </comp>
+    <comp ref="C141">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>9291cf76-28c0-47d7-8fc6-2b304faefa90</tstamps>
+    </comp>
+    <comp ref="C142">
+      <value>12p</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/vishay-vitramon/VJ0805A120FXJCW1BC/8307136</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/vishay-vitramon/VJ0805A120FXJCW1BC/8307136"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>cd0ea386-e41f-4455-90b0-c036a752d697</tstamps>
+    </comp>
+    <comp ref="C143">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>3f34821e-a0e3-450b-a4f0-f6d3b836f798</tstamps>
+    </comp>
+    <comp ref="C144">
+      <value>12p</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/vishay-vitramon/VJ0805A120FXJCW1BC/8307136</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/vishay-vitramon/VJ0805A120FXJCW1BC/8307136"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>c8668da8-9fc8-47e3-89a0-5cf35f62b08d</tstamps>
+    </comp>
+    <comp ref="C145">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>6ce579c2-0915-4693-9507-2401f0a78d82</tstamps>
+    </comp>
+    <comp ref="C146">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>b4b1108a-e5ad-4cd3-b48e-786fa658a8a9</tstamps>
+    </comp>
+    <comp ref="C147">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>c8e0004c-b51a-41b5-826d-6a4196d4037c</tstamps>
+    </comp>
+    <comp ref="C148">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>1539b6ce-68ef-4c95-bdad-c270fdf9298a</tstamps>
+    </comp>
+    <comp ref="C149">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:CP_Elec_4x5.4</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/nichicon/UWT1C100MCL1GB/589914</field>
+      </fields>
+      <libsource lib="Device" part="C_Polarized_US" description="Polarized capacitor, US symbol"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/nichicon/UWT1C100MCL1GB/589914"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>2529aca6-5d6a-49f8-a19a-1a16b14a0639</tstamps>
+    </comp>
+    <comp ref="D101">
+      <value>LED_YELLOW_2V_20mA</value>
+      <footprint>Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/sunled/XZMYK54W-8/8259039</field>
+      </fields>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/sunled/XZMYK54W-8/8259039"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>caa27f55-0dbf-430d-8474-23e5b228c06a</tstamps>
+    </comp>
+    <comp ref="J113">
+      <value>Conn_02x10_Odd_Even</value>
+      <footprint>Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical</footprint>
+      <fields>
+        <field name="Size">Cortex Debug+ETM Connector (1.27mm)</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_02x10_Odd_Even" description="Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Size" value="Cortex Debug+ETM Connector (1.27mm)"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>401d38dc-69b7-41e7-a412-1992002e3ddb</tstamps>
+    </comp>
+    <comp ref="J114">
+      <value>Conn_02x07_Counter_Clockwise</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="Title">Extra GPIO</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_02x07_Odd_Even" description="Generic connector, double row, 02x07, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Title" value="Extra GPIO"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>909e5ad5-5beb-4201-9f15-b7895e15fcee</tstamps>
+    </comp>
+    <comp ref="Q102">
+      <value>Q_NMOS_GSD</value>
+      <footprint>Package_TO_SOT_SMD:SOT-323_SC-70_Handsoldering</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/panjit-international-inc/PJC138K-AU-R1-000A1/14661065</field>
+      </fields>
+      <libsource lib="Device" part="Q_NMOS_GSD" description="N-MOSFET transistor, gate/source/drain"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/panjit-international-inc/PJC138K-AU-R1-000A1/14661065"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>f2ed51a7-477b-440b-bc54-1f46b0ac7919</tstamps>
+    </comp>
+    <comp ref="R123">
+      <value>62</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0762RL/5896938</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0762RL/5896938"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>d8ec9a67-5778-4aaa-abde-af692eaf0ace</tstamps>
+    </comp>
+    <comp ref="U106">
+      <value>EFM32GG990F1024</value>
+      <footprint>centrifuge_mcu:BGA-112_9.0x9.0mm_Layout11x11_P0.8mm_Ball0.4mm_Pad0.35mm_NSMD</footprint>
+      <libsource lib="" part="EFM32GG990F1024_2" description=""/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>bf7cdbc6-7e87-4e1d-bdc9-891fe3eb5eb2 720a19a0-4294-477d-99a0-aea1b19d52a4 b54ac283-ccd8-4d41-834d-c2a7c4509315 0344a82d-9f86-4269-9a92-3ab5f7652de1</tstamps>
+    </comp>
+    <comp ref="Y101">
+      <value>VXM7-1366-48M0000000</value>
+      <footprint>Crystal:Crystal_SMD_TXC_7M-4Pin_3.2x2.5mm_HandSoldering</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/microchip-technology/VXM7-1366-48M0000000/13175116?s=N4IgTCBcDaIGoA0CyB2AtARgMwDYdoBYAOJABnItJAF0BfIA</field>
+      </fields>
+      <libsource lib="Device" part="Crystal_GND24" description="Four pin crystal, GND on pins 2 and 4"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/microchip-technology/VXM7-1366-48M0000000/13175116?s=N4IgTCBcDaIGoA0CyB2AtARgMwDYdoBYAOJABnItJAF0BfIA"/>
+      <property name="Sheetname" value="MCU"/>
+      <property name="Sheetfile" value="mcu.kicad_sch"/>
+      <sheetpath names="/MCU/" tstamps="/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/"/>
+      <tstamps>1f094ed8-6d61-4275-b7c2-81d4ef42e237</tstamps>
+    </comp>
+    <comp ref="C150">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/taiyo-yuden/LMF212B7104KGHT/10379109"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>6e83488a-db73-466c-99a6-359780d36bb4</tstamps>
+    </comp>
+    <comp ref="J115">
+      <value>SD_Card</value>
+      <footprint>Connector_Card:SD_Kyocera_145638009511859+</footprint>
+      <datasheet>http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf</datasheet>
+      <libsource lib="Connector" part="SD_Card" description="SD Card Reader"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>77c92aee-164d-4e73-9f5c-49261ebb1158</tstamps>
+    </comp>
+    <comp ref="R124">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>bf93eaf9-f3f5-4764-b599-4cb81e78e0d6</tstamps>
+    </comp>
+    <comp ref="R125">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>307fc1a0-9677-4aa0-9fd1-d06ead18241a</tstamps>
+    </comp>
+    <comp ref="R126">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>ae08fd71-09a7-447b-af00-1db2e6ca3e9b</tstamps>
+    </comp>
+    <comp ref="R127">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>ced7e6fe-8c1e-4df5-b363-13d8280812ba</tstamps>
+    </comp>
+    <comp ref="R128">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="SD card reader"/>
+      <property name="Sheetfile" value="SD_card.kicad_sch"/>
+      <sheetpath names="/SD card reader/" tstamps="/c93e1a38-8eab-42e4-af21-3b81f9232499/"/>
+      <tstamps>f9729b17-2a21-4478-a727-a3f172375797</tstamps>
+    </comp>
+    <comp ref="R129">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="Button Panel"/>
+      <property name="Sheetfile" value="button_panel.kicad_sch"/>
+      <sheetpath names="/Button Panel/" tstamps="/5ad062df-ac4b-48ff-8223-f8ac7bddbcbd/"/>
+      <tstamps>a7e84268-2b55-4ede-a5b5-d9f01ea86bd1</tstamps>
+    </comp>
+    <comp ref="R130">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="Button Panel"/>
+      <property name="Sheetfile" value="button_panel.kicad_sch"/>
+      <sheetpath names="/Button Panel/" tstamps="/5ad062df-ac4b-48ff-8223-f8ac7bddbcbd/"/>
+      <tstamps>fa7aa861-7175-40d3-b70d-0256b714d368</tstamps>
+    </comp>
+    <comp ref="R131">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="Button Panel"/>
+      <property name="Sheetfile" value="button_panel.kicad_sch"/>
+      <sheetpath names="/Button Panel/" tstamps="/5ad062df-ac4b-48ff-8223-f8ac7bddbcbd/"/>
+      <tstamps>d771d4c1-5355-4934-a11f-de6a40d6e6aa</tstamps>
+    </comp>
+    <comp ref="R132">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="Purchase">https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Purchase" value="https://www.digikey.no/no/products/detail/yageo/AC0805FR-0710KL/2827834"/>
+      <property name="Sheetname" value="Button Panel"/>
+      <property name="Sheetfile" value="button_panel.kicad_sch"/>
+      <sheetpath names="/Button Panel/" tstamps="/5ad062df-ac4b-48ff-8223-f8ac7bddbcbd/"/>
+      <tstamps>f2c1f678-fd0f-4ae2-b7fb-89ea647e08c9</tstamps>
+    </comp>
+    <comp ref="U107">
+      <value>4x4_keyboard</value>
+      <footprint>centrifuge_mcu:Adafruit 3844</footprint>
+      <datasheet>https://no.mouser.com/ProductDetail/Adafruit/3844?qs=qSfuJ%252Bfl%2Fd6WS5%252BJGim1hw%3D%3D</datasheet>
+      <libsource lib="mcu_centrifuge_library" part="4x4_keyboard" description=""/>
+      <property name="Sheetname" value="Button Panel"/>
+      <property name="Sheetfile" value="button_panel.kicad_sch"/>
+      <sheetpath names="/Button Panel/" tstamps="/5ad062df-ac4b-48ff-8223-f8ac7bddbcbd/"/>
+      <tstamps>7fdd8325-231a-4d44-8488-6bb1d7f5a6af</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="" part="EFM32GG990F1024_2">
+      <fields>
+        <field name="Reference">U105</field>
+        <field name="Value">EFM32GG990F1024_2</field>
+      </fields>
+      <pins>
+        <pin num="A1" name="PE15" type="bidirectional"/>
+        <pin num="A2" name="PE14" type="bidirectional"/>
+        <pin num="A3" name="PE12/US0_CLK#0" type="output"/>
+        <pin num="A4" name="PE9" type="input"/>
+        <pin num="A5" name="PD10" type="output"/>
+        <pin num="A6" name="PF7" type="bidirectional"/>
+        <pin num="A7" name="PF5" type="bidirectional"/>
+        <pin num="A8" name="PF12" type="bidirectional"/>
+        <pin num="A9" name="PE4" type="input"/>
+        <pin num="A10" name="PF10" type="bidirectional"/>
+        <pin num="A11" name="PF11" type="bidirectional"/>
+        <pin num="B1" name="PA15" type="bidirectional"/>
+        <pin num="B2" name="PE13/US0_CS#0" type="output"/>
+        <pin num="B3" name="PE11/US0_RX#0" type="input"/>
+        <pin num="B4" name="PE8" type="input"/>
+        <pin num="B5" name="PD11" type="output"/>
+        <pin num="B6" name="PF8" type="bidirectional"/>
+        <pin num="B8" name="USB_VBUS" type="input"/>
+        <pin num="B9" name="PE5" type="input"/>
+        <pin num="B10" name="USB_VREGI" type="input"/>
+        <pin num="B11" name="USB_VREGO" type="output"/>
+        <pin num="C1" name="PA1" type="output"/>
+        <pin num="C3" name="PE10/US0_TX#0" type="output"/>
+        <pin num="C4" name="PD13" type="output"/>
+        <pin num="C5" name="PD12" type="output"/>
+        <pin num="C7" name="VSS" type="power_in"/>
+        <pin num="C8" name="DBG_SWO#0" type="bidirectional"/>
+        <pin num="C10" name="PC10" type="bidirectional"/>
+        <pin num="D2" name="PA2/CMU_CLK0#0" type="output"/>
+        <pin num="D4" name="VSS" type="power_in"/>
+        <pin num="D5" name="IOVDD_6" type="power_in"/>
+        <pin num="D6" name="PD9" type="bidirectional"/>
+        <pin num="D7" name="IOVDD_5" type="power_in"/>
+        <pin num="D8" name="DBG_SWDIO#0" type="bidirectional"/>
+        <pin num="E8" name="DBG_SWCLK#0" type="input"/>
+        <pin num="F3" name="PB3/US2_TX#1" type="output"/>
+        <pin num="F4" name="PB4/US2_RX#1" type="input"/>
+        <pin num="F8" name="VDD_DREG" type="power_in"/>
+        <pin num="F9" name="VSS_DREG" type="power_in"/>
+        <pin num="F11" name="DECOUPLE" type="input"/>
+        <pin num="G1" name="PB5/US2_CLK#1" type="output"/>
+        <pin num="G2" name="PB6/US2_CS#1" type="output"/>
+        <pin num="G3" name="VSS" type="power_in"/>
+        <pin num="G4" name="IOVDD_0" type="power_in"/>
+        <pin num="G8" name="IOVDD_4" type="power_in"/>
+        <pin num="G9" name="VSS" type="power_in"/>
+        <pin num="G10" name="PC6/I2C0_SDA#2" type="open_collector"/>
+        <pin num="G11" name="PC7/I2C0_SCL#2" type="open_collector"/>
+        <pin num="H1" name="PC0/US1_TX#0" type="output"/>
+        <pin num="H6" name="VSS" type="power_in"/>
+        <pin num="H7" name="IOVDD_3" type="power_in"/>
+        <pin num="H10" name="PD6/I2C0_SDA#1" type="open_collector"/>
+        <pin num="H11" name="PD7/I2C0_SCL#1" type="open_collector"/>
+        <pin num="J1" name="PC1/US1_RX#0" type="input"/>
+        <pin num="J8" name="PB10" type="bidirectional"/>
+        <pin num="J9" name="PD2" type="bidirectional"/>
+        <pin num="J10" name="PD3" type="bidirectional"/>
+        <pin num="J11" name="PD4" type="bidirectional"/>
+        <pin num="K1" name="PB7/US1_CLK#0" type="output"/>
+        <pin num="K2" name="PC4/I2C1_SDA#0" type="open_collector"/>
+        <pin num="K4" name="VSS" type="power_in"/>
+        <pin num="K6" name="~{RESET}" type="input"/>
+        <pin num="K7" name="AVSS_1" type="power_in"/>
+        <pin num="K8" name="AVDD_2" type="power_in"/>
+        <pin num="K9" name="AVDD_1" type="power_in"/>
+        <pin num="K10" name="AVSS_0" type="power_in"/>
+        <pin num="K11" name="PD1" type="bidirectional"/>
+        <pin num="L1" name="PB8/US1_CS#0" type="output"/>
+        <pin num="L2" name="PC5/I2C1_SCL#0" type="open_collector"/>
+        <pin num="L4" name="IOVDD_1" type="power_in"/>
+        <pin num="L7" name="AVSS_2" type="power_in"/>
+        <pin num="L8" name="PB13/HFXTAL_P" type="input"/>
+        <pin num="L9" name="PB14/HFXTAL_N" type="input"/>
+        <pin num="L10" name="AVDD_0" type="power_in"/>
+        <pin num="L11" name="PD0" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="" part="TPS54294_1">
+      <fields>
+        <field name="Reference">U102</field>
+        <field name="Value">TPS54294_1</field>
+        <field name="Footprint">Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN1" type="power_in"/>
+        <pin num="2" name="VBST1" type="input"/>
+        <pin num="3" name="SW1" type="power_out"/>
+        <pin num="4" name="PGND1" type="power_in"/>
+        <pin num="5" name="EN1" type="input"/>
+        <pin num="6" name="PG1" type="output"/>
+        <pin num="7" name="VFB1" type="input"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="VREG5" type="power_out"/>
+        <pin num="10" name="VFB2" type="input"/>
+        <pin num="11" name="PG2" type="output"/>
+        <pin num="12" name="EN2" type="input"/>
+        <pin num="13" name="PGND2" type="power_in"/>
+        <pin num="14" name="SW2" type="power_out"/>
+        <pin num="15" name="VBST2" type="input"/>
+        <pin num="16" name="VIN2" type="power_in"/>
+        <pin num="17" name="PwPd" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="" part="TPS54294_2">
+      <fields>
+        <field name="Reference">U102</field>
+        <field name="Value">TPS54294_2</field>
+        <field name="Footprint">Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN1" type="power_in"/>
+        <pin num="2" name="VBST1" type="input"/>
+        <pin num="3" name="SW1" type="power_out"/>
+        <pin num="4" name="PGND1" type="power_in"/>
+        <pin num="5" name="EN1" type="input"/>
+        <pin num="6" name="PG1" type="output"/>
+        <pin num="7" name="VFB1" type="input"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="VREG5" type="power_out"/>
+        <pin num="10" name="VFB2" type="input"/>
+        <pin num="11" name="PG2" type="output"/>
+        <pin num="12" name="EN2" type="input"/>
+        <pin num="13" name="PGND2" type="power_in"/>
+        <pin num="14" name="SW2" type="power_out"/>
+        <pin num="15" name="VBST2" type="input"/>
+        <pin num="16" name="VIN2" type="power_in"/>
+        <pin num="17" name="PwPd" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Barrel_Jack_Switch">
+      <description>DC Barrel Jack with an internal switch</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>BarrelJack*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Barrel_Jack_Switch</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x02_Male">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x04_Male">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x06_Male">
+      <description>Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x06_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="SD_Card">
+      <description>SD Card Reader</description>
+      <docs>http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf</docs>
+      <footprints>
+        <fp>SD*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">SD_Card</field>
+        <field name="Datasheet">http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CD/DAT3" type="input"/>
+        <pin num="2" name="CMD" type="input"/>
+        <pin num="3" name="VSS" type="power_in"/>
+        <pin num="4" name="VDD" type="power_in"/>
+        <pin num="5" name="CLK" type="input"/>
+        <pin num="6" name="VSS" type="power_in"/>
+        <pin num="7" name="DAT0" type="input"/>
+        <pin num="8" name="DAT1" type="input"/>
+        <pin num="9" name="DAT2" type="input"/>
+        <pin num="10" name="CARD_DETECT" type="input"/>
+        <pin num="11" name="WRITE_PROTECT" type="input"/>
+        <pin num="12" name="SHELL1" type="input"/>
+        <pin num="13" name="SHELL2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="USB_B_Micro">
+      <description>USB Micro Type B connector</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>USB*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">USB_B_Micro</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VBUS" type="power_out"/>
+        <pin num="2" name="D-" type="bidirectional"/>
+        <pin num="3" name="D+" type="bidirectional"/>
+        <pin num="4" name="ID" type="passive"/>
+        <pin num="5" name="GND" type="power_out"/>
+        <pin num="6" name="Shield" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_02x06_Odd_Even">
+      <description>Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_2x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_02x06_Odd_Even</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_02x07_Odd_Even">
+      <description>Generic connector, double row, 02x07, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_2x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_02x07_Odd_Even</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_02x10_Odd_Even">
+      <description>Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_2x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_02x10_Odd_Even</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+        <pin num="16" name="Pin_16" type="passive"/>
+        <pin num="17" name="Pin_17" type="passive"/>
+        <pin num="18" name="Pin_18" type="passive"/>
+        <pin num="19" name="Pin_19" type="passive"/>
+        <pin num="20" name="Pin_20" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Polarized_US">
+      <description>Polarized capacitor, US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized_US</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Crystal_GND24">
+      <description>Four pin crystal, GND on pins 2 and 4</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal_GND24</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Q_NMOS_GSD">
+      <description>N-MOSFET transistor, gate/source/drain</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NMOS_GSD</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Q_PMOS_GDS">
+      <description>P-MOSFET transistor, gate/drain/source</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_PMOS_GDS</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="mcu_centrifuge_library" part="4x4_keyboard">
+      <docs>https://no.mouser.com/ProductDetail/Adafruit/3844?qs=qSfuJ%252Bfl%2Fd6WS5%252BJGim1hw%3D%3D</docs>
+      <fields>
+        <field name="Reference">U?</field>
+        <field name="Value">4x4_keyboard</field>
+        <field name="Datasheet">https://no.mouser.com/ProductDetail/Adafruit/3844?qs=qSfuJ%252Bfl%2Fd6WS5%252BJGim1hw%3D%3D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C0" type="bidirectional"/>
+        <pin num="2" name="C1" type="bidirectional"/>
+        <pin num="3" name="C2" type="bidirectional"/>
+        <pin num="4" name="C3" type="bidirectional"/>
+        <pin num="5" name="R0" type="bidirectional"/>
+        <pin num="6" name="R1" type="bidirectional"/>
+        <pin num="7" name="R2" type="bidirectional"/>
+        <pin num="8" name="R3" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="mcu_centrifuge_library" part="DFR0555">
+      <fields>
+        <field name="Reference">U101</field>
+        <field name="Value">DFR0555</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SDA" type="open_collector"/>
+        <pin num="2" name="SCL" type="open_collector"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="mcu_centrifuge_library" part="LCD16x2L">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LCD16x2L</field>
+      </fields>
+    </libpart>
+    <libpart lib="mcu_centrifuge_library" part="TPS54294">
+      <fields>
+        <field name="Reference">U102</field>
+        <field name="Value">TPS54294</field>
+        <field name="Footprint">Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN1" type="power_in"/>
+        <pin num="2" name="VBST1" type="input"/>
+        <pin num="3" name="SW1" type="power_out"/>
+        <pin num="4" name="PGND1" type="power_in"/>
+        <pin num="5" name="EN1" type="input"/>
+        <pin num="6" name="PG1" type="output"/>
+        <pin num="7" name="VFB1" type="input"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="VREG5" type="power_out"/>
+        <pin num="10" name="VFB2" type="input"/>
+        <pin num="11" name="PG2" type="output"/>
+        <pin num="12" name="EN2" type="input"/>
+        <pin num="13" name="PGND2" type="power_in"/>
+        <pin num="14" name="SW2" type="power_out"/>
+        <pin num="15" name="VBST2" type="input"/>
+        <pin num="16" name="VIN2" type="power_in"/>
+        <pin num="17" name="PwPd" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/usr/share/kicad/symbols//Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="mcu_centrifuge_library">
+      <uri>/home/havard/Development/tdt4295/pcb/centrifuge_mcu/mcu_centrifuge_library.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+1V0">
+      <node ref="J101" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J102" pin="6" pinfunction="Pin_6" pintype="passive"/>
+    </net>
+    <net code="2" name="+1V8">
+      <node ref="J101" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J102" pin="5" pinfunction="Pin_5" pintype="passive"/>
+    </net>
+    <net code="3" name="+1V9">
+      <node ref="J101" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="J102" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="4" name="+3.3V">
+      <node ref="C135" pin="1" pintype="passive"/>
+      <node ref="C136" pin="1" pintype="passive"/>
+      <node ref="C137" pin="1" pintype="passive"/>
+      <node ref="C138" pin="1" pintype="passive"/>
+      <node ref="C140" pin="1" pintype="passive"/>
+      <node ref="C141" pin="1" pintype="passive"/>
+      <node ref="C143" pin="1" pintype="passive"/>
+      <node ref="C145" pin="1" pintype="passive"/>
+      <node ref="C146" pin="1" pintype="passive"/>
+      <node ref="C147" pin="1" pintype="passive"/>
+      <node ref="C148" pin="1" pintype="passive"/>
+      <node ref="C149" pin="1" pintype="passive"/>
+      <node ref="C150" pin="2" pintype="passive"/>
+      <node ref="J101" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="J102" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J113" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J114" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J115" pin="4" pinfunction="VDD" pintype="power_in"/>
+      <node ref="R101" pin="2" pintype="passive"/>
+      <node ref="R102" pin="2" pintype="passive"/>
+      <node ref="R103" pin="2" pintype="passive"/>
+      <node ref="R104" pin="2" pintype="passive"/>
+      <node ref="R105" pin="1" pintype="passive"/>
+      <node ref="R106" pin="1" pintype="passive"/>
+      <node ref="R123" pin="1" pintype="passive"/>
+      <node ref="R124" pin="1" pintype="passive"/>
+      <node ref="R125" pin="1" pintype="passive"/>
+      <node ref="R126" pin="1" pintype="passive"/>
+      <node ref="R127" pin="1" pintype="passive"/>
+      <node ref="R128" pin="2" pintype="passive"/>
+      <node ref="U101" pin="4" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U106" pin="D5" pinfunction="IOVDD_6" pintype="power_in"/>
+      <node ref="U106" pin="D7" pinfunction="IOVDD_5" pintype="power_in"/>
+      <node ref="U106" pin="F8" pinfunction="VDD_DREG" pintype="power_in"/>
+      <node ref="U106" pin="G4" pinfunction="IOVDD_0" pintype="power_in"/>
+      <node ref="U106" pin="G8" pinfunction="IOVDD_4" pintype="power_in"/>
+      <node ref="U106" pin="H7" pinfunction="IOVDD_3" pintype="power_in"/>
+      <node ref="U106" pin="K8" pinfunction="AVDD_2" pintype="power_in"/>
+      <node ref="U106" pin="K9" pinfunction="AVDD_1" pintype="power_in"/>
+      <node ref="U106" pin="L10" pinfunction="AVDD_0" pintype="power_in"/>
+      <node ref="U106" pin="L4" pinfunction="IOVDD_1" pintype="power_in"/>
+    </net>
+    <net code="5" name="+3.3VADC">
+      <node ref="J101" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="J102" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="6" name="+5V">
+      <node ref="J101" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="J102" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="7" name="/Button Panel/C0">
+      <node ref="U106" pin="A4" pinfunction="PE9" pintype="input"/>
+      <node ref="U107" pin="1" pinfunction="C0" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="/Button Panel/C1">
+      <node ref="U106" pin="B4" pinfunction="PE8" pintype="input"/>
+      <node ref="U107" pin="2" pinfunction="C1" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="/Button Panel/C2">
+      <node ref="U106" pin="B9" pinfunction="PE5" pintype="input"/>
+      <node ref="U107" pin="3" pinfunction="C2" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="/Button Panel/C3">
+      <node ref="U106" pin="A9" pinfunction="PE4" pintype="input"/>
+      <node ref="U107" pin="4" pinfunction="C3" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="/Button Panel/R0">
+      <node ref="R130" pin="2" pintype="passive"/>
+      <node ref="U106" pin="C4" pinfunction="PD13" pintype="output"/>
+    </net>
+    <net code="12" name="/Button Panel/R1">
+      <node ref="R132" pin="2" pintype="passive"/>
+      <node ref="U106" pin="C5" pinfunction="PD12" pintype="output"/>
+    </net>
+    <net code="13" name="/Button Panel/R2">
+      <node ref="R129" pin="2" pintype="passive"/>
+      <node ref="U106" pin="B5" pinfunction="PD11" pintype="output"/>
+    </net>
+    <net code="14" name="/Button Panel/R3">
+      <node ref="R131" pin="2" pintype="passive"/>
+      <node ref="U106" pin="A5" pinfunction="PD10" pintype="output"/>
+    </net>
+    <net code="15" name="/MCU/ADC0_RST">
+      <node ref="J108" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U106" pin="L11" pinfunction="PD0" pintype="bidirectional"/>
+    </net>
+    <net code="16" name="/MCU/ADC1_RST">
+      <node ref="J108" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U106" pin="K11" pinfunction="PD1" pintype="bidirectional"/>
+    </net>
+    <net code="17" name="/MCU/CMU_CLK#0">
+      <node ref="J104" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U106" pin="D2" pinfunction="PA2/CMU_CLK0#0" pintype="output"/>
+    </net>
+    <net code="18" name="/MCU/FPGA_CONFIG_DONE">
+      <node ref="J104" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U106" pin="A8" pinfunction="PF12" pintype="bidirectional"/>
+    </net>
+    <net code="19" name="/MCU/FPGA_INIT_B">
+      <node ref="J104" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U106" pin="A6" pinfunction="PF7" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="/MCU/FPGA_PROGRAM_B">
+      <node ref="J104" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U106" pin="A7" pinfunction="PF5" pintype="bidirectional"/>
+    </net>
+    <net code="21" name="/MCU/I2C0_SCL#1">
+      <node ref="J106" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R104" pin="1" pintype="passive"/>
+      <node ref="U106" pin="H11" pinfunction="PD7/I2C0_SCL#1" pintype="open_collector"/>
+    </net>
+    <net code="22" name="/MCU/I2C0_SCL#2">
+      <node ref="J106" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R102" pin="1" pintype="passive"/>
+      <node ref="U106" pin="G11" pinfunction="PC7/I2C0_SCL#2" pintype="open_collector"/>
+    </net>
+    <net code="23" name="/MCU/I2C0_SDA#1">
+      <node ref="J106" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R103" pin="1" pintype="passive"/>
+      <node ref="U106" pin="H10" pinfunction="PD6/I2C0_SDA#1" pintype="open_collector"/>
+    </net>
+    <net code="24" name="/MCU/I2C0_SDA#2">
+      <node ref="J106" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R101" pin="1" pintype="passive"/>
+      <node ref="U106" pin="G10" pinfunction="PC6/I2C0_SDA#2" pintype="open_collector"/>
+    </net>
+    <net code="25" name="/MCU/I2C1_SCL">
+      <node ref="J107" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R105" pin="2" pintype="passive"/>
+      <node ref="U101" pin="2" pinfunction="SCL" pintype="open_collector"/>
+      <node ref="U106" pin="L2" pinfunction="PC5/I2C1_SCL#0" pintype="open_collector"/>
+    </net>
+    <net code="26" name="/MCU/I2C1_SDA">
+      <node ref="J107" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R106" pin="2" pintype="passive"/>
+      <node ref="U101" pin="1" pinfunction="SDA" pintype="open_collector"/>
+      <node ref="U106" pin="K2" pinfunction="PC4/I2C1_SDA#0" pintype="open_collector"/>
+    </net>
+    <net code="27" name="/MCU/MF-IO0">
+      <node ref="J103" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U106" pin="J8" pinfunction="PB10" pintype="bidirectional"/>
+    </net>
+    <net code="28" name="/MCU/MF-IO1">
+      <node ref="J103" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U106" pin="J9" pinfunction="PD2" pintype="bidirectional"/>
+    </net>
+    <net code="29" name="/MCU/MF-IO2">
+      <node ref="J103" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U106" pin="J10" pinfunction="PD3" pintype="bidirectional"/>
+    </net>
+    <net code="30" name="/MCU/MF-IO3">
+      <node ref="J103" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U106" pin="J11" pinfunction="PD4" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="/MCU/SPI0_CLK">
+      <node ref="J105" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U106" pin="A3" pinfunction="PE12/US0_CLK#0" pintype="output"/>
+    </net>
+    <net code="32" name="/MCU/SPI0_CS">
+      <node ref="J105" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U106" pin="B2" pinfunction="PE13/US0_CS#0" pintype="output"/>
+    </net>
+    <net code="33" name="/MCU/SPI0_MISO">
+      <node ref="J105" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U106" pin="B3" pinfunction="PE11/US0_RX#0" pintype="input"/>
+    </net>
+    <net code="34" name="/MCU/SPI0_MOSI">
+      <node ref="J105" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U106" pin="C3" pinfunction="PE10/US0_TX#0" pintype="output"/>
+    </net>
+    <net code="35" name="/MCU/SPI1_CLK">
+      <node ref="J115" pin="5" pinfunction="CLK" pintype="input"/>
+      <node ref="U106" pin="K1" pinfunction="PB7/US1_CLK#0" pintype="output"/>
+    </net>
+    <net code="36" name="/MCU/SPI1_CS">
+      <node ref="J115" pin="1" pinfunction="CD/DAT3" pintype="input"/>
+      <node ref="R126" pin="2" pintype="passive"/>
+      <node ref="U106" pin="L1" pinfunction="PB8/US1_CS#0" pintype="output"/>
+    </net>
+    <net code="37" name="/MCU/SPI1_MISO">
+      <node ref="J115" pin="7" pinfunction="DAT0" pintype="input"/>
+      <node ref="R124" pin="2" pintype="passive"/>
+      <node ref="U106" pin="J1" pinfunction="PC1/US1_RX#0" pintype="input"/>
+    </net>
+    <net code="38" name="/MCU/SPI1_MOSI">
+      <node ref="J115" pin="2" pinfunction="CMD" pintype="input"/>
+      <node ref="R125" pin="2" pintype="passive"/>
+      <node ref="U106" pin="H1" pinfunction="PC0/US1_TX#0" pintype="output"/>
+    </net>
+    <net code="39" name="/Power Circuit/1V0">
+      <node ref="C101" pin="1" pintype="passive"/>
+      <node ref="C104" pin="1" pintype="passive"/>
+      <node ref="J101" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="L101" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R108" pin="1" pintype="passive"/>
+    </net>
+    <net code="40" name="/Power Circuit/1V8">
+      <node ref="C129" pin="1" pintype="passive"/>
+      <node ref="C132" pin="1" pintype="passive"/>
+      <node ref="J101" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="L104" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R117" pin="1" pintype="passive"/>
+    </net>
+    <net code="41" name="/Power Circuit/1V9">
+      <node ref="C102" pin="1" pintype="passive"/>
+      <node ref="C105" pin="1" pintype="passive"/>
+      <node ref="J101" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="L102" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R107" pin="1" pintype="passive"/>
+      <node ref="R110" pin="1" pintype="passive"/>
+    </net>
+    <net code="42" name="/Power Circuit/3V3">
+      <node ref="C130" pin="1" pintype="passive"/>
+      <node ref="C133" pin="1" pintype="passive"/>
+      <node ref="J101" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="L105" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R119" pin="1" pintype="passive"/>
+    </net>
+    <net code="43" name="/Power Circuit/3V3ADC">
+      <node ref="C103" pin="1" pintype="passive"/>
+      <node ref="C106" pin="1" pintype="passive"/>
+      <node ref="J101" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="L103" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R112" pin="1" pintype="passive"/>
+    </net>
+    <net code="44" name="/Power Circuit/5V0">
+      <node ref="C131" pin="1" pintype="passive"/>
+      <node ref="C134" pin="1" pintype="passive"/>
+      <node ref="J101" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="L106" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R121" pin="1" pintype="passive"/>
+    </net>
+    <net code="45" name="GND">
+      <node ref="C101" pin="2" pintype="passive"/>
+      <node ref="C102" pin="2" pintype="passive"/>
+      <node ref="C103" pin="2" pintype="passive"/>
+      <node ref="C104" pin="2" pintype="passive"/>
+      <node ref="C105" pin="2" pintype="passive"/>
+      <node ref="C106" pin="2" pintype="passive"/>
+      <node ref="C107" pin="2" pintype="passive"/>
+      <node ref="C108" pin="2" pintype="passive"/>
+      <node ref="C109" pin="2" pintype="passive"/>
+      <node ref="C110" pin="2" pintype="passive"/>
+      <node ref="C111" pin="2" pintype="passive"/>
+      <node ref="C112" pin="2" pintype="passive"/>
+      <node ref="C113" pin="2" pintype="passive"/>
+      <node ref="C117" pin="1" pintype="passive"/>
+      <node ref="C118" pin="1" pintype="passive"/>
+      <node ref="C119" pin="1" pintype="passive"/>
+      <node ref="C123" pin="2" pintype="passive"/>
+      <node ref="C124" pin="2" pintype="passive"/>
+      <node ref="C125" pin="2" pintype="passive"/>
+      <node ref="C126" pin="2" pintype="passive"/>
+      <node ref="C127" pin="2" pintype="passive"/>
+      <node ref="C128" pin="2" pintype="passive"/>
+      <node ref="C129" pin="2" pintype="passive"/>
+      <node ref="C130" pin="2" pintype="passive"/>
+      <node ref="C131" pin="2" pintype="passive"/>
+      <node ref="C132" pin="2" pintype="passive"/>
+      <node ref="C133" pin="2" pintype="passive"/>
+      <node ref="C134" pin="2" pintype="passive"/>
+      <node ref="C135" pin="2" pintype="passive"/>
+      <node ref="C136" pin="2" pintype="passive"/>
+      <node ref="C137" pin="2" pintype="passive"/>
+      <node ref="C138" pin="2" pintype="passive"/>
+      <node ref="C139" pin="1" pintype="passive"/>
+      <node ref="C140" pin="2" pintype="passive"/>
+      <node ref="C141" pin="2" pintype="passive"/>
+      <node ref="C142" pin="2" pintype="passive"/>
+      <node ref="C143" pin="2" pintype="passive"/>
+      <node ref="C144" pin="2" pintype="passive"/>
+      <node ref="C145" pin="2" pintype="passive"/>
+      <node ref="C146" pin="2" pintype="passive"/>
+      <node ref="C147" pin="2" pintype="passive"/>
+      <node ref="C148" pin="2" pintype="passive"/>
+      <node ref="C149" pin="2" pintype="passive"/>
+      <node ref="C150" pin="1" pintype="passive"/>
+      <node ref="J110" pin="2" pintype="passive"/>
+      <node ref="J111" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J112" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J113" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="J113" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="J113" pin="15" pinfunction="Pin_15" pintype="passive"/>
+      <node ref="J113" pin="17" pinfunction="Pin_17" pintype="passive"/>
+      <node ref="J113" pin="19" pinfunction="Pin_19" pintype="passive"/>
+      <node ref="J113" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J113" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J113" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="J114" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J115" pin="3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="J115" pin="6" pinfunction="VSS" pintype="power_in"/>
+      <node ref="Q101" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="Q102" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R109" pin="2" pintype="passive"/>
+      <node ref="R111" pin="2" pintype="passive"/>
+      <node ref="R113" pin="2" pintype="passive"/>
+      <node ref="R118" pin="2" pintype="passive"/>
+      <node ref="R120" pin="2" pintype="passive"/>
+      <node ref="R122" pin="2" pintype="passive"/>
+      <node ref="U101" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U103" pin="13" pinfunction="PGND2" pintype="power_in"/>
+      <node ref="U103" pin="17" pinfunction="PwPd" pintype="power_in"/>
+      <node ref="U103" pin="4" pinfunction="PGND1" pintype="power_in"/>
+      <node ref="U103" pin="8" pinfunction="GND" pintype="power_in"/>
+      <node ref="U104" pin="13" pinfunction="PGND2" pintype="power_in"/>
+      <node ref="U104" pin="17" pinfunction="PwPd" pintype="power_in"/>
+      <node ref="U104" pin="4" pinfunction="PGND1" pintype="power_in"/>
+      <node ref="U104" pin="8" pinfunction="GND" pintype="power_in"/>
+      <node ref="U105" pin="13" pinfunction="PGND2" pintype="power_in"/>
+      <node ref="U105" pin="17" pinfunction="PwPd" pintype="power_in"/>
+      <node ref="U105" pin="4" pinfunction="PGND1" pintype="power_in"/>
+      <node ref="U105" pin="8" pinfunction="GND" pintype="power_in"/>
+      <node ref="U106" pin="B10" pinfunction="USB_VREGI" pintype="input"/>
+      <node ref="U106" pin="B8" pinfunction="USB_VBUS" pintype="input"/>
+      <node ref="U106" pin="C7" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U106" pin="D4" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U106" pin="F9" pinfunction="VSS_DREG" pintype="power_in"/>
+      <node ref="U106" pin="G3" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U106" pin="G9" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U106" pin="H6" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U106" pin="K10" pinfunction="AVSS_0" pintype="power_in"/>
+      <node ref="U106" pin="K4" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U106" pin="K7" pinfunction="AVSS_1" pintype="power_in"/>
+      <node ref="U106" pin="L7" pinfunction="AVSS_2" pintype="power_in"/>
+      <node ref="Y101" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="Y101" pin="4" pinfunction="4" pintype="passive"/>
+    </net>
+    <net code="46" name="Net-(C107-Pad1)">
+      <node ref="C107" pin="1" pintype="passive"/>
+      <node ref="C108" pin="1" pintype="passive"/>
+      <node ref="C109" pin="1" pintype="passive"/>
+      <node ref="C110" pin="1" pintype="passive"/>
+      <node ref="C111" pin="1" pintype="passive"/>
+      <node ref="C112" pin="1" pintype="passive"/>
+      <node ref="C113" pin="1" pintype="passive"/>
+      <node ref="C123" pin="1" pintype="passive"/>
+      <node ref="C124" pin="1" pintype="passive"/>
+      <node ref="C125" pin="1" pintype="passive"/>
+      <node ref="C126" pin="1" pintype="passive"/>
+      <node ref="C127" pin="1" pintype="passive"/>
+      <node ref="C128" pin="1" pintype="passive"/>
+      <node ref="J109" pin="1" pinfunction="VBUS" pintype="power_out"/>
+      <node ref="Q101" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="U103" pin="1" pinfunction="VIN1" pintype="power_in"/>
+      <node ref="U103" pin="16" pinfunction="VIN2" pintype="power_in"/>
+      <node ref="U103" pin="5" pinfunction="EN1" pintype="input"/>
+      <node ref="U104" pin="1" pinfunction="VIN1" pintype="power_in"/>
+      <node ref="U104" pin="16" pinfunction="VIN2" pintype="power_in"/>
+      <node ref="U105" pin="1" pinfunction="VIN1" pintype="power_in"/>
+      <node ref="U105" pin="16" pinfunction="VIN2" pintype="power_in"/>
+    </net>
+    <net code="47" name="Net-(C114-Pad1)">
+      <node ref="C114" pin="1" pintype="passive"/>
+      <node ref="U103" pin="2" pinfunction="VBST1" pintype="input"/>
+    </net>
+    <net code="48" name="Net-(C114-Pad2)">
+      <node ref="C114" pin="2" pintype="passive"/>
+      <node ref="L101" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U103" pin="3" pinfunction="SW1" pintype="power_out"/>
+    </net>
+    <net code="49" name="Net-(C115-Pad1)">
+      <node ref="C115" pin="1" pintype="passive"/>
+      <node ref="U104" pin="2" pinfunction="VBST1" pintype="input"/>
+    </net>
+    <net code="50" name="Net-(C115-Pad2)">
+      <node ref="C115" pin="2" pintype="passive"/>
+      <node ref="L102" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U104" pin="3" pinfunction="SW1" pintype="power_out"/>
+    </net>
+    <net code="51" name="Net-(C116-Pad1)">
+      <node ref="C116" pin="1" pintype="passive"/>
+      <node ref="U105" pin="2" pinfunction="VBST1" pintype="input"/>
+    </net>
+    <net code="52" name="Net-(C116-Pad2)">
+      <node ref="C116" pin="2" pintype="passive"/>
+      <node ref="L103" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U105" pin="3" pinfunction="SW1" pintype="power_out"/>
+    </net>
+    <net code="53" name="Net-(C117-Pad2)">
+      <node ref="C117" pin="2" pintype="passive"/>
+      <node ref="R114" pin="1" pintype="passive"/>
+      <node ref="R115" pin="1" pintype="passive"/>
+      <node ref="U103" pin="9" pinfunction="VREG5" pintype="power_out"/>
+    </net>
+    <net code="54" name="Net-(C118-Pad2)">
+      <node ref="C118" pin="2" pintype="passive"/>
+      <node ref="R116" pin="1" pintype="passive"/>
+      <node ref="U104" pin="9" pinfunction="VREG5" pintype="power_out"/>
+    </net>
+    <net code="55" name="Net-(C119-Pad2)">
+      <node ref="C119" pin="2" pintype="passive"/>
+      <node ref="U105" pin="9" pinfunction="VREG5" pintype="power_out"/>
+    </net>
+    <net code="56" name="Net-(C120-Pad1)">
+      <node ref="C120" pin="1" pintype="passive"/>
+      <node ref="U103" pin="15" pinfunction="VBST2" pintype="input"/>
+    </net>
+    <net code="57" name="Net-(C120-Pad2)">
+      <node ref="C120" pin="2" pintype="passive"/>
+      <node ref="L104" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U103" pin="14" pinfunction="SW2" pintype="power_out"/>
+    </net>
+    <net code="58" name="Net-(C121-Pad1)">
+      <node ref="C121" pin="1" pintype="passive"/>
+      <node ref="U104" pin="15" pinfunction="VBST2" pintype="input"/>
+    </net>
+    <net code="59" name="Net-(C121-Pad2)">
+      <node ref="C121" pin="2" pintype="passive"/>
+      <node ref="L105" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U104" pin="14" pinfunction="SW2" pintype="power_out"/>
+    </net>
+    <net code="60" name="Net-(C122-Pad1)">
+      <node ref="C122" pin="1" pintype="passive"/>
+      <node ref="U105" pin="15" pinfunction="VBST2" pintype="input"/>
+    </net>
+    <net code="61" name="Net-(C122-Pad2)">
+      <node ref="C122" pin="2" pintype="passive"/>
+      <node ref="L106" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U105" pin="14" pinfunction="SW2" pintype="power_out"/>
+    </net>
+    <net code="62" name="Net-(C139-Pad2)">
+      <node ref="C139" pin="2" pintype="passive"/>
+      <node ref="U106" pin="F11" pinfunction="DECOUPLE" pintype="input"/>
+    </net>
+    <net code="63" name="Net-(C142-Pad1)">
+      <node ref="C142" pin="1" pintype="passive"/>
+      <node ref="U106" pin="L9" pinfunction="PB14/HFXTAL_N" pintype="input"/>
+      <node ref="Y101" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="64" name="Net-(C144-Pad1)">
+      <node ref="C144" pin="1" pintype="passive"/>
+      <node ref="U106" pin="L8" pinfunction="PB13/HFXTAL_P" pintype="input"/>
+      <node ref="Y101" pin="3" pinfunction="3" pintype="passive"/>
+    </net>
+    <net code="65" name="Net-(D101-Pad1)">
+      <node ref="D101" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="Q102" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="66" name="Net-(D101-Pad2)">
+      <node ref="D101" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R123" pin="2" pintype="passive"/>
+    </net>
+    <net code="67" name="Net-(J109-Pad5)">
+      <node ref="J109" pin="5" pinfunction="GND" pintype="power_out"/>
+      <node ref="J109" pin="6" pinfunction="Shield" pintype="passive"/>
+      <node ref="J110" pin="3" pintype="passive"/>
+    </net>
+    <net code="68" name="Net-(J110-Pad1)">
+      <node ref="J110" pin="1" pintype="passive"/>
+      <node ref="J111" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J112" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q101" pin="2" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="69" name="Net-(J113-Pad2)">
+      <node ref="J113" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U106" pin="D8" pinfunction="DBG_SWDIO#0" pintype="bidirectional"/>
+    </net>
+    <net code="70" name="Net-(J113-Pad4)">
+      <node ref="J113" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U106" pin="E8" pinfunction="DBG_SWCLK#0" pintype="input"/>
+    </net>
+    <net code="71" name="Net-(J113-Pad6)">
+      <node ref="J113" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U106" pin="C8" pinfunction="DBG_SWO#0" pintype="bidirectional"/>
+    </net>
+    <net code="72" name="Net-(J113-Pad10)">
+      <node ref="J113" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U106" pin="K6" pinfunction="~{RESET}" pintype="input"/>
+    </net>
+    <net code="73" name="Net-(J114-Pad2)">
+      <node ref="J114" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U106" pin="A11" pinfunction="PF11" pintype="bidirectional"/>
+    </net>
+    <net code="74" name="Net-(J114-Pad4)">
+      <node ref="J114" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U106" pin="B1" pinfunction="PA15" pintype="bidirectional"/>
+    </net>
+    <net code="75" name="Net-(J114-Pad5)">
+      <node ref="J114" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U106" pin="A10" pinfunction="PF10" pintype="bidirectional"/>
+    </net>
+    <net code="76" name="Net-(J114-Pad6)">
+      <node ref="J114" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U106" pin="A1" pinfunction="PE15" pintype="bidirectional"/>
+    </net>
+    <net code="77" name="Net-(J114-Pad7)">
+      <node ref="J114" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U106" pin="G2" pinfunction="PB6/US2_CS#1" pintype="output"/>
+    </net>
+    <net code="78" name="Net-(J114-Pad8)">
+      <node ref="J114" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U106" pin="D6" pinfunction="PD9" pintype="bidirectional"/>
+    </net>
+    <net code="79" name="Net-(J114-Pad9)">
+      <node ref="J114" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="U106" pin="F4" pinfunction="PB4/US2_RX#1" pintype="input"/>
+    </net>
+    <net code="80" name="Net-(J114-Pad10)">
+      <node ref="J114" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="U106" pin="A2" pinfunction="PE14" pintype="bidirectional"/>
+    </net>
+    <net code="81" name="Net-(J114-Pad11)">
+      <node ref="J114" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="U106" pin="F3" pinfunction="PB3/US2_TX#1" pintype="output"/>
+    </net>
+    <net code="82" name="Net-(J114-Pad12)">
+      <node ref="J114" pin="12" pinfunction="Pin_12" pintype="passive"/>
+      <node ref="U106" pin="B6" pinfunction="PF8" pintype="bidirectional"/>
+    </net>
+    <net code="83" name="Net-(J114-Pad13)">
+      <node ref="J114" pin="13" pinfunction="Pin_13" pintype="passive"/>
+      <node ref="U106" pin="G1" pinfunction="PB5/US2_CLK#1" pintype="output"/>
+    </net>
+    <net code="84" name="Net-(J114-Pad14)">
+      <node ref="J114" pin="14" pinfunction="Pin_14" pintype="passive"/>
+      <node ref="U106" pin="C10" pinfunction="PC10" pintype="bidirectional"/>
+    </net>
+    <net code="85" name="Net-(J115-Pad8)">
+      <node ref="J115" pin="8" pinfunction="DAT1" pintype="input"/>
+      <node ref="R128" pin="1" pintype="passive"/>
+    </net>
+    <net code="86" name="Net-(J115-Pad9)">
+      <node ref="J115" pin="9" pinfunction="DAT2" pintype="input"/>
+      <node ref="R127" pin="2" pintype="passive"/>
+    </net>
+    <net code="87" name="Net-(Q102-Pad1)">
+      <node ref="Q102" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="U106" pin="C1" pinfunction="PA1" pintype="output"/>
+    </net>
+    <net code="88" name="Net-(R107-Pad2)">
+      <node ref="R107" pin="2" pintype="passive"/>
+      <node ref="R110" pin="2" pintype="passive"/>
+      <node ref="R111" pin="1" pintype="passive"/>
+      <node ref="U104" pin="7" pinfunction="VFB1" pintype="input"/>
+    </net>
+    <net code="89" name="Net-(R108-Pad2)">
+      <node ref="R108" pin="2" pintype="passive"/>
+      <node ref="R109" pin="1" pintype="passive"/>
+      <node ref="U103" pin="7" pinfunction="VFB1" pintype="input"/>
+    </net>
+    <net code="90" name="Net-(R112-Pad2)">
+      <node ref="R112" pin="2" pintype="passive"/>
+      <node ref="R113" pin="1" pintype="passive"/>
+      <node ref="U105" pin="7" pinfunction="VFB1" pintype="input"/>
+    </net>
+    <net code="91" name="Net-(R114-Pad2)">
+      <node ref="R114" pin="2" pintype="passive"/>
+      <node ref="U103" pin="12" pinfunction="EN2" pintype="input"/>
+      <node ref="U103" pin="6" pinfunction="PG1" pintype="output"/>
+    </net>
+    <net code="92" name="Net-(R115-Pad2)">
+      <node ref="R115" pin="2" pintype="passive"/>
+      <node ref="U103" pin="11" pinfunction="PG2" pintype="output"/>
+      <node ref="U104" pin="12" pinfunction="EN2" pintype="input"/>
+    </net>
+    <net code="93" name="Net-(R116-Pad2)">
+      <node ref="R116" pin="2" pintype="passive"/>
+      <node ref="U104" pin="11" pinfunction="PG2" pintype="output"/>
+      <node ref="U104" pin="5" pinfunction="EN1" pintype="input"/>
+      <node ref="U105" pin="12" pinfunction="EN2" pintype="input"/>
+      <node ref="U105" pin="5" pinfunction="EN1" pintype="input"/>
+    </net>
+    <net code="94" name="Net-(R117-Pad2)">
+      <node ref="R117" pin="2" pintype="passive"/>
+      <node ref="R118" pin="1" pintype="passive"/>
+      <node ref="U103" pin="10" pinfunction="VFB2" pintype="input"/>
+    </net>
+    <net code="95" name="Net-(R119-Pad2)">
+      <node ref="R119" pin="2" pintype="passive"/>
+      <node ref="R120" pin="1" pintype="passive"/>
+      <node ref="U104" pin="10" pinfunction="VFB2" pintype="input"/>
+    </net>
+    <net code="96" name="Net-(R121-Pad2)">
+      <node ref="R121" pin="2" pintype="passive"/>
+      <node ref="R122" pin="1" pintype="passive"/>
+      <node ref="U105" pin="10" pinfunction="VFB2" pintype="input"/>
+    </net>
+    <net code="97" name="Net-(R129-Pad1)">
+      <node ref="R129" pin="1" pintype="passive"/>
+      <node ref="U107" pin="7" pinfunction="R2" pintype="bidirectional"/>
+    </net>
+    <net code="98" name="Net-(R130-Pad1)">
+      <node ref="R130" pin="1" pintype="passive"/>
+      <node ref="U107" pin="5" pinfunction="R0" pintype="bidirectional"/>
+    </net>
+    <net code="99" name="Net-(R131-Pad1)">
+      <node ref="R131" pin="1" pintype="passive"/>
+      <node ref="U107" pin="8" pinfunction="R3" pintype="bidirectional"/>
+    </net>
+    <net code="100" name="Net-(R132-Pad1)">
+      <node ref="R132" pin="1" pintype="passive"/>
+      <node ref="U107" pin="6" pinfunction="R1" pintype="bidirectional"/>
+    </net>
+    <net code="101" name="unconnected-(J109-Pad2)">
+      <node ref="J109" pin="2" pinfunction="D-" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="102" name="unconnected-(J109-Pad3)">
+      <node ref="J109" pin="3" pinfunction="D+" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="103" name="unconnected-(J109-Pad4)">
+      <node ref="J109" pin="4" pinfunction="ID" pintype="passive+no_connect"/>
+    </net>
+    <net code="104" name="unconnected-(J113-Pad7)">
+      <node ref="J113" pin="7" pinfunction="Pin_7" pintype="passive+no_connect"/>
+    </net>
+    <net code="105" name="unconnected-(J113-Pad8)">
+      <node ref="J113" pin="8" pinfunction="Pin_8" pintype="passive+no_connect"/>
+    </net>
+    <net code="106" name="unconnected-(J113-Pad12)">
+      <node ref="J113" pin="12" pinfunction="Pin_12" pintype="passive+no_connect"/>
+    </net>
+    <net code="107" name="unconnected-(J113-Pad14)">
+      <node ref="J113" pin="14" pinfunction="Pin_14" pintype="passive+no_connect"/>
+    </net>
+    <net code="108" name="unconnected-(J113-Pad16)">
+      <node ref="J113" pin="16" pinfunction="Pin_16" pintype="passive+no_connect"/>
+    </net>
+    <net code="109" name="unconnected-(J113-Pad18)">
+      <node ref="J113" pin="18" pinfunction="Pin_18" pintype="passive+no_connect"/>
+    </net>
+    <net code="110" name="unconnected-(J113-Pad20)">
+      <node ref="J113" pin="20" pinfunction="Pin_20" pintype="passive+no_connect"/>
+    </net>
+    <net code="111" name="unconnected-(J115-Pad10)">
+      <node ref="J115" pin="10" pinfunction="CARD_DETECT" pintype="input+no_connect"/>
+    </net>
+    <net code="112" name="unconnected-(J115-Pad11)">
+      <node ref="J115" pin="11" pinfunction="WRITE_PROTECT" pintype="input+no_connect"/>
+    </net>
+    <net code="113" name="unconnected-(J115-Pad12)">
+      <node ref="J115" pin="12" pinfunction="SHELL1" pintype="input+no_connect"/>
+    </net>
+    <net code="114" name="unconnected-(J115-Pad13)">
+      <node ref="J115" pin="13" pinfunction="SHELL2" pintype="input+no_connect"/>
+    </net>
+    <net code="115" name="unconnected-(U104-Pad6)">
+      <node ref="U104" pin="6" pinfunction="PG1" pintype="output+no_connect"/>
+    </net>
+    <net code="116" name="unconnected-(U105-Pad6)">
+      <node ref="U105" pin="6" pinfunction="PG1" pintype="output+no_connect"/>
+    </net>
+    <net code="117" name="unconnected-(U105-Pad11)">
+      <node ref="U105" pin="11" pinfunction="PG2" pintype="output+no_connect"/>
+    </net>
+    <net code="118" name="unconnected-(U106-PadB11)">
+      <node ref="U106" pin="B11" pinfunction="USB_VREGO" pintype="output+no_connect"/>
+    </net>
+  </nets>
+</export>

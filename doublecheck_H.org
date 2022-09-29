@@ -1,11 +1,12 @@
 * TODO
 [X] Switch pullups to 2.2k
-[ ] Add the connectors Paolo expects
+[X] Add the connectors Paolo expects
 [X] 124k -> 120k + 4.7k
 [X] 5.49M -> 5.6M
-[ ] Some LEDs for the MCU
+[X] Some LED for the MCU
 [X] Add pinouts for power input
-[ ] Add symbol for LCD
+[X] Add symbol for LCD
+[X] Add #0 to debug pins as well
 
 * Power circuit
 [X] Are all resistors and capacitors the correct values?

@@ -53,7 +53,6 @@
   (pad "17" thru_hole circle (at 1 -0.6) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (tstamp 834b2b13-2d8e-4c80-9ca5-caf2459cb037))
   (pad "17" thru_hole circle (at 1 -1.8) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (tstamp 8f98e1a4-494b-40cf-8ae3-1708a285640e))
   (pad "17" thru_hole circle (at -1 1.8) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (tstamp b38be1f7-9a60-4bc8-ab05-3dd9ab2ae34a))
-  (pad "17" smd rect (at 0 0) (size 3.4 5) (layers "B.Cu") (tstamp e1f65639-fbc9-476f-b3b4-20ef0ffcbff5))
   (pad "17" thru_hole circle (at -1 -1.8) (size 0.6 0.6) (drill 0.3) (layers *.Cu) (tstamp f8440e4e-454a-4d31-ba1d-9fbfc2f27619))
   (model "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm.wrl"
     (offset (xyz 0 0 0))
