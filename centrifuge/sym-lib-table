@@ -1,5 +1,5 @@
 (sym_lib_table
   (lib (name "centrifuge_symbols")(type "KiCad")(uri "${KIPRJMOD}/centrifuge_symbols.kicad_sym")(options "")(descr ""))
-  (lib (name "THS8136")(type "Legacy")(uri "/home/paolo.celati@ad.celati.com/repos/ntnu/tdt4295/pcb/THS8136.lib")(options "")(descr ""))
-  (lib (name "TVP7002")(type "Legacy")(uri "/home/paolo.celati@ad.celati.com/repos/ntnu/tdt4295/pcb/TVP7002.lib")(options "")(descr ""))
+  (lib (name "THS8136")(type "Legacy")(uri "/home/paolo.celati@ad.celati.com/repos/ntnu/tdt4295/pcb/THS8136.lib")(options "")(descr "")(disabled))
+  (lib (name "TVP7002")(type "Legacy")(uri "/home/paolo.celati@ad.celati.com/repos/ntnu/tdt4295/pcb/TVP7002.lib")(options "")(descr "")(disabled))
 )

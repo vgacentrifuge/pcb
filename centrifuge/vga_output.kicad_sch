@@ -6,8 +6,10 @@
 
   (title_block
     (title "VGA Centrifuge")
+    (date "2022-09-30")
     (rev "R1")
     (comment 1 "Author: Paolo Celati")
+    (comment 2 "VGA DAC")
   )
 
   (lib_symbols
@@ -578,6 +580,9 @@
   (junction (at 160.02 123.19) (diameter 0) (color 0 0 0 0)
     (uuid dad0d1dd-b792-4b06-ac6d-7451f32a5a9b)
   )
+  (junction (at 59.69 108.585) (diameter 0) (color 0 0 0 0)
+    (uuid dc4721e5-c94f-48c0-90ed-c46d8332bd24)
+  )
   (junction (at 136.525 137.16) (diameter 0) (color 0 0 0 0)
     (uuid e355223b-8f52-4a85-ad4d-9e0bbfaaf43d)
   )
@@ -868,6 +873,10 @@
   (wire (pts (xy 68.58 94.615) (xy 71.12 94.615))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 542e8775-ce6f-4d86-975d-b8bce487356a)
+  )
+  (wire (pts (xy 59.69 108.585) (xy 59.69 111.125))
+    (stroke (width 0) (type default) (color 0 0 0 0))
+    (uuid 54b577d0-c275-4667-b73d-8421f291cc00)
   )
   (bus (pts (xy 62.23 89.535) (xy 62.23 86.995))
     (stroke (width 0) (type default) (color 0 0 0 0))
@@ -1253,7 +1262,7 @@
   )
 
   (text "datasheet recommends 3.8k on rfsadj\nfor our 700 mV outputs"
-    (at 170.815 164.465 0)
+    (at 146.304 165.989 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 2abad0ab-1b21-4e02-9f44-5f18c6caf7ae)
   )
@@ -1681,6 +1690,22 @@
     )
     (pin "1" (uuid 374a8642-fa6d-4c22-8e90-d9f8b1abee62))
     (pin "2" (uuid 4a802e62-9c1b-4824-bc42-85c69972395d))
+  )
+
+  (symbol (lib_id "power:GND") (at 59.69 111.125 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 5f12be3c-6e77-4c32-9c24-d95366ca8426)
+    (property "Reference" "#PWR0216" (id 0) (at 59.69 117.475 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (id 1) (at 59.69 115.57 0))
+    (property "Footprint" "" (id 2) (at 59.69 111.125 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 59.69 111.125 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 26467c7b-05d6-40de-8b1f-56ba4f40d48e))
   )
 
   (symbol (lib_id "power:GND") (at 221.615 46.99 0) (unit 1)
