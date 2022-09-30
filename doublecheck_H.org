@@ -7,13 +7,14 @@
 [X] Add pinouts for power input
 [X] Add symbol for LCD
 [X] Add #0 to debug pins as well
+[ ] Change power supply EN pullups to lower resistance (min 1400 Ohm, currently 100k Ohm)
 
 * Power circuit
 [X] Are all resistors and capacitors the correct values?
 [X] Did we calculate correct inductance values?
 [X] Is everything connected as supposed to (see pcb lecture)
-[ ] Use multiple Vias for connecting to ground plane
-[ ] We do actually use the 16-pin PWP footprint?
+[X] Use multiple Vias for connecting to ground plane
+[X] We do actually use the 16-pin PWP footprint? Yes
 
 [X] The barrel jack has a footprint that works
 [X] The barrel jack pin numbers match in datasheet, footprint and schematic
