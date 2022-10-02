@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "centrifuge_symbols")(type "KiCad")(uri "${KIPRJMOD}/centrifuge_symbols.kicad_sym")(options "")(descr ""))
+  (lib (name "mcu_centrifuge_library")(type "KiCad")(uri "${KIPRJMOD}/mcu_centrifuge_library.kicad_sym")(options "")(descr ""))
+)
