@@ -2536,7 +2536,7 @@
       (reference "C137") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/9ed69746-c021-491f-a33e-59871af261ac"
-      (reference "C138") (unit 1) (value "10u") (footprint "Capacitor_SMD:CP_Elec_4x5.4")
+      (reference "C138") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/eeb2d0e6-0531-4b87-a933-36e19cbd5802"
       (reference "C139") (unit 1) (value "1u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -2569,7 +2569,7 @@
       (reference "C148") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/2529aca6-5d6a-49f8-a19a-1a16b14a0639"
-      (reference "C149") (unit 1) (value "10u") (footprint "Capacitor_SMD:CP_Elec_4x5.4")
+      (reference "C149") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
     )
     (path "/c93e1a38-8eab-42e4-af21-3b81f9232499/6e83488a-db73-466c-99a6-359780d36bb4"
       (reference "C150") (unit 1) (value "100n") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -2614,10 +2614,10 @@
       (reference "J112") (unit 1) (value "PowerPads") (footprint "centrifuge_mcu:PowerPads")
     )
     (path "/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/401d38dc-69b7-41e7-a412-1992002e3ddb"
-      (reference "J113") (unit 1) (value "Conn_02x10_Odd_Even") (footprint "Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical")
+      (reference "J113") (unit 1) (value "DEBUG") (footprint "Connector_PinHeader_1.27mm:PinHeader_2x10_P1.27mm_Vertical")
     )
     (path "/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/909e5ad5-5beb-4201-9f15-b7895e15fcee"
-      (reference "J114") (unit 1) (value "Extra MCU GPIO") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x07_P2.54mm_Vertical")
+      (reference "J114") (unit 1) (value "Extra MCU GPIO") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
     )
     (path "/c93e1a38-8eab-42e4-af21-3b81f9232499/77c92aee-164d-4e73-9f5c-49261ebb1158"
       (reference "J115") (unit 1) (value "SD_Card") (footprint "Connector_Card:SD_Kyocera_145638009511859+")
@@ -2686,13 +2686,13 @@
       (reference "R113") (unit 1) (value "22.1k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/4964a866-34f8-4db5-8a1b-b6662659a83a/162b4e3e-e25d-4901-acb9-ce818bdf24d9"
-      (reference "R114") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R114") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/4964a866-34f8-4db5-8a1b-b6662659a83a/dd039ee3-4210-4551-a17e-313f8c3c0f48"
-      (reference "R115") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R115") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/4964a866-34f8-4db5-8a1b-b6662659a83a/80efbc09-92c8-432e-b496-adc67740c0a3"
-      (reference "R116") (unit 1) (value "100k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+      (reference "R116") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/4964a866-34f8-4db5-8a1b-b6662659a83a/708a3c60-c896-4a64-b498-f68ad278fa45"
       (reference "R117") (unit 1) (value "30.1k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
