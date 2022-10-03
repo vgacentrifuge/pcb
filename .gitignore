@@ -1,4 +1,5 @@
 centrifuge/centrifuge-backups/*
+centrifuge_combined/centrifuge-backups/*
 centrifuge/centrifuge_symbols.bak
 centrifuge_mcu/centrifuge_mcu-backups/*
 centrifuge_mcu/centrifuge_mcu_symbols.bak
