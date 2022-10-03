@@ -7,7 +7,7 @@
   (title_block
     (title "VGA Centrifuge")
     (date "2022-10-03")
-    (rev "R2")
+    (rev "R3")
     (comment 1 "Author: Paolo Celati")
     (comment 2 "FPGA Video IO")
   )

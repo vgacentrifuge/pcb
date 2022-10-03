@@ -7,7 +7,7 @@
   (title_block
     (title "VGA Centrifuge")
     (date "2022-10-03")
-    (rev "R2")
+    (rev "R3")
     (comment 1 "Author: Paolo Celati")
     (comment 2 "VGA ADC")
   )
@@ -892,6 +892,7 @@
       )
     )
   )
+
 
   (junction (at 194.31 47.625) (diameter 0) (color 0 0 0 0)
     (uuid 03d3952d-f6fd-41c5-9c2b-324c9871e9e8)
