@@ -597,8 +597,16 @@
       ""
     ],
     [
+      "e1575795-d3d5-4c3d-a0f9-e66719ec181c",
+      "fpga_part"
+    ],
+    [
       "dc0aff80-49aa-4f2d-b505-209791422e22",
       "pwr_jtag"
+    ],
+    [
+      "4c7a3b57-3605-49ef-8431-d3fca3e33250",
+      "config_sram"
     ],
     [
       "07367363-4798-4656-a865-671597074ec3",
@@ -606,7 +614,7 @@
     ],
     [
       "eb68ddf6-c710-4db3-b938-28d6cf722d5d",
-      "e2"
+      "vga_adc2"
     ],
     [
       "41448e64-f8a6-4898-94db-9af1b3d7cee9",
@@ -614,11 +622,11 @@
     ],
     [
       "ef5d7455-1656-4458-a59b-edaf486a2c7e",
-      "e4"
+      "vga_ddc_eeprom2"
     ],
     [
       "b23f5231-af44-4936-acfe-d2cfbd9973c9",
-      "e1"
+      "vga_adc1"
     ],
     [
       "3e4fbc07-93ba-4c68-9b2c-ce8f536b353e",
@@ -626,23 +634,15 @@
     ],
     [
       "e5e4df5b-8ba9-4c81-80da-2712089c1129",
-      "e3"
+      "vga_ddc_eeprom1"
     ],
     [
       "634c7769-4266-4d3f-b715-4b9767b6d9de",
-      "e"
+      "vga_dac"
     ],
     [
       "9c253e80-2b56-46fb-bbe0-8c25e23a6733",
-      "vga_interface"
-    ],
-    [
-      "e1575795-d3d5-4c3d-a0f9-e66719ec181c",
-      "fpga_part"
-    ],
-    [
-      "4c7a3b57-3605-49ef-8431-d3fca3e33250",
-      "config_sram"
+      "vga_interface3"
     ],
     [
       "02dc33a2-ea39-47d9-957e-80e0f80f4644",
@@ -653,12 +653,12 @@
       "Power Circuit"
     ],
     [
-      "c93e1a38-8eab-42e4-af21-3b81f9232499",
-      "SD card reader"
-    ],
-    [
       "6fd6f0a7-8b0f-4518-81c4-1b5a966836cc",
       "MCU"
+    ],
+    [
+      "c93e1a38-8eab-42e4-af21-3b81f9232499",
+      "SD card reader"
     ],
     [
       "5ad062df-ac4b-48ff-8223-f8ac7bddbcbd",
