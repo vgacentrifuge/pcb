@@ -5,7 +5,9 @@
   (paper "A4")
 
   (title_block
-    (title "Power supply")
+    (title "VGA Centrifuge")
+    (date "2022-10-03")
+    (rev "R2")
   )
 
   (lib_symbols

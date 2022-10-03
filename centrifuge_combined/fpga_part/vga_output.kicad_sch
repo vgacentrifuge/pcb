@@ -6,8 +6,8 @@
 
   (title_block
     (title "VGA Centrifuge")
-    (date "2022-09-30")
-    (rev "R1")
+    (date "2022-10-03")
+    (rev "R2")
     (comment 1 "Author: Paolo Celati")
     (comment 2 "VGA DAC")
   )

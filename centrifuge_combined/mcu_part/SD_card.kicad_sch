@@ -4,6 +4,12 @@
 
   (paper "A4")
 
+  (title_block
+    (title "VGA Centrifuge")
+    (date "2022-10-03")
+    (rev "R2")
+  )
+
   (lib_symbols
     (symbol "Connector:SD_Card" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at -16.51 13.97 0)
