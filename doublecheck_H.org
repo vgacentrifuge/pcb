@@ -7,7 +7,8 @@
 [X] Add pinouts for power input
 [X] Add symbol for LCD
 [X] Add #0 to debug pins as well
-[ ] Change power supply EN pullups to lower resistance (min 1400 Ohm, currently 100k Ohm)
+[X] Change power supply EN pullups to lower resistance (min 1400 Ohm, currently 100k Ohm)
+[ ] Fix missing footprint info in all of the MCU components
 
 * Power circuit
 [X] Are all resistors and capacitors the correct values?
@@ -18,6 +19,7 @@
 
 [X] The barrel jack has a footprint that works
 [X] The barrel jack pin numbers match in datasheet, footprint and schematic
+[ ] Do all inductors have the correct footprint
 
 * MCU
 Datasheet: https://www.silabs.com/documents/public/data-sheets/efm32gg-datasheet.pdf
@@ -29,7 +31,7 @@ AN0002 Hardware considerations: https://www.silabs.com/documents/public/applicat
 [ ] Are decoupling capacitors placed well?
 
 ** Choice of output pins
-[ ] Make sure all pins are correct in schematic, and support what we want to use them for
+[X] Make sure all pins are correct in schematic, and support what we want to use them for
 NOTE: Make sure you always look at the BGA112 package!
 
 [X] Make sure all features we use are available on the 990
@@ -47,9 +49,9 @@ See table 5.20.3 GPIO Pinout Overview.
 ** Crystal
 Oups, we bought an osciallator, not a crystal.
 We should buy a crystal instead, to stay true to the pcb lecture schematic and AN0002.
-[ ] Are the capacitors correctly placed on the PCB?
-[ ] Use KiCADs differental pair routing?
-[ ] Is the ground plane correctly formed under the crystal?
+[X] Are the capacitors correctly placed on the PCB?
+[NO] Use KiCADs differental pair routing? No need.
+[X] Is the ground plane correctly formed under the crystal?
 
 * I2C
 [ ] Buy both 2k and 4.7k pullups in case we need to switch

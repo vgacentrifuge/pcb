@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "centrifuge footprints")(type "KiCad")(uri "${KIPRJMOD}/centrifuge footprints.pretty")(options "")(descr ""))
-)
