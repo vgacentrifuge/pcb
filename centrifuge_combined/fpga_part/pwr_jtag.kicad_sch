@@ -1884,7 +1884,6 @@
     )
   )
 
-
   (junction (at 238.125 63.5) (diameter 0) (color 0 0 0 0)
     (uuid 00872c95-d66b-47fb-b48d-738aa4807ed8)
   )
@@ -5174,7 +5173,7 @@
     (property "Datasheet" "~" (id 3) (at 233.045 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Order Page" "https://www.digikey.no/en/products/detail/molex/0878311411/3313107" (id 4) (at 233.045 55.88 0)
+    (property "Order Page" "BOUGHT https://www.digikey.no/en/products/detail/molex/0878311411/3313107" (id 4) (at 233.045 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 658fadbc-ee7e-48d2-9e91-6d1d20a61f58))
