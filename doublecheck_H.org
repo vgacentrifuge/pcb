@@ -8,7 +8,6 @@
 [X] Add symbol for LCD
 [X] Add #0 to debug pins as well
 [X] Change power supply EN pullups to lower resistance (min 1400 Ohm, currently 100k Ohm)
-[ ] Fix missing footprint info in all of the MCU components
 
 * Power circuit
 [X] Are all resistors and capacitors the correct values?
@@ -19,7 +18,7 @@
 
 [X] The barrel jack has a footprint that works
 [X] The barrel jack pin numbers match in datasheet, footprint and schematic
-[ ] Do all inductors have the correct footprint
+[X] Do all inductors have the correct footprint
 
 * MCU
 Datasheet: https://www.silabs.com/documents/public/data-sheets/efm32gg-datasheet.pdf
@@ -28,7 +27,7 @@ AN0002 Hardware considerations: https://www.silabs.com/documents/public/applicat
 ** Power delivery
 [X] Do we provide power to all power inputs (REG, IO and Analog)
 [X] All ground pins connected?
-[ ] Are decoupling capacitors placed well?
+[HOPE SO] Are decoupling capacitors placed well?
 
 ** Choice of output pins
 [X] Make sure all pins are correct in schematic, and support what we want to use them for
@@ -41,10 +40,10 @@ The 990 fully implements the 2x I2C and 3x USART described elsewhere in the data
 See table 5.20.3 GPIO Pinout Overview.
 
 ** Footprint
-[ ] Are the pins in the correct locations, correct solder pad size and such?
+[X] Are the pins in the correct locations, correct solder pad size and such?
 
 ** Debug header
-[ ] Is it correctly laid out?
+[X] Is it correctly laid out?
 
 ** Crystal
 Oups, we bought an osciallator, not a crystal.
@@ -57,25 +56,43 @@ We should buy a crystal instead, to stay true to the pcb lecture schematic and A
 [ ] Buy both 2k and 4.7k pullups in case we need to switch
 
 * Connectors
-[ ] Check that the 20-pin debug connector is already bought (1.27mm 2x10 male pin header)
-For all other pin headers, just buy a fair amount of 1-row and 2-row breakup-able pin headers.
-[ ] Buy 2x per board of 2x20: https://www.digikey.no/no/products/detail/sullins-connector-solutions/PREC020DFAN-RC/2774994
-[ ] Buy 1x per board of 1x20: https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC020SACN-RC/2776086
+[X] Check that the 20-pin debug connector is already bought (1.27mm 2x10 male pin header)
+
+For all other pin headers, just buy a fair amount of 1-row and 2-row through hole breakup-able pin headers.
+[X] Count the number of 2.54mm pin headers we have per board:
+ 2-row: (6 PSU disconnect)+(6 PSU breakout)+(4 MCU extra IO)+(5+3+2 FPGA extra IO) = 26 cols
+ 1-row: (4 MCU extra IO)+((4) MCU-FPGA SPI breakout)+(2+2+2 I2C breakout)+(4 LCU connector)+(8 keypad top) = 26 cols
+ Buy enough for 3, and breaking a bunch.
+Cheap [[https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC040SACN-RC/2776066][1-row x 40]] and [[https://www.digikey.no/no/products/detail/sullins-connector-solutions/PRPC013DFAN-RC/2775401][2-row x 18]]
+
+[X] Buy 8-wide 2.54mm female pin header for easy on and off for the keypad [[https://www.digikey.no/no/products/detail/sullins-connector-solutions/PPTC081LFBN-RC/810147][1-row x 8 female]].
+
+[X] Do we have enough shunts to connect things (6x 5-wide and 25x 1-wide shunts is plenty)
 
 * SD card
-[ ] Everything connected correctly
-[ ] Pullup resistors make sense
-[ ] Footprint matches the slot we have bought
+[X] Everything connected correctly
+[X] Pullup resistors make sense (we have 5, can just de-solder if needed)
+[X] Footprint matches the slot we have bought
 
 * LCD screen
 [ ] Check that the footprint is correct in terms of size and holes, and connection point
 
 * Keyboard matrix
-[ ] Is the custom footprint correct size?
+[SHOULD BE] Is the custom footprint correct size? Used the picture.
 
 * FPGA
 [ ] Does it get everything it needs from the MCU?
 
-* In general
-[ ] Do all parts we purchase have correct parameters (as specified in schematic)
-[ ] Do all footprints actually fit the parts we buy / have bought?
+* SRAM
+[X] Footprint correct
+
+* DDC
+[X] Footprint correct
+[X] Matches the suggested schematic
+[X] Pin-out pin numbers match
+
+* ADC
+[X] Footprint correct
+
+* DDC level switches
+[X] Footprints correct for the MOSFETs, both for the input and output VGAs.

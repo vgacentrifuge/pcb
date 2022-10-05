@@ -348,7 +348,7 @@ instead letting the FPGA control it.
 It would be nice to support 1.8V input, since the rest of video out is at 1.8V.
 
 For each ADC, and for the output, buy one
-[771-LSF0102DCH](https://no.mouser.com/ProductDetail/Nexperia/LSF0102DCH?qs=zW32dvEIR3vhhHCS5E8Gjg%3D%3D).
+[771-LSF0102DCH](https://www.digikey.no/no/products/detail/nexperia-usa-inc/LSF0102DCH/13574967).
 
 ##### Input VGA ports: I2C EEPROMs
 On our VGA inputs, we should respond to I2C read commands, to return 128-256 bytes of read only [Extended Display Identification Data](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data).
