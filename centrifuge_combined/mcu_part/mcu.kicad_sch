@@ -2998,7 +2998,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0c5eaafa-8d33-4e2f-aad6-2d5d69c09718)
   )
-  (text "Extra MCU-FPGA IO" (at 174.625 43.815 0)
+  (text "Extra MCU GPIO" (at 174.625 43.815 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 294f32f3-dfd2-456b-9f7d-66514d85474e)
   )

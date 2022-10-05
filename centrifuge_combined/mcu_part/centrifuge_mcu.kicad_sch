@@ -1923,7 +1923,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 64ddcf41-2be8-44c4-9b4f-c144dbd415f7)
     (property "Reference" "J503" (id 0) (at 97.79 66.04 90))
-    (property "Value" "FPGA_extra" (id 1) (at 97.79 68.58 90))
+    (property "Value" "MCU_extra" (id 1) (at 97.79 68.58 90))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (id 2) (at 99.06 71.374 0)
       (effects (font (size 1.27 1.27)) hide)
     )
