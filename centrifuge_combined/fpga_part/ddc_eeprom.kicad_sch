@@ -6,8 +6,8 @@
 
   (title_block
     (title "VGA Centrifuge")
-    (date "2022-10-03")
-    (rev "R3")
+    (date "2022-10-05")
+    (rev "R4")
     (comment 1 "Author: Paolo Celati")
     (comment 2 "VGA Input EEPROM")
   )

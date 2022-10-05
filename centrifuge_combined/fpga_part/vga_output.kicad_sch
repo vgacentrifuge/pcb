@@ -6,8 +6,8 @@
 
   (title_block
     (title "VGA Centrifuge")
-    (date "2022-10-03")
-    (rev "R3")
+    (date "2022-10-05")
+    (rev "R4")
     (comment 1 "Author: Paolo Celati")
     (comment 2 "VGA DAC")
   )
@@ -1757,9 +1757,9 @@
   (symbol (lib_id "centrifuge_symbols:THS8136") (at 178.435 69.85 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6910358c-e92c-45c1-a24a-80dfc23ba030)
-    (property "Reference" "U5" (id 0) (at 210.82 49.3012 0))
-    (property "Value" "THS8136" (id 1) (at 210.82 51.8412 0))
-    (property "Footprint" "Package_QFP:LQFP-48-1EP_7x7mm_P0.5mm_EP3.6x3.6mm" (id 2) (at 178.435 69.85 0)
+    (property "Reference" "U5" (id 0) (at 210.82 50.0505 0))
+    (property "Value" "THS8136" (id 1) (at 210.82 52.5905 0))
+    (property "Footprint" "centrifuge footprints:LQFP-48-1EP_7x7mm_P0.5mm_EP3.6x3.6mm_ThermalVias_modified" (id 2) (at 178.435 69.85 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.ti.com/lit/ds/symlink/ths8136.pdf" (id 3) (at 178.435 69.85 0)

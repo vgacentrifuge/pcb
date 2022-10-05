@@ -6,8 +6,8 @@
 
   (title_block
     (title "VGA Centrifuge")
-    (date "2022-10-03")
-    (rev "R3")
+    (date "2022-10-05")
+    (rev "R4")
     (comment 1 "Author: Paolo Celati")
     (comment 2 "Toplevel")
   )
@@ -817,7 +817,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 065c7614-f1e5-43f4-9e51-37aa46a50f51)
     (property "Reference" "J518" (id 0) (at 114.1984 172.72 0))
-    (property "Value" "FPGA 6XTRA" (id 1) (at 114.1984 175.26 0))
+    (property "Value" "Conn_02x03_Odd_Even" (id 1) (at 114.1984 175.26 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" (id 2) (at 112.9284 181.2544 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -852,8 +852,8 @@
   (symbol (lib_id "Connector_Generic:Conn_02x02_Odd_Even") (at 76.6572 186.9694 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9b781762-538b-48b9-8478-fa6a861b4795)
-    (property "Reference" "J519" (id 0) (at 77.9272 180.34 0))
-    (property "Value" "FPGA EXTR4" (id 1) (at 77.9272 182.88 0))
+    (property "Reference" "J519" (id 0) (at 77.9272 193.04 0))
+    (property "Value" "Conn_02x02_Odd_Even" (id 1) (at 77.9272 195.58 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 76.6572 186.9694 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -869,8 +869,8 @@
   (symbol (lib_id "Connector_Generic:Conn_02x05_Odd_Even") (at 161.29 129.2098 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid e1c91b2f-9f46-43e0-9803-4154ea32a4bf)
-    (property "Reference" "J504" (id 0) (at 162.56 118.11 0))
-    (property "Value" "FPGA eXtra" (id 1) (at 162.56 120.65 0))
+    (property "Reference" "J504" (id 0) (at 162.56 138.43 0))
+    (property "Value" "Conn_02x05_Odd_Even" (id 1) (at 162.56 140.97 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" (id 2) (at 161.29 129.2098 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1238,8 +1238,8 @@
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/367917a3-6239-48d1-9573-3ab1b9f5c90a"
       (reference "#PWR0122") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/98fec552-a155-4b2e-a0db-8f682b2e047b"
-      (reference "#PWR0123") (unit 1) (value "+3V3_FPGA") (footprint "")
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/85738c56-05dd-4498-92d7-f3e46fbd4d59"
+      (reference "#PWR0123") (unit 1) (value "+1V8") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/cee8dd18-ae90-4ef7-82e5-f924274ba04a"
       (reference "#PWR0124") (unit 1) (value "+3V3") (footprint "")
@@ -1400,8 +1400,8 @@
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/3e4fbc07-93ba-4c68-9b2c-ce8f536b353e/367917a3-6239-48d1-9573-3ab1b9f5c90a"
       (reference "#PWR0176") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/e67fdb3f-7e85-477f-8134-0287c1754cef"
-      (reference "#PWR0177") (unit 1) (value "+1V8_FPGA") (footprint "")
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/3e4fbc07-93ba-4c68-9b2c-ce8f536b353e/85738c56-05dd-4498-92d7-f3e46fbd4d59"
+      (reference "#PWR0177") (unit 1) (value "+1V8") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/3e4fbc07-93ba-4c68-9b2c-ce8f536b353e/dd33a722-3105-430e-ae1f-18734fe91dc7"
       (reference "#PWR0178") (unit 1) (value "GND") (footprint "")
@@ -1439,8 +1439,8 @@
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/41448e64-f8a6-4898-94db-9af1b3d7cee9/367917a3-6239-48d1-9573-3ab1b9f5c90a"
       (reference "#PWR0189") (unit 1) (value "+5V_FPGA") (footprint "")
     )
-    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/f1e8b8ff-8293-4a66-bf3d-2505ef83bc55"
-      (reference "#PWR0190") (unit 1) (value "+3V3_FPGA") (footprint "")
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/41448e64-f8a6-4898-94db-9af1b3d7cee9/85738c56-05dd-4498-92d7-f3e46fbd4d59"
+      (reference "#PWR0190") (unit 1) (value "+1V8_FPGA") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/41448e64-f8a6-4898-94db-9af1b3d7cee9/dd33a722-3105-430e-ae1f-18734fe91dc7"
       (reference "#PWR0191") (unit 1) (value "GND") (footprint "")
@@ -1534,6 +1534,9 @@
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/9b553b34-59b0-4efd-8c3b-8d64e329d16e"
       (reference "#PWR0221") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/4c7a3b57-3605-49ef-8431-d3fca3e33250/0c8c7057-0ebc-4afa-b245-78462fd8816a"
+      (reference "#PWR0222") (unit 1) (value "+3V3_FPGA") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/f663a6f9-0b20-4f6e-9953-88323eee8805"
       (reference "#PWR0223") (unit 1) (value "+3V3_FPGA") (footprint "")
@@ -2238,7 +2241,7 @@
       (reference "D501") (unit 1) (value "LED_YELLOW_2V_20mA") (footprint "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/9bb45a87-ba44-4f62-9b71-001a5d1cfb78"
-      (reference "J1") (unit 1) (value "FPGA JTAG") (footprint "centrifuge footprints:878311411")
+      (reference "J1") (unit 1) (value "Conn_02x07_Odd_Even") (footprint "centrifuge footprints:878311411")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/c50ed301-9691-45b4-8160-e577727037b4"
       (reference "J2") (unit 1) (value "Conn_01x15") (footprint "centrifuge footprints:L77HDE15SD1CH4FVGA")
@@ -2253,10 +2256,10 @@
       (reference "J501") (unit 1) (value "Conn_02x06_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/64ddcf41-2be8-44c4-9b4f-c144dbd415f7"
-      (reference "J503") (unit 1) (value "MCU_extra") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+      (reference "J503") (unit 1) (value "FPGA_extra") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/e1c91b2f-9f46-43e0-9803-4154ea32a4bf"
-      (reference "J504") (unit 1) (value "FPGA eXtra") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
+      (reference "J504") (unit 1) (value "Conn_02x05_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/12449800-d3ac-47fd-8345-77581e9ee736"
       (reference "J505") (unit 1) (value "FPGA_SPI") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
@@ -2298,10 +2301,10 @@
       (reference "J517") (unit 1) (value "DDCI2C1") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/065c7614-f1e5-43f4-9e51-37aa46a50f51"
-      (reference "J518") (unit 1) (value "FPGA 6XTRA") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
+      (reference "J518") (unit 1) (value "Conn_02x03_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
     )
     (path "/9b781762-538b-48b9-8478-fa6a861b4795"
-      (reference "J519") (unit 1) (value "FPGA EXTR4") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+      (reference "J519") (unit 1) (value "Conn_02x02_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/5b9b0cf7-ae06-48c3-84da-0cf76e29bfc8"
       (reference "JP1") (unit 1) (value "Jumper_2_Bridged") (footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm")
@@ -2558,6 +2561,9 @@
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/29bda079-e9a8-4ae2-9f2f-2574a5d14a24"
       (reference "R54") (unit 1) (value "330") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/4c7a3b57-3605-49ef-8431-d3fca3e33250/1c25aaff-795a-4c7a-a448-27d59a695932"
+      (reference "R55") (unit 1) (value "2.2k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/fbdfdf53-0af0-4881-86b7-bda43037c5c0"
       (reference "R501") (unit 1) (value "2.2k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
@@ -2805,7 +2811,7 @@
       (reference "U4") (unit 1) (value "TVP7002") (footprint "centrifuge footprints:TQFP-100-1EP_14x14mm_P0.5mm_EP5x5mm_ThermalVias_elprint")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/634c7769-4266-4d3f-b715-4b9767b6d9de/6910358c-e92c-45c1-a24a-80dfc23ba030"
-      (reference "U5") (unit 1) (value "THS8136") (footprint "Package_QFP:LQFP-48-1EP_7x7mm_P0.5mm_EP3.6x3.6mm")
+      (reference "U5") (unit 1) (value "THS8136") (footprint "centrifuge footprints:LQFP-48-1EP_7x7mm_P0.5mm_EP3.6x3.6mm_ThermalVias_modified")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/f40b1711-a16a-4dcd-9870-5df08d87996b"
       (reference "U6") (unit 1) (value "LSF0102") (footprint "Package_SO:VSSOP-8_2.3x2mm_P0.5mm")
