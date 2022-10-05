@@ -817,7 +817,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 065c7614-f1e5-43f4-9e51-37aa46a50f51)
     (property "Reference" "J518" (id 0) (at 114.1984 172.72 0))
-    (property "Value" "Conn_02x03_Odd_Even" (id 1) (at 114.1984 175.26 0))
+    (property "Value" "FPGA 6XTRA" (id 1) (at 114.1984 175.26 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical" (id 2) (at 112.9284 181.2544 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -852,8 +852,8 @@
   (symbol (lib_id "Connector_Generic:Conn_02x02_Odd_Even") (at 76.6572 186.9694 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9b781762-538b-48b9-8478-fa6a861b4795)
-    (property "Reference" "J519" (id 0) (at 77.9272 193.04 0))
-    (property "Value" "Conn_02x02_Odd_Even" (id 1) (at 77.9272 195.58 0))
+    (property "Reference" "J519" (id 0) (at 77.9272 180.34 0))
+    (property "Value" "FPGA EXTR4" (id 1) (at 77.9272 182.88 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical" (id 2) (at 76.6572 186.9694 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -869,8 +869,8 @@
   (symbol (lib_id "Connector_Generic:Conn_02x05_Odd_Even") (at 161.29 129.2098 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid e1c91b2f-9f46-43e0-9803-4154ea32a4bf)
-    (property "Reference" "J504" (id 0) (at 162.56 138.43 0))
-    (property "Value" "Conn_02x05_Odd_Even" (id 1) (at 162.56 140.97 0))
+    (property "Reference" "J504" (id 0) (at 162.56 118.11 0))
+    (property "Value" "FPGA eXtra" (id 1) (at 162.56 120.65 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical" (id 2) (at 161.29 129.2098 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1238,6 +1238,9 @@
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/367917a3-6239-48d1-9573-3ab1b9f5c90a"
       (reference "#PWR0122") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/98fec552-a155-4b2e-a0db-8f682b2e047b"
+      (reference "#PWR0123") (unit 1) (value "+3V3_FPGA") (footprint "")
+    )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/cee8dd18-ae90-4ef7-82e5-f924274ba04a"
       (reference "#PWR0124") (unit 1) (value "+3V3") (footprint "")
     )
@@ -1435,6 +1438,9 @@
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/41448e64-f8a6-4898-94db-9af1b3d7cee9/367917a3-6239-48d1-9573-3ab1b9f5c90a"
       (reference "#PWR0189") (unit 1) (value "+5V_FPGA") (footprint "")
+    )
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/f1e8b8ff-8293-4a66-bf3d-2505ef83bc55"
+      (reference "#PWR0190") (unit 1) (value "+3V3_FPGA") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/41448e64-f8a6-4898-94db-9af1b3d7cee9/dd33a722-3105-430e-ae1f-18734fe91dc7"
       (reference "#PWR0191") (unit 1) (value "GND") (footprint "")
@@ -1663,12 +1669,6 @@
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/1938774a-11ed-4c6a-9e00-f7d552bf4988"
       (reference "#PWR0539") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/98fec552-a155-4b2e-a0db-8f682b2e047b"
-      (reference "#PWR?") (unit 1) (value "+3V3_FPGA") (footprint "")
-    )
-    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/f1e8b8ff-8293-4a66-bf3d-2505ef83bc55"
-      (reference "#PWR?") (unit 1) (value "+3V3_FPGA") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/634c7769-4266-4d3f-b715-4b9767b6d9de/90142074-d6ae-4f09-8dd2-e143c0d83720"
       (reference "C1") (unit 1) (value "10u") (footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
@@ -2238,7 +2238,7 @@
       (reference "D501") (unit 1) (value "LED_YELLOW_2V_20mA") (footprint "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/9bb45a87-ba44-4f62-9b71-001a5d1cfb78"
-      (reference "J1") (unit 1) (value "Conn_02x07_Odd_Even") (footprint "centrifuge footprints:878311411")
+      (reference "J1") (unit 1) (value "FPGA JTAG") (footprint "centrifuge footprints:878311411")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/c50ed301-9691-45b4-8160-e577727037b4"
       (reference "J2") (unit 1) (value "Conn_01x15") (footprint "centrifuge footprints:L77HDE15SD1CH4FVGA")
@@ -2256,7 +2256,7 @@
       (reference "J503") (unit 1) (value "MCU_extra") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
     )
     (path "/e1c91b2f-9f46-43e0-9803-4154ea32a4bf"
-      (reference "J504") (unit 1) (value "Conn_02x05_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
+      (reference "J504") (unit 1) (value "FPGA eXtra") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/12449800-d3ac-47fd-8345-77581e9ee736"
       (reference "J505") (unit 1) (value "FPGA_SPI") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
@@ -2298,10 +2298,10 @@
       (reference "J517") (unit 1) (value "DDCI2C1") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
     )
     (path "/065c7614-f1e5-43f4-9e51-37aa46a50f51"
-      (reference "J518") (unit 1) (value "Conn_02x03_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
+      (reference "J518") (unit 1) (value "FPGA 6XTRA") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical")
     )
     (path "/9b781762-538b-48b9-8478-fa6a861b4795"
-      (reference "J519") (unit 1) (value "Conn_02x02_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
+      (reference "J519") (unit 1) (value "FPGA EXTR4") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x02_P2.54mm_Vertical")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/5b9b0cf7-ae06-48c3-84da-0cf76e29bfc8"
       (reference "JP1") (unit 1) (value "Jumper_2_Bridged") (footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm")

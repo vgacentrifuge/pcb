@@ -7,7 +7,7 @@
 [X] Add pinouts for power input
 [X] Add symbol for LCD
 [X] Add #0 to debug pins as well
-[X] Change power supply EN pullups to lower resistance (min 1400 Ohm, currently 100k Ohm)
+[X] Change power supply EN pullups to lower resistance (min 1400 Ohm, moved from 100k Ohm to 10k)
 
 * Power circuit
 [X] Are all resistors and capacitors the correct values?
@@ -75,24 +75,41 @@ Cheap [[https://www.digikey.no/no/products/detail/sullins-connector-solutions/PR
 [X] Footprint matches the slot we have bought
 
 * LCD screen
-[ ] Check that the footprint is correct in terms of size and holes, and connection point
+[X] Check that the footprint is correct in terms of size and holes, and connection point
 
 * Keyboard matrix
-[SHOULD BE] Is the custom footprint correct size? Used the picture.
+[X] Is the custom footprint correct size? Used a ruler.
 
 * FPGA
-[ ] Does it get everything it needs from the MCU?
+[X] Does it get everything it needs from the MCU?
+
+** Config flash
+[X] Correct footprint
 
 * SRAM
 [X] Footprint correct
+[X] All needed pins are connected, either to FPGA, or hardwired correctly.
 
-* DDC
+* DAC
 [X] Footprint correct
 [X] Matches the suggested schematic
 [X] Pin-out pin numbers match
+[X] FPGA provides 1.8V digital inputs
 
 * ADC
 [X] Footprint correct
+[X] Matches suggested schematic (except low pass filter on VSYNC)
+[X] pin-out pin numbers match
 
-* DDC level switches
+* VGA
+** HSYNC/VSYNC
+[X] Level switchers have correct voltages
+[X] Level switchers have correct footprint
+
+** DDC
+*** EEPROMS
+[X] Footprints match (pads are a bit longer and closer than suggested, but should be fine)
+
+*** level switches
 [X] Footprints correct for the MOSFETs, both for the input and output VGAs.
+[X] Voltages correct on both sides: 3.3V on MCU side, 5V on VGA/EEPROM side

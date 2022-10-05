@@ -5166,7 +5166,7 @@
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 9bb45a87-ba44-4f62-9b71-001a5d1cfb78)
     (property "Reference" "J1" (id 0) (at 231.775 41.91 0))
-    (property "Value" "Conn_02x07_Odd_Even" (id 1) (at 231.775 44.45 0))
+    (property "Value" "FPGA JTAG" (id 1) (at 231.775 44.45 0))
     (property "Footprint" "centrifuge footprints:878311411" (id 2) (at 233.045 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
