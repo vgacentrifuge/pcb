@@ -1172,6 +1172,9 @@
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/a4c621ca-8cc4-4434-8e60-8167a74478d3"
       (reference "#PWR02") (unit 1) (value "GND") (footprint "")
     )
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/8fdd4beb-2bd0-4b8d-b442-c8dff09f5c98"
+      (reference "#PWR03") (unit 1) (value "+3V3_FPGA") (footprint "")
+    )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/07367363-4798-4656-a865-671597074ec3/817b333b-e194-4f07-9620-ee13273cbcd0"
       (reference "#PWR0101") (unit 1) (value "+1V8_FPGA") (footprint "")
     )
@@ -1513,9 +1516,6 @@
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/4c7a3b57-3605-49ef-8431-d3fca3e33250/9fdcb4ad-483a-4d09-8071-8ca61f55a07d"
       (reference "#PWR0214") (unit 1) (value "+3V3_FPGA") (footprint "")
-    )
-    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/4c7a3b57-3605-49ef-8431-d3fca3e33250/dcda02c7-96e8-45d3-92d6-8317846c3094"
-      (reference "#PWR0215") (unit 1) (value "+3V3_FPGA") (footprint "")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/634c7769-4266-4d3f-b715-4b9767b6d9de/5f12be3c-6e77-4c32-9c24-d95366ca8426"
       (reference "#PWR0216") (unit 1) (value "GND") (footprint "")
@@ -2557,6 +2557,9 @@
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/29bda079-e9a8-4ae2-9f2f-2574a5d14a24"
       (reference "R54") (unit 1) (value "330") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+    )
+    (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/4c7a3b57-3605-49ef-8431-d3fca3e33250/04b31304-926e-401d-afbf-4a73076838c4"
+      (reference "R55") (unit 1) (value "2.2k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/fbdfdf53-0af0-4881-86b7-bda43037c5c0"
       (reference "R501") (unit 1) (value "2.2k") (footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
