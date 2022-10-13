@@ -2814,7 +2814,7 @@
       (reference "U6") (unit 1) (value "LSF0102") (footprint "Package_SO:VSSOP-8_2.3x2mm_P0.5mm")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/9c253e80-2b56-46fb-bbe0-8c25e23a6733/a83e3935-5b50-4545-9d78-746262d393a5"
-      (reference "U7") (unit 1) (value "PESD4USB5B-TTS") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
+      (reference "U7") (unit 1) (value "RCLAMP0524PATCT") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/b23f5231-af44-4936-acfe-d2cfbd9973c9/7387945d-cb70-464a-a9ec-c2ce059b4d08"
       (reference "U8") (unit 1) (value "TVP7002") (footprint "centrifuge footprints:TQFP-100-1EP_14x14mm_P0.5mm_EP5x5mm_ThermalVias_elprint")
@@ -2832,13 +2832,13 @@
       (reference "U12") (unit 1) (value "M24C02-WMN") (footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/3e4fbc07-93ba-4c68-9b2c-ce8f536b353e/a83e3935-5b50-4545-9d78-746262d393a5"
-      (reference "U13") (unit 1) (value "PESD4USB5B-TTS") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
+      (reference "U13") (unit 1) (value "RCLAMP0524PATCT") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/41448e64-f8a6-4898-94db-9af1b3d7cee9/a83e3935-5b50-4545-9d78-746262d393a5"
-      (reference "U14") (unit 1) (value "PESD4USB5B-TTS") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
+      (reference "U14") (unit 1) (value "RCLAMP0524PATCT") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
     )
     (path "/e1575795-d3d5-4c3d-a0f9-e66719ec181c/dc0aff80-49aa-4f2d-b505-209791422e22/fd83cd09-1744-4811-bdb9-0a6ac24e01f3"
-      (reference "U15") (unit 1) (value "D5V0FS4U10LP") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
+      (reference "U15") (unit 1) (value "RCLAMP3324P.TNT") (footprint "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/6ce5747e-02ae-4108-bbe2-9e2fb0a774ec"
       (reference "U501") (unit 1) (value "DFR0555") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
@@ -2847,13 +2847,13 @@
       (reference "U502") (unit 1) (value "LCD16x2L") (footprint "centrifuge_mcu:DFR0555")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/4964a866-34f8-4db5-8a1b-b6662659a83a/d74fa298-ff26-4fe6-9af5-ae2cf4529486"
-      (reference "U503") (unit 1) (value "TPS54294") (footprint "centrifuge_mcu:TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias_EXTRA")
+      (reference "U503") (unit 1) (value "TPS54294") (footprint "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/4964a866-34f8-4db5-8a1b-b6662659a83a/612c894c-5691-4e85-86a2-27ebc27c07ac"
-      (reference "U504") (unit 1) (value "TPS54294") (footprint "centrifuge_mcu:TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias_EXTRA")
+      (reference "U504") (unit 1) (value "TPS54294") (footprint "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/4964a866-34f8-4db5-8a1b-b6662659a83a/8fc3f9af-b9b7-4672-a5ff-9a3cca25cb64"
-      (reference "U505") (unit 1) (value "TPS54294") (footprint "centrifuge_mcu:TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias_EXTRA")
+      (reference "U505") (unit 1) (value "TPS54294") (footprint "Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm")
     )
     (path "/02dc33a2-ea39-47d9-957e-80e0f80f4644/6fd6f0a7-8b0f-4518-81c4-1b5a966836cc/720a19a0-4294-477d-99a0-aea1b19d52a4"
       (reference "U506") (unit 1) (value "EFM32GG990F1024") (footprint "centrifuge_mcu:BGA-112_9.0x9.0mm_Layout11x11_P0.8mm_Ball0.4mm_Pad0.35mm_NSMD")
