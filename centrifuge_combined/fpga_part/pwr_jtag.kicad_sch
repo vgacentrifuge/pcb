@@ -2025,7 +2025,7 @@
           (name "CH2" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
-        (pin no_connect line (at -2.54 -10.16 90) (length 2.54) hide
+        (pin power_in line (at 0 -10.16 90) (length 2.54) hide
           (name "GND" (effects (font (size 1.27 1.27))))
           (number "3" (effects (font (size 1.27 1.27))))
         )
@@ -6663,10 +6663,10 @@
     (property "Footprint" "Package_DFN_QFN:Diodes_UDFN-10_1.0x2.5mm_P0.5mm" (id 2) (at 258.572 47.752 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "https://no.mouser.com/datasheet/2/761/SEMT_S_A0002540573_1-2575715.pdf" (id 3) (at 258.572 47.752 0)
+    (property "Datasheet" "https://www.diodes.com/assets/Datasheets/D5V0FS4U10LP.pdf" (id 3) (at 258.572 47.752 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Order Page" "https://no.mouser.com/ProductDetail/Semtech/RCLAMP3324P.TNT?qs=rBWM4%252BvDhIcjIdOyxs8eng%3D%3D" (id 4) (at 258.572 47.752 0)
+    (property "Order Page" "https://www.digikey.no/en/products/detail/diodes-incorporated/D5V0FS4U10LP-7/7930773" (id 4) (at 258.572 47.752 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "10" (uuid 8be17a6a-213a-42fe-9451-290c7a57491a))

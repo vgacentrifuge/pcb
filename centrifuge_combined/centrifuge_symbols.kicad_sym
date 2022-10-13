@@ -3117,7 +3117,7 @@
         (name "CH2" (effects (font (size 1.27 1.27))))
         (number "2" (effects (font (size 1.27 1.27))))
       )
-      (pin no_connect line (at -2.54 -10.16 90) (length 2.54) hide
+      (pin power_in line (at 0 -10.16 90) (length 2.54) hide
         (name "GND" (effects (font (size 1.27 1.27))))
         (number "3" (effects (font (size 1.27 1.27))))
       )
@@ -3512,7 +3512,7 @@
         (name "CH2" (effects (font (size 1.27 1.27))))
         (number "2" (effects (font (size 1.27 1.27))))
       )
-      (pin no_connect line (at -2.54 -10.16 90) (length 2.54) hide
+      (pin power_in line (at 0 -10.16 90) (length 2.54) hide
         (name "GND" (effects (font (size 1.27 1.27))))
         (number "3" (effects (font (size 1.27 1.27))))
       )
