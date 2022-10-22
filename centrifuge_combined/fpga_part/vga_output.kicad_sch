@@ -1267,6 +1267,10 @@
     (uuid f60931c3-8576-4d2e-9481-400a14cf1f1d)
   )
 
+  (text "Used to be 2.2k" (at 239.014 143.256 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 04c84f29-4687-4ed1-95b6-3adf624eb183)
+  )
   (text "datasheet recommends 3.8k on rfsadj\nfor our 700 mV outputs"
     (at 146.304 165.989 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -1738,7 +1742,7 @@
     (property "Reference" "R7" (id 0) (at 236.22 142.2399 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "2.2k" (id 1) (at 236.22 144.7799 0)
+    (property "Value" "4.7k" (id 1) (at 236.22 144.7799 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (id 2) (at 234.315 143.51 0)
