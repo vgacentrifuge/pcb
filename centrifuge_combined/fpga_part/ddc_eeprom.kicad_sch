@@ -493,6 +493,12 @@
     (uuid f819c77d-d1bb-4642-a41c-e82dfee5f121)
   )
 
+  (text "Writes are enabled if pulled to GND or left floating"
+    (at 163.83 106.172 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 822d4912-130c-4555-8544-47b7196e2022)
+  )
+
   (label "SDA" (at 209.55 113.665 270)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 1fb433b6-3b76-4511-80bb-14b5685c1a4b)
