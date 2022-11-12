@@ -1458,6 +1458,11 @@
     (uuid fc4067c5-3d72-47a7-a1cd-84e361d84ee7)
   )
 
+  (text "On the first PCB, in an attempt to make I2C work\nR12, R13, R14 and R15 are all 4.7k.\nIt didn't work, so now Q1 and Q2 are removed\n(The 10k's and BSN20's are in their bags)."
+    (at 104.902 56.134 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 26c8423c-7c76-42d0-9dd3-a27d54c812d2)
+  )
   (text "Couldn't find a TVS diode with\nsuitable clamping/breakdown voltages\nthat wasn't under 1x1mm.\nSo for now leaving out TVS protection."
     (at 137.795 189.23 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
